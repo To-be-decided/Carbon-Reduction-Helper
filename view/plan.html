@@ -95,7 +95,7 @@
                     Include information on<br>
                     &nbsp;&nbsp;&nbsp;<input type="checkbox" checked  disabled onchange="alert('Disabling is not implemented in this proof-of-concept'); this.value='All'">Cost effectiveness<br>
                     <br>
-                    Filter by impact<br>
+                    Filter by impact on person<br>
                     &nbsp;&nbsp;&nbsp;<select >
                     <option>Any </option>
                     <option disabled>Medium or less</option>
@@ -109,8 +109,8 @@
                 </select> cost
                     <br>
                     <br>
-                    Filter by effectiveness<br>
-                    &nbsp;&nbsp;&nbsp;<input id="showStepsBelow5perc" type="checkbox" onchange="refresh_steps()">Show steps with carbon impact less 5%<br>
+                    Filter by carbon reduction<br>
+                    &nbsp;&nbsp;&nbsp;<input id="showStepsBelow5perc" type="checkbox" onchange="refresh_steps()"> Include steps with a reduction of less than 5%<br>
                 </td><td>
 
         <header>
@@ -132,7 +132,7 @@
                                 <a class="text-dark nav-link" href="#" onclick="gotoMenu('familiarise.html');return false">Familiarise</a>
                             </li>
                             <li class="nav-item">
-                                <a class="text-dark nav-link"  href="#" onclick="gotoMenu('execute.html');return false">Execute</a>
+                                <a class="text-dark nav-link"  href="#" onclick="gotoMenu('complete.html');return false">Complete</a>
                             </li>
                             <li class="nav-item">
                                 <a class="text-dark nav-link" href="#" onclick="gotoMenu('feedback.html');return false">Feedback</a>
@@ -638,7 +638,8 @@
                         <!-- Comparison of emissions -->
                         <div class="card">
                             <div class="card-header">
-                                <h4>Your saved emissions compared to an average UK adult</h4>
+                                <h4>Your carbon reduction</h4>
+                                (compared to an average UK adult)
                                 <div class="card-body">
                                     <dl class="row">
                                         <dt class="col-sm-5">Planned</dt>
@@ -746,13 +747,13 @@
                 stepsBelow5perc,
                 function(e){e.style = "";}
             );
-			document.getElementById('resultsSummary').innerHTML = "26 out of 26 results"
+			document.getElementById('resultsSummary').innerHTML = "26 out of 26 steps"
         }else{
             Array.prototype.filter.call(
                 stepsBelow5perc,
                 function(e){e.style = "display:none";}
             );
-			document.getElementById('resultsSummary').innerHTML = "12 out of 26 results"
+			document.getElementById('resultsSummary').innerHTML = "12 out of 26 steps"
         }
     }
 

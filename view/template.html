@@ -8,7 +8,7 @@
     <base href=".">
 
     <link rel="shortcut icon" href="images/favicon.ico">
-    <title>Carbon Reduction Helper - Execute</title>
+    <title>Carbon Reduction Helper - Complete</title>
 
     <link href="lib/2.67123b20.chunk.css" rel="stylesheet">
     <link href="lib/main.a391ff7c.chunk.css" rel="stylesheet">
@@ -50,7 +50,7 @@
                                 <a class="text-dark nav-link" href="#" onclick="gotoMenu('familiarise.html');return false">Familiarise</a>
                             </li>
                             <li class="nav-item">
-                                <a disabled="" class="text-dark nav-link"  href="#" onclick="gotoMenu('execute.html');return false">[Execute]</a>
+                                <a disabled="" class="text-dark nav-link"  href="#" onclick="gotoMenu('complete.html');return false">[Complete]</a>
                             </li>
                             <li class="nav-item">
                                 <a class="text-dark nav-link" href="#" onclick="gotoMenu('feedback.html');return false">Feedback</a>
@@ -132,7 +132,7 @@
     }
 
     handle_stepChange2 = function(stepId){
-        let newUrl = 'execute.html?step=' + stepId
+        let newUrl = 'complete.html?step=' + stepId
 
         window.location.href = newUrl;
     }

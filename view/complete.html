@@ -8,7 +8,7 @@
     <base href=".">
 
     <link rel="shortcut icon" href="images/favicon.ico">
-    <title>Carbon Reduction Helper - Execute</title>
+    <title>Carbon Reduction Helper - Complete</title>
 
     <link href="lib/2.67123b20.chunk.css" rel="stylesheet">
     <link href="lib/main.a391ff7c.chunk.css" rel="stylesheet">
@@ -50,7 +50,7 @@
                                 <a class="text-dark nav-link" href="#" onclick="gotoMenu('familiarise.html');return false">Familiarise</a>
                             </li>
                             <li class="nav-item">
-                                <a disabled="" class="text-dark nav-link"  href="#" onclick="gotoMenu('execute.html');return false">[Execute]</a>
+                                <a disabled="" class="text-dark nav-link"  href="#" onclick="gotoMenu('complete.html');return false">[Complete]</a>
                             </li>
                             <li class="nav-item">
                                 <a class="text-dark nav-link" href="#" onclick="gotoMenu('feedback.html');return false">Feedback</a>
@@ -78,7 +78,7 @@
                             doing
                         </li>
                         <li>click on its associated status and select your preference, then</li>
-                        <li>click on [Familiarise] or [Execute] menus</li>
+                        <li>click on [Familiarise] or [Complete] menus</li>
                     </ul>
                 </small>
 
@@ -89,11 +89,12 @@
     -->
                         <select id="stepSelector" onchange="handle_stepChange2()">
                             <option value="">Select a planned step ...</option>
-                            <option value="10">Replace an old gas boiler with an air source heat pump</option>
-                            <option value="20">Replace an old gas boiler with a ground source heat pump</option>
-                            <option value="30">Replace 5 beef (herd) portions per week with poultry</option>
-                            <option value="40">Replace a petrol car with an electric car</option>
-                            <option value="50">Increase loft insulation from ??cm to ??cm in a gas heated house with an old boiler</option>
+                            <option value="10">Replace an old gas boiler with an air source heat pump [23%]</option>
+                            <option value="20">Replace an old gas boiler with a ground source heat pump [23%]</option>
+                            <option value="30">Replace 5 beef (herd) portions per week with poultry [20%]</option>
+                            <option value="40">Replace a petrol car with an electric car [17%]</option>
+                            <option value="50">Increase loft insulation from ??cm to ??cm in a gas heated house with an
+                                old boiler [17%]
                         </select>
                     </div>
                     <br>
@@ -313,7 +314,7 @@ B&Q = £945
     }
 
     handle_stepChange2 = function(){
-        let url = 'execute.html'
+        let url = 'complete.html'
 
         if(selectorId.value !== ""){
             url = url + '?step=' + selectorId.value
