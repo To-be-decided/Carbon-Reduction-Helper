@@ -1,0 +1,11 @@
+a.navbar-brand{white-space:normal;text-align:center;word-break:break-all}html{font-size:14px}@media (min-width:768px){html{font-size:16px}}.box-shadow{box-shadow:0 .25rem .75rem rgba(0,241,0,.25)}a{color:#0366d6}code{color:#e01a76}
+.btn-primary{
+	color:#fff;
+	background-color:#1b6ec2;
+	border-color:#1861ac
+}
+.table-striped tbody tr:nth-of-type(odd)
+{
+	background-color:#B0ffB0
+}
+/*# MappingURL=main.a391ff7c.chunk.css.map */

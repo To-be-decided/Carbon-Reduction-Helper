@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--<base href="/">-->
+    <base href=".">
+
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <title>Carbon Reduction Helper - Familiarise</title>
+
+    <link href="lib/2.67123b20.chunk.css" rel="stylesheet">
+    <link href="lib/main.a391ff7c.chunk.css" rel="stylesheet">
+
+    <script src="../model.js"></script>
+    <script src="view.js"></script>
+    <script src="../controller.js"></script>
+    <script src="lib/common.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173546127-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-173546127-1');
+    </script>
+</head>
+
+<body data-gr-c-s-loaded="true">
+
+<noscript>You need to enable JavaScript to run this app.</noscript>
+
+<div id="root">
+    <div>
+        <header>
+            <nav class="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 navbar navbar-light">
+                <div class="container">
+                    <a disabled="" class="navbar-brand disabled" href="dashboard.html">Carbon Reduction
+                        Helper
+                        (proof-of-concept)</a>
+                    <button aria-label="Toggle navigation" type="button" class="mr-2 navbar-toggler">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="d-sm-inline-flex flex-sm-row-reverse collapse navbar-collapse">
+                        <ul class="navbar-nav flex-grow">
+                            <li class="nav-item">
+                                <a class="text-dark nav-link" href="#"
+                                   onclick="gotoMenu('dashboard.html');return false">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="text-dark nav-link" href="#"
+                                   onclick="gotoMenu('plan.html');return false">Plan</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="text-dark nav-link" disabled="" href="#"
+                                   onclick="gotoMenu('familiarise.html');return false">[Familiarise]</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="text-dark nav-link" href="#"
+                                   onclick="gotoMenu('execute.html');return false">Execute</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="text-dark nav-link" href="#"
+                                   onclick="gotoMenu('feedback.html');return false">Feedback</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="text-dark nav-link" href="#"
+                                   onclick="gotoMenu('help.html');return false">Help</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="container-xl">
+            <div class="row">
+                <div class="col-md-8">
+                    <div align="center">
+                        <!--
+                            <table bgcolor="yellow">
+                                <tr>
+                                    <td>
+                                        Tips:
+                                        <small>
+                                            <ul>
+                                                <li>scroll down the list of steps to find the first thing you maybe happy
+                                                    doing
+                                                </li>
+                                                <li>click on its associated status and select your preference, then</li>
+                                                <li>click on [Familiarise] or [Execute] menus</li>
+                                            </ul>
+                                        </small>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br>
+                            -->
+                        <select id="stepSelector" onchange="handle_stepChange()">
+                            <option value="">Select a planned step ...</option>
+                            <option value="10">Replace an old gas boiler with an air source heat pump</option>
+                            <option value="20">Replace an old gas boiler with a ground source heat pump</option>
+                            <option value="30">Replace 5 beef (herd) portions per week with poultry</option>
+                            <option value="40">Replace a petrol car with an electric car</option>
+                            <option value="50">Increase loft insulation from ??cm to ??cm in a gas heated house with an
+                                old boiler
+                            </option>
+                        </select>
+                        <br>
+                        <br>
+                        <iframe
+                                id="docFrame"
+                                src="more_info_blank.html"
+                                width="740" height="1000">
+                        </iframe><br>
+
+                        <div>
+                            Note:<br>
+                               If you don't have off-road parking there are several options to install on-street charge points.<br>
+                            Automatically submit your request for on-street charging in the Execute page.
+                        </div>
+                    </div>
+                    <br>
+                    <div id="discussion1">
+                        <div id="disqus_thread"></div>
+                        <script>
+                            /**
+                             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                            /*
+                            var disqus_config = function () {
+                            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                            };
+                            */
+                            (function () { // DON'T EDIT BELOW THIS LINE
+                                var d = document, s = d.createElement('script');
+                                s.src = 'https://crh1.disqus.com/embed.js';
+                                s.setAttribute('data-timestamp', +new Date());
+                                (d.head || d.body).appendChild(s);
+                            })();
+                        </script>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="sticky-top pt-2">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Menu</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                Set this step status to:
+                                                <select id="stepStateSelector"
+                                                        onFocus="this.oldIndex = this.selectedIndex"
+                                                        onChange="model_setStepState(step, this.value); this.selectedIndex = this.oldIndex">
+                                                    <option value=""></option>
+                                                    <option value="maybe">Maybe</option>
+                                                    <option value="aspiring">Plan to</option>
+                                                    <option value="done">Completed</option>
+                                                    <option value="na">Not applicable</option>
+                                                    <option value="never">Never</option>
+                                                </select>
+                                                <br>
+                                                Follow changes to this step<input type="checkbox"><br>
+                                                <br>
+                                                <p>
+                                                    [Print ...]<br>
+                                                    [<a
+                                                        id="suggestUpdates"
+                                                        href="#"
+                                                        onClick="handle_suggestChanges(); return false"
+                                                    >Suggest updates ...</a>]<br>
+                                                </p>
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let selectorId = document.getElementById('stepSelector');
+    if(step !== "") selectorId.value = step
+
+    // Change selector to stored step state
+    stepStateSelector = document.getElementById('stepStateSelector')
+    stepStateSelector.value = model_getStepState(step);   // @todo Correct the stepId
+
+    handle_stepChange = function () {
+        document.getElementById('docFrame').src = "more_info_loading.html";
+        let url = 'familiarise.html'
+
+        if(selectorId.value !== ""){
+            url = url + '?step=' + selectorId.value
+        }
+        setTimeout("window.location.href = \'" + url + "\'", 0)
+
+    }
+
+    update_stepChange = function () {
+        let selectorId = document.getElementById('stepSelector');
+        let suggestUpdatesId = document.getElementById('suggestUpdates');
+
+        if (selectorId.selectedIndex !== "") {
+            document.getElementById('docFrame').src = model_getStepEmbedUrl(step);
+        }
+    }
+
+    update_stepChange()
+
+    handle_suggestChanges = function(){
+        alert("The information is stored in a Google doc so you will need to login in to Google")
+        window.open(model_getStepEditUrl(step));
+    }
+</script>
+
+</body>
+</html>

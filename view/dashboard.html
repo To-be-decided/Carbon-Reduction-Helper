@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--<base href="/">-->
+    <base href=".">
+
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <title>Carbon Reduction Helper - Dashboard</title>
+
+    <link href="lib/2.67123b20.chunk.css" rel="stylesheet">
+    <link href="lib/main.a391ff7c.chunk.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173546127-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-173546127-1');
+    </script>
+
+</head>
+
+<body data-gr-c-s-loaded="true">
+
+<noscript>You need to enable JavaScript to run this app.</noscript>
+
+<div id="root">
+    <div>
+        <header>
+            <nav class="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 navbar navbar-light">
+                <div class="container">
+                    <a disabled="" class="navbar-brand disabled" href="dashboard.html">Carbon Reduction Helper (proof-of-concept)</a>
+                    <button aria-label="Toggle navigation" type="button" class="mr-2 navbar-toggler">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="d-sm-inline-flex flex-sm-row-reverse collapse navbar-collapse">
+                        <ul class="navbar-nav flex-grow">
+                            <li class="nav-item">
+                                <a disabled="" class="text-dark nav-link" href="#" onclick="gotoMenu('dashboard.html');return false">[Dashboard]</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="text-dark nav-link" href="#" onclick="gotoMenu('plan.html');return false">Plan</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="text-dark nav-link" href="#" onclick="gotoMenu('familiarise.html');return false">Familiarise</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="text-dark nav-link"  href="#" onclick="gotoMenu('execute.html');return false">Execute</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="text-dark nav-link" href="#" onclick="gotoMenu('feedback.html');return false">Feedback</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="text-dark nav-link" href="#" onclick="gotoMenu('help.html');return false">Help</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+</header>
+        <div class="container-xl">
+            <div class="row">
+                <div class="col-md-8">
+                    <table bgcolor="yellow" width="100%">
+                        <tr>
+                            <td>
+                                Tips:
+                                    <ul>
+                                        <li>
+                                            <small><i>In this proof-of-concept, this dashboard contains fixed sample data that reflects the default settings in the plan page.</i></small>
+                                        </li>
+                                    </ul>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <h3>Dashboard</h3>
+                    <table style="margin-left:40px">
+                        <tr>
+                            <td> You are currently saving: 20% of average UK adult<br><br></td> <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                You rank 3rd out of 5 of your friends <i>(Well done! You moved up one place 5 days ago)</i><br>
+								<br>
+                                <table style="margin-left:40px" border="1">
+                                    <tr><th>Ranking </th><th>Person</th><th> Current emission savings </th></tr>
+                                    <tr><td> 1 </td><td> Joe Bloggs    </td><td> 35% </td></tr>
+                                    <tr><td> 2 </td><td> Queen Mary    </td><td> 31% </td></tr>
+                                    <tr><td> 3 </td><td> [You]         </td><td> 28% <-----------------</td></tr>
+                                    <tr><td> 4 </td><td> Jane Doe      </td><td> 25% </td></tr>
+                                    <tr><td> 5 </td><td> Elvis Presley </td><td> 23% </td></tr>
+                                </table>
+                            </td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td> <br>You are planning on saving a total of:  63% of average UK adult</td> <td> </td>
+                        </tr>
+                    </table>
+                    <br>
+
+                    <h3>Recent activity:</h3>
+                    <ul>
+                        <li><small>You: completed <a href="familiarise.html?step=30">Replace 5 beef (herd) portions per week with poultry</a> saving ??% of UK average person on 5 July 2020</small></li>
+                        <li><small>John Doe: planned to complete <a href="familiarise.html?step=40">Replace a petrol car with an electric car</a> saving ??% of UK average person by 30 Aug 2020</small></li>
+                    </ul>
+                    <h3>Your carbon reduction progress:</h3>
+                    <img
+                            src="images/emissions over time.png"
+                            onclick="alert('This is just an representative image in this proof-of-concept.')"
+                            alt=""
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="lib/common.js"></script>
+
+</body>
+</html>
