@@ -201,7 +201,7 @@ B&Q = £945
                         </table>
                         <br>
                         <p>
-                            Once action is complete get a good feeling by ticking it off.
+                            Once action is complete, get a good feeling by ticking it off.
                         </p>
                     </div> <!-- exec_info -->
                     <div id="step30_exec_info" style="display:none">  <!-- beef (herd) portions -->
@@ -213,7 +213,7 @@ B&Q = £945
 
                     <div id="step40_exec_info" style="display:none">  <!-- Electric -->
                         <p>
-                            I have have off-road parking
+                            I have off-road parking
                                 <input
                                         type="checkbox"
                                         checked
@@ -266,7 +266,10 @@ B&Q = £945
                                             <td>
 <!--                                           Follow changes to this step<input type="checkbox"><br> -->
                                                 Set this step status to:
-                                                <select id="stepStateSelector" onFocus="this.oldIndex = this.selectedIndex" onChange="model_setStepState(step, this.value); this.selectedIndex = this.oldIndex">
+                                                <select id="stepStateSelector"
+                                                        onFocus="this.oldIndex = this.selectedIndex"
+                                                        onChange="model_setStepState(step, this.value); this.selectedIndex = this.oldIndex"
+                                                >
                                                     <option value=""></option>
                                                     <option value="maybe">Maybe</option>
                                                     <option value="aspiring">Plan to</option>
@@ -306,8 +309,13 @@ B&Q = £945
     let selectorId = document.getElementById('stepSelector');
 
     if(step !== "") {
+        // Set step
         selectorId.value = step
+
+        // Display step info
         document.getElementById('step' + step + '_exec_info').style = "";
+
+        // Set step state
         document.getElementById('stepStateSelector').value = model_getStepState(step)
     }
 

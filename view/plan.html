@@ -21,6 +21,8 @@
     <script src="../controller.js"></script>
     <script src="../persistence.js"></script>
 
+    <script src="lib/common.js"></script>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173546127-1"></script>
     <script>
@@ -40,6 +42,8 @@
     </style>
 </head>
 
+<!-------------------------------------------------------------->
+
 <body data-gr-c-s-loaded="true">
 
 <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -47,6 +51,8 @@
 <!--suppress ES6ConvertVarToLetConst -->
 <script>
     var volatilityConfirmed=false;
+    var incLowImpactSteps = urlParams.get('incLowImpactSteps')
+
 </script>
 <script>
     function pulse(element, withStyle){
@@ -58,6 +64,8 @@
         element.classList.toggle(element.classList[0])
     }
 </script>
+
+<!-------------------------------------------------------------->
 
 <div id="root">
     <div>
@@ -660,7 +668,7 @@
     </div> <!-- Anonymous -->
 </div> <!-- Root -->
 
-<script src="lib/common.js"></script>
+<!-------------------------------------------------------------->
 
 <script>
     handle_stepStateChange = function(stepId, stateId) {
@@ -730,10 +738,15 @@
     }
 
     refresh_steps = function(){
-        let showStepsBelow5percState = document.getElementById('showStepsBelow5perc').checked
+        let showStepsBelow5percId = document.getElementById('showStepsBelow5perc')
         let stepsBelow5perc = document.getElementsByClassName('below5perc');
 
-        if(showStepsBelow5percState) {
+        if(incLowImpactSteps!=null){
+            incLowImpactSteps = null
+            showStepsBelow5percId.checked = true
+        }
+
+        if(showStepsBelow5percId.checked) {
             Array.prototype.filter.call(
                 stepsBelow5perc,
                 function(e){e.style = "";}
