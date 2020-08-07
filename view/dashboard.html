@@ -13,6 +13,24 @@
     <link href="lib/2.67123b20.chunk.css" rel="stylesheet">
     <link href="lib/main.a391ff7c.chunk.css" rel="stylesheet">
 
+    <style>
+        .pgBar {
+            width: 100%;
+            background-color: grey;
+        }
+
+        .pgBar_meter {
+            height: 30px;
+            background-color: #4CAF50;
+            text-align: center;
+            line-height: 30px; /* To center it vertically */
+            color: white;
+        }
+
+        .pgBar_meter_10perc{width: 10%;}
+        .bgBar_meter_50perc{width: 50%;}
+    </style>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173546127-1"></script>
     <script>
@@ -80,71 +98,110 @@
 
                     <table style="margin-left:40px" width="100%">
                         <tr>
-                            <td width="90%" colspan="2"> You have reduced your carbon emissions by <b>17%</b> and are planning on saving <b>69%</b></td>
+                            <td width="90%" colspan="2">
+                                <p>Well done! You are making good progress.</p>
+                                You have :
+                                <ul>
+                                    <li>reduced your carbon emissions by <b>17%</b> this month <img src="images/tick.png"></li>
+                                    <li>saved a total of <b>17%</b> <img src="images/tick.png"></li>
+                                    <li>commited to saving a total of <b>69%</b> by ??? <img src="images/tick.png"></li>
+                                </ul>
+                            </td>
                         </tr>
                         <tr>
                             <td width="100%" colspan="2"><br>
-                                Compare to <select id='compareTo' onchange="handle_compareToChange()">
-                                    <option>no one</option>
-                                    <option>friends only</option>
-                                    <option selected>friends and government target</option>
-                                </select><br>
-                                <br>
+                                <h3>Compare your progress with others</h3>
+<div align="right">
+                                <a href="#"
+                                onclick="alert('Although you can\'t change it on this proof-of-concept, on the final version this option controls what to display.  Including one ore more of Friends, Government target, Region and Groups'); return false")
+                                align="right"
+                                >[Configure]</a>
+</div>
+
                             </td>
                             <tr>
                                 <td>
-                                <table id="rankingCurrent" border="1" style="margin-left:20px" width="300">
+                                <table id="rankingCurrent" border="1" style="margin-left:20px" width="400">
                                     <tr>
                                         <td colspan="3" align="center">
                                             <b>CURRENT<br>carbon reduction</b>
                                         </td>
                                     </tr>
                                     <tr bgcolor="#D0D0D0">
-                                        <th align="center">Position</th>
-                                        <th align="center">Person</th>
-                                        <th align="center">Reduction </th></tr>
-                                    <tr id="governmentActual"
-                                        bgcolor="#00FF00"><td align="center"> </td><td>[Government target]</td><td align="center"> 42% </td></tr>
-                                    <tr                  ><td align="center"> 1 </td><td> Joe Bloggs               </td><td align="center"> 23% </td></tr>
-                                    <tr                  ><td align="center"> 2 </td><td> Queen Mary               </td><td align="center"> 18% </td></tr>
-                                    <tr bgcolor="#adff2f"><td align="center"> 3 </td><td> [You]                    </td><td align="center"> 17%</td></tr>
-                                    <tr                  ><td align="center"> 4 </td><td> Jane Doe                 </td><td align="center"> 15% </td></tr>
-                                    <tr                  ><td align="center"> 5 </td><td> Elvis Presley            </td><td align="center"> 10% </td></tr>
+                                        <th align="center">Who</th>
+                                        <th align="center">Average<br>Reduction</th></tr>
+
+                                    <tr id="governmentActual"  bgcolor="#00FF00">
+                                        <td>[Government target]</td>
+                                        <td align="center"><img src="https://docs.google.com/drawings/d/e/2PACX-1vQC5lcmm4pFKZGzwyo76IpYxHh97P2QAAsTJZ8-GwaIhH3V8cUunBoLc8hZmEFf-VrzDEAmr6Kvl2Hl/pub?h=23"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Friends <img src="images/sort_down.png"  align="right"></td>
+                                        <td align="center"><img src="https://docs.google.com/drawings/d/e/2PACX-1vTyGIMQDCA6zAtDBx01VEk0PTCFrqvs2HA_HS_Yz6DfJ1WHj50iBjICpfIBs3jwew6lG2OksXjAOKaz/pub?h=23"></td>
+                                    </tr>
+                                    <tr bgcolor="#adff2f">
+                                        <td> [You]</td>
+                                        <td align="center">
+                                        <img src="https://docs.google.com/drawings/d/e/2PACX-1vSvQ7AQ4Klutp4g2IMaFQbmYBEFyGjQ194015iN9ozSoWC7sB08HZAc7HKNyfmmZDaq5_5LyjC_fu98/pub?h=23">
+                                        </td>
+                                    </tr>
+                                    <tr >
+                                        <td>World<img src="images/sort_down.png" align="right"></td>
+                                        <!-- 10% -->
+                                        <td align="center">
+                                            <img src="https://docs.google.com/drawings/d/e/2PACX-1vShjV4qM_sSRdIj966wEycgO2dr3oskMQp719r8hENNVFa6JN4fa5xweVDXyyJfkOXqpPXqpw4YihKV/pub?h=23">
+                                        </td>
+                                    </tr>
                                 </table>
                             </td>
                             <td width="50%" >
-                                <table id="rankingFuture" border="1" width="300">
+                                <table id="rankingFuture" border="1" width="400">
                                     <tr>
                                         <td colspan="3" align="center">
                                             <b>PLANNED<br>carbon reduction</b>
                                         </td>
                                     </tr>
-                                    <tr bgcolor="#D0D0D0"><th>Position</th><th>Person</th><th> Reduction</th></tr>
-                                    <tr>                  <td align="center"> 1 </td><td align="center"> Queen Mary    </td><td align="center"> 43% </td></tr>
-                                    <tr id="governmentPlanned"
-                                        bgcolor="#00FF00"><td align="center">   </td><td align="center"> [Government target]</td><td align="center"> 42% </td></tr>
-                                    <tr bgcolor="#adff2f"><td align="center"> 2 </td><td align="center"> [You]         </td><td align="center"> 39%</td></tr>
-                                    <tr>                  <td align="center"> 3 </td><td align="center"> Joe Bloggs    </td><td align="center"> 33% </td></tr>
-                                    <tr>                  <td align="center"> 4 </td><td align="center"> Jane Doe      </td><td align="center"> 20% </td></tr>
-                                    <tr>                  <td align="center"> 5 </td><td align="center"> Elvis Presley </td><td align="center"> 18% </td></tr>
+                                    <tr bgcolor="#D0D0D0">
+                                        <th>Who</th>   <th align="center">Average<br>Reduction</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Friends <img src="images/sort_down.png" align="right"></td>
+                                        <td align="center">
+                                            <img src="https://docs.google.com/drawings/d/e/2PACX-1vSlYGNS4T-dLTFPmna4ye_1m0_xHhvaI5F5D39zzrOLoHEMboYlNSsIFSASOOe0L8WOkf_vtrBGz4Hp/pub?h=23">
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#00FF00">
+                                        <td>[Government target]</td>
+                                        <td align="center"><img src="https://docs.google.com/drawings/d/e/2PACX-1vQC5lcmm4pFKZGzwyo76IpYxHh97P2QAAsTJZ8-GwaIhH3V8cUunBoLc8hZmEFf-VrzDEAmr6Kvl2Hl/pub?h=23"></td>
+                                    </tr>
+                                    <tr bgcolor="#adff2f">
+                                        <td> [You]</td>
+                                        <td align="center">
+                                            <img src="https://docs.google.com/drawings/d/e/2PACX-1vQ8kUD509Xn75QYSYi22EnEk932yq2LH9oyRnFOvB7qHqPhwK8e01DXc4Zd2FJqIsu5bAhhm0tojaPQ/pub?h=23">
+                                        </td>
+                                    </tr>
+                                    <tr><!-- 17% -->
+                                        <td>World<img src="images/sort_down.png" align="right"></td>
+                                        <td align="center">
+                                            <img src="https://docs.google.com/drawings/d/e/2PACX-1vSvQ7AQ4Klutp4g2IMaFQbmYBEFyGjQ194015iN9ozSoWC7sB08HZAc7HKNyfmmZDaq5_5LyjC_fu98/pub?h=23">
+                                        </td>
+                                    </tr>
                                 </table>
                             </td>
                         </tr>
                     </table>
                     <br>
 
-                    You and your friends are saving on average: ??/person <br>
-                    <br>
-                    Well done you are
-                    If everyone in the world saved the same amount it would ????.
-<br>
-                    <br>
+                    <p>You and your friends are saving on average: ??%/person</p>
+
+                    <p>If everyone in the world saved the same amount it would ????.</p>
+
                     <h3>Recent activity:</h3>
                     <ul>
                         <li><small>You: completed <a href="familiarise.html?step=30">Replace 5 beef (herd) portions per week with poultry</a> saving ??% of UK average person on 5 July 2020</small></li>
                         <li><small>John Doe: planned to complete <a href="familiarise.html?step=40">Replace a petrol car with an electric car</a> saving ??% of UK average person by 30 Aug 2020</small></li>
                     </ul>
-                    <h3>Your carbon reduction progress:</h3>
+                    <h3>How you and your friends are doing over time:</h3>
                     <img
                             src="images/emissions over time.png"
                             onclick="alert('This is just an representative image in this proof-of-concept.')"
@@ -160,6 +217,7 @@
 
 <script>
 
+    /** @todo This may not be required */
     handle_compareToChange = function(){
 
         switch(document.getElementById('compareTo').selectedIndex){
@@ -196,7 +254,6 @@
 
     }
 
-    handle_compareToChange();
 </script>
 </body>
 </html>
