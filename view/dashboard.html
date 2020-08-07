@@ -84,39 +84,49 @@
                         </tr>
                         <tr>
                             <td width="100%" colspan="2"><br>
-                                Compared to your<select>
-                                    <option>friends and government target</option>
+                                Compare to <select id='compareTo' onchange="handle_compareToChange()">
+                                    <option>no one</option>
                                     <option>friends only</option>
+                                    <option selected>friends and government target</option>
                                 </select><br>
                                 <br>
                             </td>
                             <tr>
                                 <td>
-                                <table border="1" style="margin-left:20px">
+                                <table id="rankingCurrent" border="1" style="margin-left:20px" width="300">
+                                    <tr>
+                                        <td colspan="3" align="center">
+                                            <b>CURRENT<br>carbon reduction</b>
+                                        </td>
+                                    </tr>
                                     <tr bgcolor="#D0D0D0">
-                                        <th>Position</th><th>Person</th>
-                                        <th>Current<br>
-                                        emission<br>
-                                        savings </th></tr>
-                                    <tr bgcolor="#00FF00"><td> </td><td>[Government target]</td><td> 42% </td></tr>
-                                    <tr                  ><td> 1 </td><td> Joe Bloggs               </td><td> 23% </td></tr>
-                                    <tr                  ><td> 2 </td><td> Queen Mary               </td><td> 18% </td></tr>
-                                    <tr bgcolor="#adff2f"><td> 3 </td><td> [You]                    </td><td> 17%</td></tr>
-                                    <tr                  ><td> 4 </td><td> Jane Doe                 </td><td> 15% </td></tr>
-                                    <tr                  ><td> 5 </td><td> Elvis Presley            </td><td> 10% </td></tr>
+                                        <th align="center">Position</th>
+                                        <th align="center">Person</th>
+                                        <th align="center">Reduction </th></tr>
+                                    <tr id="governmentActual"
+                                        bgcolor="#00FF00"><td align="center"> </td><td>[Government target]</td><td align="center"> 42% </td></tr>
+                                    <tr                  ><td align="center"> 1 </td><td> Joe Bloggs               </td><td align="center"> 23% </td></tr>
+                                    <tr                  ><td align="center"> 2 </td><td> Queen Mary               </td><td align="center"> 18% </td></tr>
+                                    <tr bgcolor="#adff2f"><td align="center"> 3 </td><td> [You]                    </td><td align="center"> 17%</td></tr>
+                                    <tr                  ><td align="center"> 4 </td><td> Jane Doe                 </td><td align="center"> 15% </td></tr>
+                                    <tr                  ><td align="center"> 5 </td><td> Elvis Presley            </td><td align="center"> 10% </td></tr>
                                 </table>
                             </td>
                             <td width="50%" >
-                                <table border="1">
-                                    <tr bgcolor="#D0D0D0"><th>Position</th><th>Person</th><th> Planned
-                                        <br>emission<br>
-                                        savings </th></tr>
-                                    <tr>                  <td> 1 </td><td> Queen Mary    </td><td> 43% </td></tr>
-                                    <tr bgcolor="#00FF00"><td>   </td><td> [Government target]</td><td> 42% </td></tr>
-                                    <tr bgcolor="#adff2f"><td> 2 </td><td> [You]         </td><td> 39%</td></tr>
-                                    <tr>                  <td> 3 </td><td> Joe Bloggs    </td><td> 33% </td></tr>
-                                    <tr>                  <td> 4 </td><td> Jane Doe      </td><td> 20% </td></tr>
-                                    <tr>                  <td> 5 </td><td> Elvis Presley </td><td> 18% </td></tr>
+                                <table id="rankingFuture" border="1" width="300">
+                                    <tr>
+                                        <td colspan="3" align="center">
+                                            <b>PLANNED<br>carbon reduction</b>
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#D0D0D0"><th>Position</th><th>Person</th><th> Reduction</th></tr>
+                                    <tr>                  <td align="center"> 1 </td><td align="center"> Queen Mary    </td><td align="center"> 43% </td></tr>
+                                    <tr id="governmentPlanned"
+                                        bgcolor="#00FF00"><td align="center">   </td><td align="center"> [Government target]</td><td align="center"> 42% </td></tr>
+                                    <tr bgcolor="#adff2f"><td align="center"> 2 </td><td align="center"> [You]         </td><td align="center"> 39%</td></tr>
+                                    <tr>                  <td align="center"> 3 </td><td align="center"> Joe Bloggs    </td><td align="center"> 33% </td></tr>
+                                    <tr>                  <td align="center"> 4 </td><td align="center"> Jane Doe      </td><td align="center"> 20% </td></tr>
+                                    <tr>                  <td align="center"> 5 </td><td align="center"> Elvis Presley </td><td align="center"> 18% </td></tr>
                                 </table>
                             </td>
                         </tr>
@@ -148,5 +158,45 @@
 
 <script src="lib/common.js"></script>
 
+<script>
+
+    handle_compareToChange = function(){
+
+        switch(document.getElementById('compareTo').selectedIndex){
+            case 0: //no one
+                // Hide both tables
+                document.getElementById('rankingCurrent').style.display = 'none'
+                document.getElementById('rankingFuture').style.display = 'none'
+                break;
+
+            case 1: //friends
+                // High government entries
+                document.getElementById('governmentActual').style.display = 'none'
+                document.getElementById('governmentPlanned').style.display = 'none'
+
+                // Show tables
+                document.getElementById('rankingCurrent').style.display = ''
+                document.getElementById('rankingFuture').style.display = ''
+                break;
+
+            case 2: //friends and government
+                // Show tables
+                document.getElementById('rankingCurrent').style.display = ''
+                document.getElementById('rankingFuture').style.display = ''
+
+                // Show government entries
+                document.getElementById('governmentActual').style.display = ''
+                document.getElementById('governmentPlanned').style.display = ''
+
+                break;
+
+            default:
+                break;
+        }
+
+    }
+
+    handle_compareToChange();
+</script>
 </body>
 </html>
