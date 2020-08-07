@@ -71,6 +71,7 @@
 <div id="root">
     <div>
         <table style="margin-left:20px;">
+
             <tr>
                 <td valign="top" width="250">
 			<br>
@@ -80,77 +81,80 @@
 			<br>
 			<br>
 			<br>
-                    <div id="resultsSummary">Calculating ...</div>
-                    <hr>
-                    Search by text contents
-                    &nbsp;&nbsp;&nbsp;<input
-                        type="text"
-                        id="searchField"
-                        value="e.g. electric"
-                        onchange="alert('Not implemented in this proof-of-concept.  Please use the browser\'s find facility')"
-                ><hr>
+                    <!-- @todo The positioning of filter options needs to be converted from the initial quick fix table implementation to:
+                        1) locate inside the main window container
+                        2) float at the top of screen regardless of scroll position-->
+            <div id="resultsSummary">Calculating ...</div>
+            <hr>
+            Search by text contents
+            &nbsp;&nbsp;&nbsp;<input
+                type="text"
+                id="searchField"
+                value="e.g. electric"
+                onchange="alert('Not implemented in this proof-of-concept.  Please use the browser\'s find facility')"
+        ><hr>
 
-                    Filter by category<br>
-                    &nbsp;&nbsp;&nbsp;<input type="checkbox" checked disabled>Food (save upto ??%) <br>
-                    &nbsp;&nbsp;&nbsp;<input type="checkbox" checked disabled>Technology (save upto ??%) <br>
-                    &nbsp;&nbsp;&nbsp;<input type="checkbox" checked disabled>Travel (save upto ??%) <br>
-                    <br>
-                    Filter by status<br>
-                    &nbsp;&nbsp;&nbsp;<input type="checkbox" checked disabled>Maybe<br>
-                    &nbsp;&nbsp;&nbsp;<input type="checkbox" checked disabled>Plan to<br>
-                    &nbsp;&nbsp;&nbsp;<input type="checkbox" checked disabled>Done <br>
-                    &nbsp;&nbsp;&nbsp;<input type="checkbox" checked disabled>N/A<br>
-                    &nbsp;&nbsp;&nbsp;<input type="checkbox" checked disabled>Never<br>
-                    <br>
-                    Include information on<br>
-                    &nbsp;&nbsp;&nbsp;<input type="checkbox" checked  disabled onchange="alert('Disabling is not implemented in this proof-of-concept'); this.value='All'">Cost effectiveness<br>
-                    <br>
-                    Filter by impact on person<br>
-                    &nbsp;&nbsp;&nbsp;<select >
-                    <option>Any </option>
-                    <option disabled>Medium or less</option>
-                    <option disabled>Low or less</option>
-                </select> disruption<br>
-                    <br>
-                    &nbsp;&nbsp;&nbsp;<select >
-                    <option>Any </option>
-                    <option disabled>Medium or less</option>
-                    <option disabled>Low or less</option>
-                </select> cost
-                    <br>
-                    <br>
-                    Filter by carbon reduction<br>
-                    &nbsp;&nbsp;&nbsp;<input id="showStepsBelow5perc" type="checkbox" onchange="refresh_steps()"> Include steps with a reduction of less than 5%<br>
-                </td><td>
+            Filter by category<br>
+            &nbsp;&nbsp;&nbsp;<input type="checkbox" checked disabled>Food (save upto ??%) <br>
+            &nbsp;&nbsp;&nbsp;<input type="checkbox" checked disabled>Technology (save upto ??%) <br>
+            &nbsp;&nbsp;&nbsp;<input type="checkbox" checked disabled>Travel (save upto ??%) <br>
+            <br>
+            Filter by status<br>
+            &nbsp;&nbsp;&nbsp;<input type="checkbox" checked disabled>Maybe<br>
+            &nbsp;&nbsp;&nbsp;<input type="checkbox" checked disabled>Plan to<br>
+            &nbsp;&nbsp;&nbsp;<input type="checkbox" checked disabled>Done <br>
+            &nbsp;&nbsp;&nbsp;<input type="checkbox" checked disabled>N/A<br>
+            &nbsp;&nbsp;&nbsp;<input type="checkbox" checked disabled>Never<br>
+            <br>
+            Include information on<br>
+            &nbsp;&nbsp;&nbsp;<input type="checkbox" checked  disabled onchange="alert('Disabling is not implemented in this proof-of-concept'); this.value='All'">Cost effectiveness<br>
+            <br>
+            Filter by impact on person<br>
+            &nbsp;&nbsp;&nbsp;<select >
+            <option>Any </option>
+            <option disabled>Medium or less</option>
+            <option disabled>Low or less</option>
+        </select> disruption<br>
+            <br>
+            &nbsp;&nbsp;&nbsp;<select >
+            <option>Any </option>
+            <option disabled>Medium or less</option>
+            <option disabled>Low or less</option>
+        </select> cost
+            <br>
+            <br>
+            Filter by carbon reduction<br>
+            &nbsp;&nbsp;&nbsp;<input id="showStepsBelow5perc" type="checkbox" onchange="refresh_steps()"> Include steps with a reduction of less than 5%<br>
+        </td><td>
 
-        <header>
-            <nav class="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 navbar navbar-light">
-                <div class="container">
-                    <a disabled="" class="navbar-brand disabled" href="../index.html">Carbon Reduction Helper (proof-of-concept)</a>
-                    <button aria-label="Toggle navigation" type="button" class="mr-2 navbar-toggler">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="d-sm-inline-flex flex-sm-row-reverse collapse navbar-collapse">
-                        <ul class="navbar-nav flex-grow">
-                            <li class="nav-item">
-                                <a class="text-dark nav-link" href="#" onclick="gotoMenu('dashboard.html');return false">Dashboard</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="text-dark nav-link" disabled="" href="#" onclick="gotoMenu('plan.html');return false">[Select]</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="text-dark nav-link" href="#" onclick="gotoMenu('familiarise.html');return false">Familiarise</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="text-dark nav-link"  href="#" onclick="gotoMenu('complete.html');return false">Complete</a>
-                            </li>
+<header>
+    <nav class="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 navbar navbar-light">
+        <div class="container">
+            <a disabled="" class="navbar-brand disabled" href="../index.html">Carbon Reduction Helper (proof-of-concept)</a>
+            <button aria-label="Toggle navigation" type="button" class="mr-2 navbar-toggler">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="d-sm-inline-flex flex-sm-row-reverse collapse navbar-collapse">
+                <ul class="navbar-nav flex-grow">
+                    <li class="nav-item">
+                        <a class="text-dark nav-link" href="#" onclick="gotoMenu('dashboard.html');return false">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="text-dark nav-link" disabled="" href="#" onclick="gotoMenu('plan.html');return false">[Select]</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="text-dark nav-link" href="#" onclick="gotoMenu('familiarise.html');return false">Familiarise</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="text-dark nav-link"  href="#" onclick="gotoMenu('complete.html');return false">Complete</a>
+                    </li>
 
-                            <li class="nav-item">
-                                <a class="text-dark nav-link" href="#" onclick="gotoMenu('help.html');return false">Help</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div> <!-- container -->
+                    <li class="nav-item">
+                        <a class="text-dark nav-link" href="#" onclick="gotoMenu('help.html');return false">Help</a>
+                    </li>
+                </ul>
+            </div>
+        </div> <!-- container -->
             </nav>
         </header>
         <div class="container-xl">
@@ -199,7 +203,7 @@
                                         <td style='display:none'>**---</td>
                                         <td>??<br>%/£/yr</td>
                                         <td>
-                                            <select id="step10_stateSelector" class="form-control" onChange="handle_stepStateChange(10, this.value)" style="width:150px">
+                                            <select id="step10" class="stateSelector form-control" onChange="handle_stepStateChange(10, this.value)" style="width:150px">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
                                                 <option value="aspiring">Plan to</option>
@@ -216,7 +220,7 @@
                                         <td style='display:none'>**---</td>
                                         <td>??<br>%/£/yr</td>
                                         <td>
-                                            <select id="step20_stateSelector" class="form-control" onChange="handle_stepStateChange(20, this.value)" style="width:150px">
+                                            <select id="step20" class="stateSelector form-control" onChange="handle_stepStateChange(20, this.value)" style="width:150px">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
                                                 <option value="aspiring">Plan to</option>
@@ -234,7 +238,7 @@
                                         <td style='display:none'>**---</td>
                                         <td>Max<br>%/£/yr</td>
                                         <td>
-                                            <select id="step30_stateSelector" class="form-control" onChange="handle_stepStateChange(30, this.value)">
+                                            <select id="step30" class="stateSelector form-control" onChange="handle_stepStateChange(30, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
                                                 <option value="aspiring">Plan to</option>
@@ -252,7 +256,7 @@
                                         <td>??<br>%/£/yr</td>
                                         <td  style="display:none">***--</td>
                                         <td>
-                                            <select id="step40_stateSelector" class="form-control" onChange="handle_stepStateChange(40, this.value)">
+                                            <select id="step40" class="stateSelector form-control" onChange="handle_stepStateChange(40, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
                                                 <option value="aspiring">Plan to</option>
@@ -270,7 +274,7 @@
                                         <td>??<br>%/£/yr</td>
                                         <td  style="display:none">***--</td>
                                         <td>
-                                            <select id="step50_stateSelector" class="form-control" onChange="handle_stepStateChange(50, this.value)">
+                                            <select id="step50" class="stateSelector form-control" onChange="handle_stepStateChange(50, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
                                                 <option value="aspiring">Plan to</option>
@@ -287,7 +291,7 @@
                                         <td>??<br>%/£/yr</td>
                                         <td  style="display:none">**---</td>
                                         <td>
-                                            <select id="step60_stateSelector" class="form-control" onChange="handle_stepStateChange(60, this.value)">
+                                            <select id="step60" class="stateSelector form-control" onChange="handle_stepStateChange(60, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
                                                 <option value="aspiring">Plan to</option>
@@ -304,7 +308,7 @@
                                         <td>??<br>%/£/yr</td>
                                         <td  style="display:none">*----</td>
                                         <td>
-                                            <select id="step70_stateSelector" class="form-control"  onChange="handle_stepStateChange(70, this.value)">
+                                            <select id="step70" class="stateSelector form-control"  onChange="handle_stepStateChange(70, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
                                                 <option value="aspiring">Plan to</option>
@@ -320,7 +324,7 @@
                                         <td>Max</td>
                                         <td  style="display:none">**---</td>
                                         <td>
-                                            <select id="step80_stateSelector" class="form-control"  onChange="handle_stepStateChange(80, this.value)">
+                                            <select id="step80" class="stateSelector form-control"  onChange="handle_stepStateChange(80, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
                                                 <option value="aspiring">Plan to</option>
@@ -336,7 +340,7 @@
                                         <td style='display:none'>**---</td>
                                         <td>??<br>%/£/yr</td>
                                         <td>
-                                            <select id="step90_stateSelector" class="form-control" onChange="handle_stepStateChange(90, this.value)">
+                                            <select id="step90" class="stateSelector form-control" onChange="handle_stepStateChange(90, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
                                                 <option value="aspiring">Plan to</option>
@@ -352,7 +356,7 @@
                                         <td>??<br>%/£/yr</td>
                                         <td  style="display:none">***--</td>
                                         <td>
-                                            <select id="step100_stateSelector" class="form-control"  onChange="handle_stepStateChange(100, this.value)">
+                                            <select id="step100" class="stateSelector form-control"  onChange="handle_stepStateChange(100, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
                                                 <option value="aspiring">Plan to</option>
@@ -368,7 +372,7 @@
                                         <td>??<br>%/£/yr</td>
                                         <td  style="display:none">***--</td>
                                         <td>
-                                            <select id="step110_stateSelector" class="form-control"  onChange="handle_stepStateChange(110, this.value)">
+                                            <select id="step110" class="stateSelector form-control"  onChange="handle_stepStateChange(110, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
                                                 <option value="aspiring">Plan to</option>
@@ -384,7 +388,7 @@
                                         <td>??<br>%/£/yr</td>
                                         <td  style="display:none">***--</td>
                                         <td>
-                                            <select id="step120_stateSelector" class="form-control"  onChange="handle_stepStateChange(120, this.value)">
+                                            <select id="step120" class="stateSelector form-control"  onChange="handle_stepStateChange(120, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
                                                 <option value="aspiring">Plan to</option>
@@ -400,7 +404,7 @@
                                         <td>??<br>%/£/yr</td>
                                         <td  style="display:none">**---</td>
                                         <td>
-                                            <select id="step130_stateSelector" class="form-control"  onChange="handle_stepStateChange(130, this.value)">
+                                            <select id="step130" class="stateSelector form-control"  onChange="handle_stepStateChange(130, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
                                                 <option value="aspiring">Plan to</option>
@@ -416,7 +420,7 @@
                                         <td>??<br>%/£/yr</td>
                                         <td  style="display:none">***--</td>
                                         <td>
-                                            <select id="step140_stateSelector" class="form-control"  onChange="handle_stepStateChange(140, this.value)">
+                                            <select id="step140" class="stateSelector form-control"  onChange="handle_stepStateChange(140, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
                                                 <option value="aspiring">Plan to</option>
@@ -434,7 +438,7 @@
                                         <td>??<br>%/£/yr</td>
                                         <td  style="display:none">***--</td>
                                         <td>
-                                            <select id="step140_stateSelector" class="form-control"  onChange="handle_stepStateChange(140, this.value)">
+                                            <select id="step140" class="stateSelector form-control"  onChange="handle_stepStateChange(140, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
                                                 <option value="aspiring">Plan to</option>
@@ -451,7 +455,7 @@
                                         <td>??<br>%/£/yr</td>
                                         <td  style="display:none">xx**---</td>
                                         <td>
-                                            <select id="step150_stateSelector" class="form-control"  onChange="handle_stepStateChange(150, this.value)">
+                                            <select id="step150" class="stateSelector form-control"  onChange="handle_stepStateChange(150, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
                                                 <option value="aspiring">Plan to</option>
@@ -467,7 +471,7 @@
                                         <td>??<br>%/£/yr</td>
                                         <td  style="display:none">*----</td>
                                         <td>
-                                            <select id="step160_stateSelector" class="form-control"  onChange="handle_stepStateChange(160, this.value)">
+                                            <select id="step160" class="stateSelector form-control"  onChange="handle_stepStateChange(160, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
                                                 <option value="aspiring">Plan to</option>
@@ -483,7 +487,7 @@
                                         <td>??<br>%/£/yr</td>
                                         <td  style="display:none">*----</td>
                                         <td>
-                                            <select id="step170_stateSelector" class="form-control"  onChange="handle_stepStateChange(170, this.value)">
+                                            <select id="step170" class="stateSelector form-control"  onChange="handle_stepStateChange(170, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
                                                 <option value="aspiring">Plan to</option>
@@ -499,7 +503,7 @@
                                         <td>??<br>%/£/yr</td>
                                         <td  style="display:none">**---</td>
                                         <td>
-                                            <select id="step180_stateSelector" class="form-control" onChange="handle_stepStateChange(180, this.value)">
+                                            <select id="step180" class="stateSelector form-control" onChange="handle_stepStateChange(180, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
                                                 <option value="aspiring">Plan to</option>
@@ -515,7 +519,7 @@
                                         <td>??<br>%/£/yr</td>
                                         <td  style="display:none">**---</td>
                                         <td>
-                                            <select id="step190_stateSelector" class="form-control" onChange="handle_stepStateChange(190, this.value)">
+                                            <select id="step190" class="stateSelector form-control" onChange="handle_stepStateChange(190, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
                                                 <option value="aspiring">Plan to</option>
@@ -531,7 +535,7 @@
                                         <td>??<br>%/£/yr</td>
                                         <td  style="display:none">**---</td>
                                         <td>
-                                            <select id="step200_stateSelector" class="form-control"  onChange="handle_stepStateChange(200, this.value)">
+                                            <select id="step200" class="stateSelector form-control"  onChange="handle_stepStateChange(200, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
                                                 <option value="aspiring">Plan to</option>
@@ -547,7 +551,7 @@
                                         <td>??<br>%/£/yr</td>
                                         <td  style="display:none">**---</td>
                                         <td>
-                                            <select id="step210_stateSelector" class="form-control"  onChange="handle_stepStateChange(210, this.value)">
+                                            <select id="step210" class="stateSelector form-control"  onChange="handle_stepStateChange(210, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
                                                 <option value="aspiring">Plan to</option>
@@ -563,7 +567,7 @@
                                         <td>??<br>%/£/yr</td>
                                         <td  style="display:none">**---</td>
                                         <td>
-                                            <select id="step220_stateSelector" class="form-control" onChange="handle_stepStateChange(220, this.value)">
+                                            <select id="step220" class="stateSelector form-control" onChange="handle_stepStateChange(220, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
                                                 <option value="aspiring">Plan to</option>
@@ -579,7 +583,7 @@
                                         <td>??<br>%/£/yr</td>
                                         <td  style="display:none">*----</td>
                                         <td>
-                                            <select id="step230_stateSelector" class="form-control"  onChange="handle_stepStateChange(230, this.value)">
+                                            <select id="step230" class="stateSelector form-control"  onChange="handle_stepStateChange(230, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
                                                 <option value="aspiring">Plan to</option>
@@ -595,7 +599,7 @@
                                         <td>Max<br>%/£/yr</td>
                                         <td  style="display:none">**---</td>
                                         <td>
-                                            <select id="step240_stateSelector" class="form-control"  onChange="handle_stepStateChange(240, this.value)">
+                                            <select id="step240" class="stateSelector form-control"  onChange="handle_stepStateChange(240, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
                                                 <option value="aspiring">Plan to</option>
@@ -612,7 +616,7 @@
                                         <td>Max<br>%/£/yr</td>
                                         <td  style="display:none">**---</td>
                                         <td>
-                                            <select id="step250_stateSelector" class="form-control"  onChange="handle_stepStateChange(250, this.value)">
+                                            <select id="step250" class="stateSelector form-control"  onChange="handle_stepStateChange(250, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
                                                 <option value="aspiring">Plan to</option>
@@ -628,7 +632,7 @@
                                         <td>Max<br>%/£/yr</td>
                                         <td  style="display:none">**---</td>
                                         <td>
-                                            <select id="step260_stateSelector" class="form-control"  onChange="handle_stepStateChange(260, this.value)">
+                                            <select id="step260" class="stateSelector form-control"  onChange="handle_stepStateChange(260, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
                                                 <option value="aspiring">Plan to</option>
@@ -682,7 +686,20 @@
     }
 
     setStepState = function(stepId, stateId) {
-        document.getElementById("step" + stepId + "_stateSelector").value = stateId
+        document.getElementById("step" + stepId).value = stateId
+    }
+
+    refresh_stepStates = function(){
+        let stepStateSelectors = document.getElementsByClassName('stateSelector');
+
+        Array.prototype.filter.call(
+            stepStateSelectors,
+            function(s){
+                let stepId = s.id.substring("step".length,999)
+                s.value = model_getStepState(stepId);
+            }
+        );
+
     }
 
     refresh_totals = function(){
@@ -761,8 +778,9 @@
         }
     }
 
+    refresh_stepStates();
     refresh_totals();
-    refresh_steps()
+    refresh_steps();
 
     </script>
 
