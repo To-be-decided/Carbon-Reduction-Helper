@@ -33,6 +33,7 @@
     </script>
 
     <style>
+        /*noinspection CssUnusedSymbol*/
         .slideSource_fade {
             transition: background-color 0.2s;
             background-color: blue;
@@ -134,7 +135,7 @@
                                 <a class="text-dark nav-link" href="#" onclick="gotoMenu('dashboard.html');return false">Dashboard</a>
                             </li>
                             <li class="nav-item">
-                                <a class="text-dark nav-link" disabled="" href="#" onclick="gotoMenu('plan.html');return false">[Plan]</a>
+                                <a class="text-dark nav-link" disabled="" href="#" onclick="gotoMenu('plan.html');return false">[Select]</a>
                             </li>
                             <li class="nav-item">
                                 <a class="text-dark nav-link" href="#" onclick="gotoMenu('familiarise.html');return false">Familiarise</a>
@@ -157,13 +158,11 @@
                     <tr>
                         <td>
                             Tips:
-                            <small>
                                 <ul>
-                                    <li>scroll down the list of steps to find the first one you maybe happy looking at</li>
-                                    <li>click on its associated status and select your preference</li>
-                                    <li>if you want more information before deciding, click on the "More info ..." in the description</li>
+                                    <li><small>scroll down the list of steps to find the first one you maybe happy looking at</small></li>
+                                    <li><small>click on its associated status and select your preference</small></li>
+                                    <li><small>if you want more information before deciding, click on the "More info ..." in the description</small></li>
                                 </ul>
-                            </small>
                         </td>
                     </tr>
                 </table> <!-- Tips area -->
@@ -175,7 +174,8 @@
                                     <thead>
                                     <tr>
                                         <th style="vertical-align:top">Step</th>
-                                        <th>Carbon Reduction<img src="images/sort_down.png"><br><small>(c.f. average<br>UK person)</small></th>
+                                        <th>Carbon Reduction<img src="images/sort_down.png" alt="Click to change sorting"><br>
+                                            <small>(c.f. average<br>UK person)</small></th>
                                         <th style="vertical-align:top">
                                             <a
                                                     href="plan.html"
@@ -659,11 +659,11 @@
             </div> <!-- row -->
 
 
-            </td>
-            </tr>
-            </table>
 
         </div> <!-- container-xl -->
+            </td>
+            </tr>
+        </table>
     </div> <!-- Anonymous -->
 </div> <!-- Root -->
 
