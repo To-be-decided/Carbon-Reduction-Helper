@@ -65,10 +65,10 @@ model_setStepState = function (stepId, stateId) {
 model_getStepState = function (stepId) {
     console.log("Getting status for " + stepId)
 
-    if(stepId > 60) return stepStateId_undefined;  // @todo Full access to model data not implement yet
+    if(stepId > 60 || stepId === "") return stepStateId_undefined;  // @todo Full access to model data not implement yet
 
     // @todo Need to search for stepId rather than calculate it
-    return stepEntry = stepData[stepId/10-1].defaultState
+    return stepData[stepId/10-1].defaultState
 }
 
 model_getStepEmbedUrl = function(stepId){
