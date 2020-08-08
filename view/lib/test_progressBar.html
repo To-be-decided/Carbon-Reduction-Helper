@@ -2,27 +2,19 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="progressBar.css">
-
+    <script src="progressBar.js"></script>
 </head>
 
 <body>
     <div style="width:200px" id="myBar" class="pBar">
         <div class="pBar_meter">
-            <p id="pBar_textValueId">0%</p>
+            0%
         </div>
     </div>
+
     <script>
-
-        pBar_set = function(pBarId, perc){
-            let pBarControl = document.getElementById(pBarId)
-
-            pBarControl.childNodes[0].innerText = perc + "%"
-            pBarControl.childNodes[0].width = perc + "%"
-        }
-
-        pBar_set('myBar', "81")
+        pBar_set('myBar', "80")
     </script>
-
 </body>
 
 </html>

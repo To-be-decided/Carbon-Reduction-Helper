@@ -8,8 +8,10 @@
 }
 
 .pBar_meter {
+    width: 100%;
+
     background-image: url("../images/progressBar_meter.png");
-    background-size:70% 100%;
+    background-size:10% 100%;
     background-repeat: no-repeat;
 
     text-align: center;
