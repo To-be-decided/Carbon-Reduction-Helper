@@ -50,7 +50,6 @@
 
 <!--suppress ES6ConvertVarToLetConst -->
 <script>
-    var volatilityConfirmed=false;
     var incLowImpactSteps = urlParams.get('incLowImpactSteps')
 
 </script>
@@ -675,12 +674,8 @@
 
 <script>
     handle_stepStateChange = function(stepId, stateId) {
-        if (!volatilityConfirmed) {
-            alert('Warning: Step selections are not be saved in this proof-of-concept or updated on the dashboard.');
-            volatilityConfirmed = true;
-        }
+        controller_handle_stepStateChange(stepId, stateId);
 
-//        controller_handle_stepStateChange(stepId, stateId); //@todo Enable set change when available
         refresh_totals();
     }
 

@@ -78,9 +78,10 @@
         <div class="container-xl">
             <div class="row">
                 <div class="col-md-8">
+                    <!--suppress HtmlDeprecatedAttribute -->
                     <div align="center">
                         <!--
-                            <table bgcolor="yellow">
+                            <table bgColor="yellow">
                                 <tr>
                                     <td>
                                         Tips:
@@ -174,7 +175,6 @@
                                                 <p>
                                                     [Print ...]<br>
                                                     [<a
-                                                        id="suggestUpdates"
                                                         href="#"
                                                         onClick="handle_suggestChanges(); return false"
                                                     >Suggest updates ...</a>]<br>
@@ -193,6 +193,11 @@
         </div>
     </div>
 </div>
+
+
+
+
+
 
 <script>
     let selectorId = document.getElementById('stepSelector');
@@ -215,7 +220,6 @@
 
     update_stepChange = function () {
         let selectorId = document.getElementById('stepSelector');
-        let suggestUpdatesId = document.getElementById('suggestUpdates');
 
         if (selectorId.selectedIndex !== "") {
             document.getElementById('docFrame').src = model_getStepEmbedUrl(step);
