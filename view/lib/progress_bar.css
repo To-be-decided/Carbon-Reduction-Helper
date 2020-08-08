@@ -1,0 +1,15 @@
+.pBar {
+    width: 100%;
+    background-color: grey;
+}
+
+.pBar_meter {
+    height: 30px;
+    background-color: #4CAF50;
+    text-align: center;
+    line-height: 30px; /* To center it vertically */
+    color: white;
+}
+
+.pBar_meter_10perc{width: 10%;}
+.bBar_meter_50perc{width: 50%;}
