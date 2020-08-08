@@ -1,0 +1,18 @@
+.pBar {
+    width: 100%;
+
+    background-image: url("../images/progressBar_wallpaper.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgb(211, 203, 214);   // In case image takes a while to load
+}
+
+.pBar_meter {
+    background-image: url("../images/progressBar_meter.png");
+    background-size:70% 100%;
+    background-repeat: no-repeat;
+
+    text-align: center;
+    line-height: 30px; /* To center it vertically */
+    color: white;
+}
