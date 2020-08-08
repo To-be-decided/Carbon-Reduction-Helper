@@ -53,13 +53,18 @@ let stepData = [
     }
 ]
 
+let volatilityConfirmed = false;
 
 model_init = function(){
 }
 
 model_setStepState = function (stepId, stateId) {
-    alert("Cannot set the step state: Not implemented yet");
     console.log("Setting status for step " + stepId + " as " + stateId)
+
+    if (!volatilityConfirmed) {
+        alert('Warning: Step selections are not be saved in this proof-of-concept or updated on the dashboard.');
+        volatilityConfirmed = true;
+    }
 }
 
 model_getStepState = function (stepId) {
