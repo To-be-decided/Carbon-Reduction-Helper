@@ -13,127 +13,142 @@
     <link href="lib/2.67123b20.chunk.css" rel="stylesheet">
     <link href="lib/main.a391ff7c.chunk.css" rel="stylesheet">
 
-    <style src="lib/progress_bar.css"></style>
+    <link rel="stylesheet" type="text/css" href="lib/progressBar.css">
+    <script src="lib/progressBar.js"></script>
+
+    <script src="lib/common.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173546127-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+    <!--
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173546127-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-        gtag('config', 'UA-173546127-1');
-    </script>
+            gtag('config', 'UA-173546127-1');
+        </script>
+-->
+    </head>
 
-</head>
+    <body data-gr-c-s-loaded="true">
 
-<body data-gr-c-s-loaded="true">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+        <div>
+            <header>
+                <nav class="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 navbar navbar-light">
+                    <div class="container">
+                        <a disabled="" class="navbar-brand disabled" href="../index.html">Carbon Reduction Helper (proof-of-concept)</a>
+                        <button aria-label="Toggle navigation" type="button" class="mr-2 navbar-toggler">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="d-sm-inline-flex flex-sm-row-reverse collapse navbar-collapse">
+                            <ul class="navbar-nav flex-grow">
+                                <li class="nav-item">
+                                    <a disabled="" class="text-dark nav-link" href="#" onclick="gotoMenu('dashboard.html');return false">[Dashboard]</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="text-dark nav-link" href="#" onclick="gotoMenu('plan.html');return false">Select</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="text-dark nav-link" href="#" onclick="gotoMenu('familiarise.html');return false">Familiarise</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="text-dark nav-link"  href="#" onclick="gotoMenu('complete.html');return false">Complete</a>
+                                </li>
 
-<noscript>You need to enable JavaScript to run this app.</noscript>
-
-<div id="root">
-    <div>
-        <header>
-            <nav class="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 navbar navbar-light">
-                <div class="container">
-                    <a disabled="" class="navbar-brand disabled" href="../index.html">Carbon Reduction Helper (proof-of-concept)</a>
-                    <button aria-label="Toggle navigation" type="button" class="mr-2 navbar-toggler">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="d-sm-inline-flex flex-sm-row-reverse collapse navbar-collapse">
-                        <ul class="navbar-nav flex-grow">
-                            <li class="nav-item">
-                                <a disabled="" class="text-dark nav-link" href="#" onclick="gotoMenu('dashboard.html');return false">[Dashboard]</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="text-dark nav-link" href="#" onclick="gotoMenu('plan.html');return false">Select</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="text-dark nav-link" href="#" onclick="gotoMenu('familiarise.html');return false">Familiarise</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="text-dark nav-link"  href="#" onclick="gotoMenu('complete.html');return false">Complete</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="text-dark nav-link" href="#" onclick="gotoMenu('help.html');return false">Help</a></li>
-                        </ul>
+                                <li class="nav-item">
+                                    <a class="text-dark nav-link" href="#" onclick="gotoMenu('help.html');return false">Help</a></li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </nav>
-</header>
-        <div class="container-xl">
-            <div class="row">
-                <div class="col-md-8">
-                    <table bgcolor="yellow" width="100%">
-                        <tr>
-                            <td>
-                                Tips:
-                                    <ul>
-                                        <li>
-                                            <small><i>In this proof-of-concept, this dashboard contains fixed sample data that reflects the default settings in the plan page.</i></small>
-                                        </li>
-                                    </ul>
-                            </td>
-                        </tr>
-                    </table>
-
-                    <h3>Your progress:</h3>
-
-                    <table style="margin-left:40px" width="100%">
-                        <tr>
-                            <td width="90%" colspan="2">
-                                <p>Well done! You are making good progress.</p>
-                                You have :
-                                <ul>
-                                    <li>reduced your carbon emissions by <b>17%</b> this month <img src="images/tick.png"></li>
-                                    <li>saved a total of <b>17%</b> <img src="images/tick.png"></li>
-                                    <li>committed to saving a total of <b>69%</b> by ??? <img src="images/tick.png"></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="100%" colspan="2"><br>
-                                <h3>Compare your progress with others</h3>
-<div align="right">
-                                <a href="#"
-                                onclick="alert('Although you can\'t change it on this proof-of-concept, on the final version this option controls what to display.  Including one ore more of Friends, Government target, Region and Groups'); return false")
-                                align="right"
-                                >[Configure]</a>
-</div>
-
-                            </td>
+                </nav>
+    </header>
+            <div class="container-xl">
+                <div class="row">
+                    <div class="col-md-8">
+                        <table bgcolor="yellow" width="100%">
                             <tr>
                                 <td>
-                                <table id="rankingCurrent" border="1" style="margin-left:20px" width="400">
-                                    <tr>
-                                        <td colspan="3" align="center">
-                                            <b>CURRENT<br>carbon reduction</b>
-                                        </td>
-                                    </tr>
-                                    <tr bgcolor="#D0D0D0">
-                                        <th align="center">Who</th>
-                                        <th align="center">Average<br>Reduction</th></tr>
+                                    Tips:
+                                        <ul>
+                                            <li>
+                                                <small><i>In this proof-of-concept, this dashboard contains fixed sample data that reflects the default settings in the plan page.</i></small>
+                                            </li>
+                                        </ul>
+                                </td>
+                            </tr>
+                        </table>
 
-                                    <tr id="governmentActual"  bgcolor="#00FF00">
-                                        <td>[Government target]</td>
-                                        <td align="center"><img src="https://docs.google.com/drawings/d/e/2PACX-1vQC5lcmm4pFKZGzwyo76IpYxHh97P2QAAsTJZ8-GwaIhH3V8cUunBoLc8hZmEFf-VrzDEAmr6Kvl2Hl/pub?h=23"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Friends <img src="images/sort_down.png"  align="right"></td>
-                                        <td align="center"><img src="https://docs.google.com/drawings/d/e/2PACX-1vTyGIMQDCA6zAtDBx01VEk0PTCFrqvs2HA_HS_Yz6DfJ1WHj50iBjICpfIBs3jwew6lG2OksXjAOKaz/pub?h=23"></td>
-                                    </tr>
-                                    <tr bgcolor="#adff2f">
-                                        <td> [You]</td>
+                        <h3>Your progress:</h3>
+
+                        <table style="margin-left:40px" width="100%">
+                            <tr>
+                                <td width="90%" colspan="2">
+                                    <p>Well done! You are making good progress.</p>
+                                    You have :
+                                    <ul>
+                                        <li>reduced your carbon emissions by <b>17%</b> this month <img src="images/tick.png"></li>
+                                        <li>saved a total of <b>17%</b> <img src="images/tick.png"></li>
+                                        <li>committed to saving a total of <b>69%</b> by ??? <img src="images/tick.png"></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="100%" colspan="2"><br>
+                                    <h3>Compare your progress with others</h3>
+    <div align="right">
+                                    <a href="#"
+                                    onclick="alert('Although you can\'t change it on this proof-of-concept, on the final version this option controls what to display.  Including one ore more of Friends, Government target, Region and Groups'); return false")
+                                    align="right"
+                                    >[Configure]</a>
+    </div>
+
+                                </td>
+                                <tr>
+                                    <td>
+                                    <table id="rankingCurrent" border="1" style="margin-left:20px" width="400">
+                                        <tr>
+                                            <td colspan="3" align="center">
+                                                <b>CURRENT<br>carbon reduction</b>
+                                            </td>
+                                        </tr>
+                                        <tr bgcolor="#D0D0D0">
+                                            <th align="center">Who</th>
+                                            <th align="center">Average<br>Reduction</th></tr>
+
+                                        <tr id="governmentActual"  bgcolor="#00FF00">
+                                            <td>[Government target]</td>
+                                            <td align="center">
+                                                <div id="governmentTarget_pbarId" class="pBar">
+                                                    <div class="pBar_meter">0%</div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Friends <img src="images/sort_down.png"  align="right"></td>
+                                            <td align="center">
+                                                <div id="friendsActual_pbarId" class="pBar">
+                                                    <div class="pBar_meter">0%</div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr bgcolor="#adff2f">
+                                            <td> [You]</td>
+                                            <td align="center">
+                                                <div id="youActual_pbarId" class="pBar">
+                                                    <div class="pBar_meter">0%</div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr >
+                                            <td>World<img src="images/sort_down.png" align="right"></td>
+                                            <!-- 10% -->
                                         <td align="center">
-                                        <img src="https://docs.google.com/drawings/d/e/2PACX-1vSvQ7AQ4Klutp4g2IMaFQbmYBEFyGjQ194015iN9ozSoWC7sB08HZAc7HKNyfmmZDaq5_5LyjC_fu98/pub?h=23">
-                                        </td>
-                                    </tr>
-                                    <tr >
-                                        <td>World<img src="images/sort_down.png" align="right"></td>
-                                        <!-- 10% -->
-                                        <td align="center">
-                                            <img src="https://docs.google.com/drawings/d/e/2PACX-1vShjV4qM_sSRdIj966wEycgO2dr3oskMQp719r8hENNVFa6JN4fa5xweVDXyyJfkOXqpPXqpw4YihKV/pub?h=23">
+                                            <div id="worldActual_pbarId" class="pBar">
+                                                <div class="pBar_meter">0%</div>
+                                            </div>
                                         </td>
                                     </tr>
                                 </table>
@@ -151,23 +166,33 @@
                                     <tr>
                                         <td>Friends <img src="images/sort_down.png" align="right"></td>
                                         <td align="center">
-                                            <img src="https://docs.google.com/drawings/d/e/2PACX-1vSlYGNS4T-dLTFPmna4ye_1m0_xHhvaI5F5D39zzrOLoHEMboYlNSsIFSASOOe0L8WOkf_vtrBGz4Hp/pub?h=23">
+                                            <div id="friendsPlanned_pbarId" class="pBar">
+                                                <div class="pBar_meter">0%</div>
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr bgcolor="#00FF00">
                                         <td>[Government target]</td>
-                                        <td align="center"><img src="https://docs.google.com/drawings/d/e/2PACX-1vQC5lcmm4pFKZGzwyo76IpYxHh97P2QAAsTJZ8-GwaIhH3V8cUunBoLc8hZmEFf-VrzDEAmr6Kvl2Hl/pub?h=23"></td>
+                                        <td align="center">
+                                            <div id="governmentTargetPlanned_pbarId" class="pBar">
+                                                <div class="pBar_meter">0%</div>
+                                            </div>
+                                        </td>
                                     </tr>
                                     <tr bgcolor="#adff2f">
                                         <td> [You]</td>
                                         <td align="center">
-                                            <img src="https://docs.google.com/drawings/d/e/2PACX-1vQ8kUD509Xn75QYSYi22EnEk932yq2LH9oyRnFOvB7qHqPhwK8e01DXc4Zd2FJqIsu5bAhhm0tojaPQ/pub?h=23">
+                                            <div id="youPlanned_pbarId" class="pBar">
+                                                <div class="pBar_meter">0%</div>
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr><!-- 17% -->
                                         <td>World<img src="images/sort_down.png" align="right"></td>
                                         <td align="center">
-                                            <img src="https://docs.google.com/drawings/d/e/2PACX-1vSvQ7AQ4Klutp4g2IMaFQbmYBEFyGjQ194015iN9ozSoWC7sB08HZAc7HKNyfmmZDaq5_5LyjC_fu98/pub?h=23">
+                                            <div id="worldPlanned_pbarId" class="pBar">
+                                                <div class="pBar_meter">0%</div>
+                                            </div>
                                         </td>
                                     </tr>
                                 </table>
@@ -197,47 +222,16 @@
     </div>
 </div>
 
-<script src="lib/common.js"></script>
+    <script>
+        pBar_set("governmentTarget_pbarId", "48")
+        pBar_set("youActual_pbarId", "23")
+        pBar_set("friendsActual_pbarId", "21")
+        pBar_set("worldActual_pbarId", "18")
 
-<script>
-
-    /** @todo This may not be required */
-    handle_compareToChange = function(){
-
-        switch(document.getElementById('compareTo').selectedIndex){
-            case 0: //no one
-                // Hide both tables
-                document.getElementById('rankingCurrent').style.display = 'none'
-                document.getElementById('rankingFuture').style.display = 'none'
-                break;
-
-            case 1: //friends
-                // High government entries
-                document.getElementById('governmentActual').style.display = 'none'
-                document.getElementById('governmentPlanned').style.display = 'none'
-
-                // Show tables
-                document.getElementById('rankingCurrent').style.display = ''
-                document.getElementById('rankingFuture').style.display = ''
-                break;
-
-            case 2: //friends and government
-                // Show tables
-                document.getElementById('rankingCurrent').style.display = ''
-                document.getElementById('rankingFuture').style.display = ''
-
-                // Show government entries
-                document.getElementById('governmentActual').style.display = ''
-                document.getElementById('governmentPlanned').style.display = ''
-
-                break;
-
-            default:
-                break;
-        }
-
-    }
-
-</script>
+        pBar_set("friendsPlanned_pbarId", "49")
+        pBar_set("governmentTargetPlanned_pbarId", "48")
+        pBar_set("youPlanned_pbarId", "43")
+        pBar_set("worldPlanned_pbarId", "28")
+    </script>
 </body>
 </html>
