@@ -2,4 +2,10 @@
     width: 100%;
 
     background-color: rgb(255, 255, 0);
+    !important;
+}
+
+.unbranded {
+    /* The "important" below is needed because the display is overridden in plan.html */
+    display: none !important;
 }

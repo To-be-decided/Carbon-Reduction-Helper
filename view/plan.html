@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <!--- Feature configuration -->
+    <!-- for "unbranded" see common.css -->
     <style>
-        .popularity        { display: none }
-        .nonBranded        { }
-        .costEffectiveness { }
+        .popularity        { display: none}
+        .costEffectiveness { display: none}
     </style>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -69,7 +69,7 @@
     <div>
         <table style="margin-left:20px;">
 
-            <tr>
+            <tr class="notBranded">
                 <td valign="top" width="250">
 			<br>
 			<br>
@@ -96,7 +96,7 @@
             &nbsp;&nbsp;&nbsp;<input type="checkbox" checked disabled>Technology (save upto ??%) <br>
             &nbsp;&nbsp;&nbsp;<input type="checkbox" checked disabled>Travel (save upto ??%) <br>
             <br>
-            <div class="nonBranded">
+            <div class="unbranded">
             Filter by status<br>
             &nbsp;&nbsp;&nbsp;<input type="checkbox" checked disabled>Maybe<br>
             &nbsp;&nbsp;&nbsp;<input type="checkbox" checked disabled>Plan to<br>
@@ -131,13 +131,13 @@
         </td><td>
 
 <header>
-    <nav class="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 navbar navbar-light nonBranded">
+    <nav class=" unbranded navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 navbar navbar-light">
         <div class="container">
             <a disabled="" class="navbar-brand disabled" href="../index.html">Carbon Reduction Helper (proof-of-concept)</a>
             <button aria-label="Toggle navigation" type="button" class="mr-2 navbar-toggler">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="d-sm-inline-flex flex-sm-row-reverse collapse navbar-collapse">
+            <div class="d-sm-inline-flex flex-sm-row-reverse collapse navbar-collapse unbranded">
                 <ul class="navbar-nav flex-grow">
                     <li class="nav-item">
                         <a class="text-dark nav-link" href="#" onclick="gotoMenu('dashboard.html');return false">Dashboard</a>
@@ -163,7 +163,7 @@
         <div class="container-xl">
             <div class="row">
                 <div class="col-md-8"> <!-- tips and list of steps -->
-                    <div class="tips nonBranded">
+                    <div class="tips unbranded">
                         Tips:
                         <ul>
                             <li><small>scroll down the list of steps to find the first one you maybe happy looking at</small></li>
@@ -184,7 +184,7 @@
                                                     onClick='alert("Sorting on this column is not implemented in this proof-of-concept")'>Cost effect-iveness
                                             </a>
                                         </th>
-                                        <th style="vertical-align:top" class="nonBranded">
+                                        <th style="vertical-align:top" class="unbranded">
                                             <a href="plan.html"
                                                onClick='alert("Sorting on this column is not implemented in this proof-of-concept")'>Status
                                             </a>
@@ -199,7 +199,7 @@
                                         <td>23%</td>
                                         <td class="popularity">**---</td>
                                         <td class="costEffectiveness">??<br>%/£/yr</td>
-                                        <td class="nonBranded">
+                                        <td class="unbranded">
                                             <select id="step10" class="stateSelector form-control" onChange="handle_stepStateChange(10, this.value)" style="width:150px">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
@@ -216,7 +216,7 @@
                                         <td>23%</td>
                                         <td class="popularity">**---</td>
                                         <td class="costEffectiveness">??<br>%/£/yr</td>
-                                        <td class="nonBranded">
+                                        <td class="unbranded">
                                             <select id="step20" class="stateSelector form-control" onChange="handle_stepStateChange(20, this.value)" style="width:150px">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
@@ -234,7 +234,7 @@
                                         <td>20%</td>
                                         <td class="popularity">**---</td>
                                         <td class="costEffectiveness">Max<br>%/£/yr</td>
-                                        <td class="nonBranded">
+                                        <td class="unbranded">
                                             <select id="step30" class="stateSelector form-control" onChange="handle_stepStateChange(30, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
@@ -252,7 +252,7 @@
                                         <td>17%</td>
                                         <td  class="popularity">***--</td>
                                         <td class="costEffectiveness">??<br>%/£/yr</td>
-                                        <td class="nonBranded">
+                                        <td class="unbranded">
                                             <select id="step40" class="stateSelector form-control" onChange="handle_stepStateChange(40, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
@@ -270,7 +270,7 @@
                                         <td>17%</td>
                                         <td  class="popularity">***--</td>
                                         <td class="costEffectiveness">??<br>%/£/yr</td>
-                                        <td class="nonBranded">
+                                        <td class="unbranded">
                                             <select id="step50" class="stateSelector form-control" onChange="handle_stepStateChange(50, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
@@ -287,7 +287,7 @@
                                         <td>9%</td>
                                         <td  class="popularity">**---</td>
                                         <td class="costEffectiveness">??<br>%/£/yr</td>
-                                        <td class="nonBranded">
+                                        <td class="unbranded">
                                             <select id="step60" class="stateSelector form-control" onChange="handle_stepStateChange(60, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
@@ -304,7 +304,7 @@
                                         <td>8%</td>
                                         <td  class="popularity">*----</td>
                                         <td class="costEffectiveness">??<br>%/£/yr</td>
-                                        <td class="nonBranded">
+                                        <td class="unbranded">
                                             <select id="step70" class="stateSelector form-control"  onChange="handle_stepStateChange(70, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
@@ -320,7 +320,7 @@
                                         <td>8%</td>
                                         <td class="popularity">**---</td>
                                         <td class="costEffectiveness">Max</td>
-                                        <td class="nonBranded">
+                                        <td class="unbranded">
                                             <select id="step80" class="stateSelector form-control"  onChange="handle_stepStateChange(80, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
@@ -336,7 +336,7 @@
                                         <td>7%</td>
                                         <td class="popularity">**---</td>
                                         <td class="costEffectiveness">??<br>%/£/yr</td>
-                                        <td class="nonBranded">
+                                        <td class="unbranded">
                                             <select id="step90" class="stateSelector form-control" onChange="handle_stepStateChange(90, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
@@ -352,7 +352,7 @@
                                         <td>5%</td>
                                         <td  class="popularity">***--</td>
                                         <td class="costEffectiveness">??<br>%/£/yr</td>
-                                        <td class="nonBranded">
+                                        <td class="unbranded">
                                             <select id="step100" class="stateSelector form-control"  onChange="handle_stepStateChange(100, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
@@ -368,7 +368,7 @@
                                         <td>0%</td>
                                         <td  class="popularity">***--</td>
                                         <td class="costEffectiveness">??<br>%/£/yr</td>
-                                        <td class="nonBranded">
+                                        <td class="unbranded">
                                             <select id="step110" class="stateSelector form-control"  onChange="handle_stepStateChange(110, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
@@ -384,7 +384,7 @@
                                         <td>5%</td>
                                         <td  class="popularity">***--</td>
                                         <td class="costEffectiveness">??<br>%/£/yr</td>
-                                        <td class="nonBranded">
+                                        <td class="unbranded">
                                             <select id="step120" class="stateSelector form-control"  onChange="handle_stepStateChange(120, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
@@ -400,7 +400,7 @@
                                         <td>4%</td>
                                         <td  class="popularity">**---</td>
                                         <td class="costEffectiveness">??<br>%/£/yr</td>
-                                        <td class="nonBranded">
+                                        <td class="unbranded">
                                             <select id="step130" class="stateSelector form-control"  onChange="handle_stepStateChange(130, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
@@ -416,7 +416,7 @@
                                         <td>3%</td>
                                         <td  class="popularity">***--</td>
                                         <td class="costEffectiveness">??<br>%/£/yr</td>
-                                        <td class="nonBranded">
+                                        <td class="unbranded">
                                             <select id="step140" class="stateSelector form-control"  onChange="handle_stepStateChange(140, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
@@ -434,7 +434,7 @@
                                         <td>2.7%</td>
                                         <td  class="popularity">***--</td>
                                         <td class="costEffectiveness">??<br>%/£/yr</td>
-                                        <td class="nonBranded">
+                                        <td class="unbranded">
                                             <select id="step140" class="stateSelector form-control"  onChange="handle_stepStateChange(140, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
@@ -451,7 +451,7 @@
                                         <td>2%</td>
                                         <td  class="popularity">xx**---</td>
                                         <td class="costEffectiveness">??<br>%/£/yr</td>
-                                        <td class="nonBranded">
+                                        <td class="unbranded">
                                             <select id="step150" class="stateSelector form-control"  onChange="handle_stepStateChange(150, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
@@ -467,7 +467,7 @@
                                         <td>2%</td>
                                         <td  class="popularity">*----</td>
                                         <td class="costEffectiveness">??<br>%/£/yr</td>
-                                        <td class="nonBranded">
+                                        <td class="unbranded">
                                             <select id="step160" class="stateSelector form-control"  onChange="handle_stepStateChange(160, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
@@ -483,7 +483,7 @@
                                         <td>1.6%</td>
                                         <td  class="popularity">*----</td>
                                         <td class="costEffectiveness">??<br>%/£/yr</td>
-                                        <td class="nonBranded">
+                                        <td class="unbranded">
                                             <select id="step170" class="stateSelector form-control"  onChange="handle_stepStateChange(170, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
@@ -499,7 +499,7 @@
                                         <td>1.0%</td>
                                         <td  class="popularity">**---</td>
                                         <td class="costEffectiveness">??<br>%/£/yr</td>
-                                        <td class="nonBranded">
+                                        <td class="unbranded">
                                             <select id="step180" class="stateSelector form-control" onChange="handle_stepStateChange(180, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
@@ -515,7 +515,7 @@
                                         <td>1.0%</td>
                                         <td  class="popularity">**---</td>
                                         <td class="costEffectiveness">??<br>%/£/yr</td>
-                                        <td class="nonBranded">
+                                        <td class="unbranded">
                                             <select id="step190" class="stateSelector form-control" onChange="handle_stepStateChange(190, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
@@ -531,7 +531,7 @@
                                         <td>0.9%</td>
                                         <td  class="popularity">**---</td>
                                         <td class="costEffectiveness">??<br>%/£/yr</td>
-                                        <td class="nonBranded">
+                                        <td class="unbranded">
                                             <select id="step200" class="stateSelector form-control"  onChange="handle_stepStateChange(200, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
@@ -547,7 +547,7 @@
                                         <td>0.8%</td>
                                         <td  class="popularity">**---</td>
                                         <td class="costEffectiveness">??<br>%/£/yr</td>
-                                        <td class="nonBranded">
+                                        <td class="unbranded">
                                             <select id="step210" class="stateSelector form-control"  onChange="handle_stepStateChange(210, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
@@ -563,7 +563,7 @@
                                         <td>0.7%</td>
                                         <td  class="popularity">**---</td>
                                         <td class="costEffectiveness">??<br>%/£/yr</td>
-                                        <td class="nonBranded">
+                                        <td class="unbranded">
                                             <select id="step220" class="stateSelector form-control" onChange="handle_stepStateChange(220, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
@@ -579,7 +579,7 @@
                                         <td>0.6%</td>
                                         <td  class="popularity">*----</td>
                                         <td class="costEffectiveness">??<br>%/£/yr</td>
-                                        <td class="nonBranded">
+                                        <td class="unbranded">
                                             <select id="step230" class="stateSelector form-control"  onChange="handle_stepStateChange(230, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
@@ -595,7 +595,7 @@
                                         <td>0.6%</td>
                                         <td class="popularity">**---</td>
                                         <td class="costEffectiveness">Max<br>%/£/yr</td>
-                                        <td class="nonBranded">
+                                        <td class="unbranded">
                                             <select id="step240" class="stateSelector form-control"  onChange="handle_stepStateChange(240, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
@@ -612,7 +612,7 @@
                                         <td>0.6%</td>
                                         <td class="popularity">**---</td>
                                         <td class="costEffectiveness">Max<br>%/£/yr</td>
-                                        <td class="nonBranded">
+                                        <td class="unbranded">
                                             <select id="step250" class="stateSelector form-control"  onChange="handle_stepStateChange(250, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
@@ -628,7 +628,7 @@
                                         <td>0.2%</td>
                                         <td class="popularity">**---</td>
                                         <td class="costEffectiveness">Max<br>%/£/yr</td>
-                                        <td class="nonBranded">
+                                        <td class="unbranded">
                                             <select id="step260" class="stateSelector form-control"  onChange="handle_stepStateChange(260, this.value)">
                                                 <option value=""></option>
                                                 <option value="maybe">Maybe</option>
@@ -641,7 +641,7 @@
                                     </tr>
                                 </table> <!-- table-striped -->
                             </div> <!-- cold-md-8 -->
-                <div class="col-md-4 nonBranded"> <!-- Cards container -->
+                <div class="col-md-4 unbranded"> <!-- Cards container -->
                     <div class="sticky-top pt-2">
                         <!-- Comparison of emissions -->
                         <div class="card">
