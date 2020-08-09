@@ -1,6 +1,6 @@
-/*
-Step state values
-@todo Step state values need to be converted to numeric stateIds, so that state text changes only need to be in one place. */
+/* Step state values
+@todo Step state values need to be converted to numeric stateIds, so that state text changes only need to be in one place.
+*/
 stepStateId_undefined   = ""
 stepStateId_maybe       = "maybe"     // Maybe
 stepStateId_planTo      = "aspiring"  // Plan to
@@ -8,7 +8,11 @@ stepStateId_completed   = "done"      // Completed
 stepStateId_na          = "na"        // Not applicable
 stepStateId_never       = "never"     // Never
 
-let stepData = [
+/**
+ * @summary
+ * @type {({summary: string, embedUrl: string, editUrl: string, defaultState: string, stepId: number}|{summary: string, embedUrl: string, editUrl: string, defaultState: string, stepId: number}|{summary: string, embedUrl: string, editUrl: string, defaultState: string, stepId: number}|{summary: string, embedUrl: string, editUrl: string, defaultState: string, stepId: number}|{summary: string, embedUrl: string, editUrl: string, defaultState: string, stepId: number})[]}
+ */
+let stepMoreInfoData = [
     {
         "stepId": 10,
         "summary": "Replace gas boiler with an air source heat pump",
@@ -67,28 +71,58 @@ model_setStepState = function (stepId, stateId) {
     }
 }
 
+/**
+ * @summary Get the current step state for the given stepId
+ * @param stepId
+ * @returns {string}
+ */
 model_getStepState = function (stepId) {
-    console.log("Getting status for " + stepId)
+    if(stepId === "") return stepStateId_undefined;
 
-    if(stepId > 60 || stepId === "") return stepStateId_undefined;  // @todo Full access to model data not implement yet
+    /* Find stepId in moreInfoData */
+    let moreInfoDataEntry = stepMoreInfoData.find(
+        stepEntry => stepEntry.stepId == stepId,
+        stepId
+    )
+    if(moreInfoDataEntry === undefined) return stepStateId_undefined
 
-    // @todo Need to search for stepId rather than calculate it
-    return stepData[stepId/10-1].defaultState
+    return moreInfoDataEntry.defaultState
 }
 
+
+/**
+ * @summary Get the URL of an HTML file containing more detailed information on the defined step
+ * @param stepId
+ * @returns {string}
+ */
 model_getStepEmbedUrl = function(stepId){
-    console.log("Getting embedUrl for " + stepId)
-    if(stepId > 60) return stepStateId_undefined;  // @todo Full access to model data not implement yet
+    if(stepId === "") return "";
 
-    // @todo Need to search for stepId rather than calculate it
-    return stepData[stepId/10-1].embedUrl
+    /* Find stepId in moreInfoData */
+    let moreInfoDataEntry = stepMoreInfoData.find(
+        stepEntry => stepEntry.stepId == stepId,
+        stepId
+    )
+    if(moreInfoDataEntry === undefined) return ""
+
+    return moreInfoDataEntry.embedUrl
 }
 
+/**
+ * @summary Get the URL to an editor pre-populated with  HTML file containing more detailed step information
+ *
+ * @param stepId
+ * @returns {string}
+ */
 model_getStepEditUrl = function(stepId){
-    console.log("Getting stepUrl for " + stepId)
+    if(stepId === "") return "";
 
-    if(stepId > 60) return stepStateId_undefined;  // @todo Full access to model data not implement yet
+    /* Find stepId in moreInfoData */
+    let moreInfoDataEntry = stepMoreInfoData.find(
+        stepEntry => stepEntry.stepId == stepId,
+        stepId
+    )
+    if(moreInfoDataEntry === undefined) return ""
 
-    // @todo Need to search for stepId rather than calculate it
-    return stepData[stepId/10-1].editUrl
+    return moreInfoDataEntry.editUrl
 }

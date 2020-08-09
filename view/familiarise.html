@@ -71,37 +71,26 @@
                 <div class="col-md-8">
                     <!--suppress HtmlDeprecatedAttribute -->
                     <div align="center">
-                        <!--
-                            <table bgColor="yellow">
-                                <tr>
-                                    <td>
-                                        Tips:
-                                        <small>
-                                            <ul>
-                                                <li>scroll down the list of steps to find the first thing you maybe happy
-                                                    doing
-                                                </li>
-                                                <li>click on its associated status and select your preference, then</li>
-                                                <li>click on [Familiarise] or [Complete] menus</li>
-                                            </ul>
-                                        </small>
-                                    </td>
-                                </tr>
-                            </table>
-                            <br>
-                            -->
+                        <div class="tips unbranded"></div>
                         <select id="stepSelector" onchange="handle_stepChange()">
                             <option value="">Select a planned step ...</option>
                             <option value="10">Replace an old gas boiler with an air source heat pump [23%]</option>
                             <option value="20">Replace an old gas boiler with a ground source heat pump [23%]</option>
                             <option value="30">Replace 5 beef (herd) portions per week with poultry [20%]</option>
-                            <option value="40">Replace a petrol car with an electric car [17%]</option>
+                            <option value="40">Replace a petrol car with a battery electric car [17%]</option>
                             <option value="50">Increase loft insulation from ??cm to ??cm in a gas heated house with an
                                 old boiler [17%]
                             </option>
                         </select>
                         <br>
                         <br>
+                            <div align="right">
+                            [<a
+                                href="#"
+                                onClick="handle_suggestChanges(); return false"
+                            >Suggest updates ...</a>]
+                        </div>
+
                         <iframe
                                 id="docFrame"
                                 src="more_info_blank.html"
@@ -163,14 +152,6 @@
                                                 <br>
                                                 Follow changes to this step<input type="checkbox"><br>
                                                 <br>
-                                                <p>
-                                                    [Print ...]<br>
-                                                    [<a
-                                                        href="#"
-                                                        onClick="handle_suggestChanges(); return false"
-                                                    >Suggest updates ...</a>]<br>
-                                                </p>
-
                                             </td>
                                         </tr>
                                     </table>
