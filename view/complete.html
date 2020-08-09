@@ -32,13 +32,14 @@
 <div id="root">
     <div>
         <header>
-            <nav class="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 navbar navbar-light">
+            <nav class="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 navbar-light">
                 <div class="container">
-                    <a disabled="" class="navbar-brand disabled" href="../index.html">Carbon Reduction Helper (proof-of-concept)</a>
+                    <a class="navbar-brand " href="../index.html">Carbon Reduction Helper (proof-of-concept)</a>
+<br>
                     <button aria-label="Toggle navigation" type="button" class="mr-2 navbar-toggler">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="d-sm-inline-flex flex-sm-row-reverse collapse navbar-collapse">
+                    <div class="d-sm-inline-flex flex-sm-row-reverse collapse navbar-collapse" style="width:380px">
                         <ul class="navbar-nav flex-grow">
                             <li class="nav-item">
                                 <a class="text-dark nav-link" href="#" onclick="gotoMenu('dashboard.html');return false">Dashboard</a>
@@ -52,7 +53,6 @@
                             <li class="nav-item">
                                 <a disabled="" class="text-dark nav-link"  href="#" onclick="gotoMenu('complete.html');return false">[Complete]</a>
                             </li>
-
                             <li class="nav-item">
                                 <a class="text-dark nav-link" href="#" onclick="gotoMenu('help.html');return false">Help</a>
                             </li>
@@ -60,45 +60,25 @@
                     </div>
                 </div>
             </nav>
-</header>
+        </header>
         <div class="container-xl">
             <div class="row">
                 <div class="col-md-8">
                     <div align="center">
-                        <!--
-    <table bgcolor="yellow">
-        <tr>
-            <td>
-                Tips:
-                <small>
-                    <ul>
-                        <li>scroll down the list of steps to find the first thing you maybe happy
-                            doing
-                        </li>
-                        <li>click on its associated status and select your preference, then</li>
-                        <li>click on [Familiarise] or [Complete] menus</li>
-                    </ul>
-                </small>
-
-            </td>
-        </tr>
-    </table>
-    <br>
-    -->
-                        <select id="stepSelector" onchange="handle_stepChange2()">
+                        <div class="tips unbranded"></div> <!-- Tips -->
+                        <select id="stepSelector" onchange="handle_stepChange()">
                             <option value="">Select a planned step ...</option>
                             <option value="10">Replace an old gas boiler with an air source heat pump [23%]</option>
                             <option value="20">Replace an old gas boiler with a ground source heat pump [23%]</option>
-                            <option value="30">Replace 5 beef (herd) portions per week with poultry [20%]</option>
-                            <option value="40">Replace a petrol car with an electric car [17%]</option>
+                            <option value="40">Replace a petrol car with a battery electric car [17%]</option>
                             <option value="50">Increase loft insulation from ??cm to ??cm in a gas heated house with an
                                 old boiler [17%]
+                            </option>
                         </select>
+                        <br>
+                        .
                     </div>
-                    <br>
                     <div id="step10_exec_info" style="display:none">
-                        <br>
-                        <br>
                         <table border="1">
                             <tr>
                                 <th>Task</th>
@@ -151,8 +131,6 @@ B&Q = £945
                         </p>
                     </div> <!-- exec_info -->
                     <div id="step20_exec_info" style="display:none">
-                        <br>
-                        <br>
                         <table border="1">
                             <tr>
                                 <th>Task</th>
@@ -205,12 +183,7 @@ B&Q = £945
                         </p>
                     </div> <!-- exec_info -->
                     <div id="step30_exec_info" style="display:none">  <!-- beef (herd) portions -->
-                        Any poultry will do<br>
-                            Chicken = ??%<br>
-                            Turkey = ??%<br>
-                        <br>
                     </div> <!-- exec_info -->
-
                     <div id="step40_exec_info" style="display:none">  <!-- Electric -->
                         <p>
                             I have off-road parking
@@ -246,7 +219,6 @@ B&Q = £945
                             </div>
 
                     </div> <!-- exec_info -->
-
                     <div id="step50_exec_info" style="display:none">  <!-- Insulation -->
                         Insulation
                         <br>
@@ -318,7 +290,7 @@ B&Q = £945
         document.getElementById('stepStateSelector').value = model_getStepState(step)
     }
 
-    handle_stepChange2 = function(){
+    handle_stepChange = function(){
         let url = 'complete.html'
 
         if(selectorId.value !== ""){

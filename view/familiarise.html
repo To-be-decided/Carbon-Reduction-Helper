@@ -31,35 +31,29 @@
 <div id="root">
     <div>
         <header class="unbranded">
-            <nav class="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 navbar navbar-light">
+            <nav class="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 navbar-light">
                 <div class="container">
-                    <a disabled="" class="navbar-brand disabled" href="../index.html">Carbon Reduction
-                        Helper
-                        (proof-of-concept)</a>
+                    <a class="navbar-brand" href="../index.html">Carbon Reduction Helper (proof-of-concept)</a>
+<br>
                     <button aria-label="Toggle navigation" type="button" class="mr-2 navbar-toggler">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="d-sm-inline-flex flex-sm-row-reverse collapse navbar-collapse">
+                    <div class="d-sm-inline-flex flex-sm-row-reverse collapse navbar-collapse" style="width:380px">
                         <ul class="navbar-nav flex-grow unbranded">
                             <li class="nav-item">
-                                <a class="text-dark nav-link" href="#"
-                                   onclick="gotoMenu('dashboard.html');return false">Dashboard</a>
+                                <a class="text-dark nav-link" href="#" onclick="gotoMenu('dashboard.html');return false">Dashboard</a>
                             </li>
                             <li class="nav-item">
-                                <a class="text-dark nav-link" href="#"
-                                   onclick="gotoMenu('plan.html');return false">Select</a>
+                                <a class="text-dark nav-link" href="#" onclick="gotoMenu('plan.html');return false">Select</a>
                             </li>
                             <li class="nav-item">
-                                <a class="text-dark nav-link" disabled="" href="#"
-                                   onclick="gotoMenu('familiarise.html');return false">[Familiarise]</a>
+                                <a class="text-dark nav-link" disabled="" href="#" onclick="gotoMenu('familiarise.html');return false">[Familiarise]</a>
                             </li>
                             <li class="nav-item">
-                                <a class="text-dark nav-link" href="#"
-                                   onclick="gotoMenu('complete.html');return false">Complete</a>
+                                <a class="text-dark nav-link" href="#" onclick="gotoMenu('complete.html');return false">Complete</a>
                             </li>
                             <li class="nav-item">
-                                <a class="text-dark nav-link" href="#"
-                                   onclick="gotoMenu('help.html');return false">Help</a>
+                                <a class="text-dark nav-link" href="#" onclick="gotoMenu('help.html');return false">Help</a>
                             </li>
                         </ul>
                     </div>
@@ -71,7 +65,7 @@
                 <div class="col-md-8">
                     <!--suppress HtmlDeprecatedAttribute -->
                     <div align="center">
-                        <div class="tips unbranded"></div>
+                        <div class="tips unbranded"></div> <!-- Tips -->
                         <select id="stepSelector" onchange="handle_stepChange()">
                             <option value="">Select a planned step ...</option>
                             <option value="10">Replace an old gas boiler with an air source heat pump [23%]</option>
