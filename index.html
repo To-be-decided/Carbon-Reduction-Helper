@@ -10,18 +10,15 @@
     <link rel="shortcut icon" href="view/images/favicon.ico">
     <title>Carbon Reduction Helper - Dashboard</title>
 
-    <link href="view/lib/2.67123b20.chunk.css" rel="stylesheet">
-    <link href="view/lib/main.a391ff7c.chunk.css" rel="stylesheet">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+	<!-- Common file includes -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173546127-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+    <script src="lib/common.js"></script>
+    <link rel="stylesheet" href="view/lib/common.css">
+    <link rel="stylesheet" href="view/lib/2.67123b20.chunk.css">
+    <link rel="stylesheet" href="view/lib/main.a391ff7c.chunk.css">
 
-        gtag('config', 'UA-173546127-1');
-    </script>
+    <!-- Google Analytics -->
 
 </head>
 
@@ -31,23 +28,23 @@
 
 <div id="root">
     <div>
-        <header>
-            <nav class="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 navbar navbar-light">
-                <div class="container">
-                    <a disabled="" class="navbar-brand disabled" href="index.html">Carbon Reduction Helper (proof-of-concept)</a>
-                    <button aria-label="Toggle navigation" type="button" class="mr-2 navbar-toggler">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-            </nav>
-</header>
+        <header></header>
         <div class="container-xl">
             <div class="row">
                 <div class="col-md-8" style="margin-left: 100px">
                     <h5 align="center">Helping busy people reduce their carbon footprint quickly and easily.</h5>
+                    <div class="tips">
+                        Please note this is a proof of concept and as such is
+                        <ul>
+                            <li><b>just a representation</b> of what the final website may look like</li>
+                            <li><b>missing a lot of functionality</b> but some of the key features will be partially implemented to demonstrate the concept</li>
+                            <li><b>using draft graphics and text</b> and again just give an idea of what may it may look like</li>
+                            <li>any feedback on improvements that can be made would be great to hear</li>
+                        </ul>
+                    </div>
 
                     <div align="center">
-                        <img src="https://docs.google.com/drawings/d/e/2PACX-1vRbZBZKiqdpv_PVMwFJcDx3C9L7vV2pVq6Kqx-YmPdEZNhzqK2s112DsG8I-ahRSGUbQApx4b3iBZdl/pub?w=768&h=576" ><br>
+                        <img src="https://docs.google.com/drawings/d/e/2PACX-1vRbZBZKiqdpv_PVMwFJcDx3C9L7vV2pVq6Kqx-YmPdEZNhzqK2s112DsG8I-ahRSGUbQApx4b3iBZdl/pub?w=580&h=420" >
                         <input type="button" style="width: 300px; height: 50px;" value="Enter" onclick="window.location = 'view/dashboard.html'">
                     </div>
                 </div>
