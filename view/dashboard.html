@@ -10,25 +10,21 @@
     <link rel="shortcut icon" href="images/favicon.ico">
     <title>Carbon Reduction Helper - Dashboard</title>
 
-    <link href="lib/2.67123b20.chunk.css" rel="stylesheet">
-    <link href="lib/main.a391ff7c.chunk.css" rel="stylesheet">
+    <!-- Common file includes -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173546127-1"></script>
+    <script src="lib/common.js"></script>
+    <link rel="stylesheet" href="lib/common.css">
+    <link rel="stylesheet" href="lib/2.67123b20.chunk.css">
+    <link rel="stylesheet" href="lib/main.a391ff7c.chunk.css">
 
+    <script src="../model.js"></script>
+    <script src="view.js"></script>
+    <script src="../controller.js"></script>
+
+    <!-- Locals -->
     <link rel="stylesheet" type="text/css" href="lib/progressBar.css">
     <script src="lib/progressBar.js"></script>
 
-    <script src="lib/common.js"></script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!--
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173546127-1"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'UA-173546127-1');
-        </script>
--->
     </head>
 
     <body data-gr-c-s-loaded="true">
@@ -68,26 +64,20 @@
             <div class="container-xl">
                 <div class="row">
                     <div class="col-md-8">
-                        <table bgcolor="yellow" width="100%">
-                            <tr>
-                                <td>
-                                    Tips:
-                                        <ul>
-                                            <li>
-                                                <small><i>In this proof-of-concept, this dashboard contains fixed sample data that reflects the default settings in the "select" page.</i></small>
-                                            </li>
-                                        </ul>
-                                </td>
-                            </tr>
-                        </table>
-
-                        <h3>Your progress:</h3>
+                        <div class="tips nonBranded">
+                            Tips:
+                            <ul>
+                                <li>
+                                    <small><i>In this proof-of-concept, this dashboard contains fixed sample data that reflects the default settings in the "select" page.</i></small>
+                                </li>
+                            </ul>
+                        </div>
+                        <h3>Well done! You are making good progress.</h3>
 
                         <table style="margin-left:40px" width="100%">
                             <tr>
                                 <td width="90%" colspan="2">
-                                    <p>Well done! You are making good progress.</p>
-                                    You have :
+                                    <h5>You have :</h5>
                                     <ul>
                                         <li>reduced your carbon emissions by <b>17%</b> this month <img src="images/tick.png"></li>
                                         <li>saved a total of <b>17%</b> <img src="images/tick.png"></li>
@@ -97,7 +87,7 @@
                             </tr>
                             <tr>
                                 <td width="100%" colspan="2"><br>
-                                    <h3>Compare your progress with others</h3>
+                                    <h5>How you compare with others</h5>
     <div align="right">
                                     <a href="#"
                                     onclick="alert('Although you can\'t change it on this proof-of-concept, on the final version this option controls what to display.  Including one ore more of Friends, Government target, Region and Groups'); return false"
@@ -118,7 +108,7 @@
                                             <th align="center">Who</th>
                                             <th align="center">Average<br>Reduction</th></tr>
 
-                                        <tr id="governmentActual"  bgcolor="#00FF00">
+                                        <tr id="governmentActual" >
                                             <td>[Government target]</td>
                                             <td align="center">
                                                 <div id="governmentTarget_pbarId" class="pBar">
@@ -134,8 +124,8 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                        <tr bgcolor="#adff2f">
-                                            <td> [You]</td>
+                                        <tr>
+                                            <td><b> [You]</b></td>
                                             <td align="center">
                                                 <div id="youActual_pbarId" class="pBar">
                                                     <div class="pBar_meter">0%</div>
@@ -171,7 +161,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr bgcolor="#00FF00">
+                                    <tr>
                                         <td>[Government target]</td>
                                         <td align="center">
                                             <div id="governmentTargetPlanned_pbarId" class="pBar">
@@ -179,15 +169,15 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr bgcolor="#adff2f">
-                                        <td> [You]</td>
+                                    <tr>
+                                        <td><b>[You]</b></td>
                                         <td align="center">
                                             <div id="youPlanned_pbarId" class="pBar">
                                                 <div class="pBar_meter">0%</div>
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr><!-- 17% -->
+                                    <tr>
                                         <td>World<img src="images/sort_down.png" align="right"></td>
                                         <td align="center">
                                             <div id="worldPlanned_pbarId" class="pBar">

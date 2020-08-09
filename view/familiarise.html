@@ -10,27 +10,18 @@
     <link rel="shortcut icon" href="images/favicon.ico">
     <title>Carbon Reduction Helper - Familiarise</title>
 
-    <link href="lib/2.67123b20.chunk.css" rel="stylesheet">
-    <link href="lib/main.a391ff7c.chunk.css" rel="stylesheet">
+    <!-- Common file includes -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173546127-1"></script>
+    <script src="lib/common.js"></script>
+    <link rel="stylesheet" href="lib/common.css">
+    <link rel="stylesheet" href="lib/2.67123b20.chunk.css">
+    <link rel="stylesheet" href="lib/main.a391ff7c.chunk.css">
 
     <script src="../model.js"></script>
     <script src="view.js"></script>
     <script src="../controller.js"></script>
-    <script src="lib/common.js"></script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173546127-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-
-        gtag('config', 'UA-173546127-1');
-    </script>
+    <!-- Locals -->
 </head>
 
 <body data-gr-c-s-loaded="true">
@@ -39,7 +30,7 @@
 
 <div id="root">
     <div>
-        <header>
+        <header class="unbranded">
             <nav class="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 navbar navbar-light">
                 <div class="container">
                     <a disabled="" class="navbar-brand disabled" href="../index.html">Carbon Reduction
@@ -49,7 +40,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="d-sm-inline-flex flex-sm-row-reverse collapse navbar-collapse">
-                        <ul class="navbar-nav flex-grow">
+                        <ul class="navbar-nav flex-grow unbranded">
                             <li class="nav-item">
                                 <a class="text-dark nav-link" href="#"
                                    onclick="gotoMenu('dashboard.html');return false">Dashboard</a>
@@ -80,37 +71,26 @@
                 <div class="col-md-8">
                     <!--suppress HtmlDeprecatedAttribute -->
                     <div align="center">
-                        <!--
-                            <table bgColor="yellow">
-                                <tr>
-                                    <td>
-                                        Tips:
-                                        <small>
-                                            <ul>
-                                                <li>scroll down the list of steps to find the first thing you maybe happy
-                                                    doing
-                                                </li>
-                                                <li>click on its associated status and select your preference, then</li>
-                                                <li>click on [Familiarise] or [Complete] menus</li>
-                                            </ul>
-                                        </small>
-                                    </td>
-                                </tr>
-                            </table>
-                            <br>
-                            -->
+                        <div class="tips unbranded"></div>
                         <select id="stepSelector" onchange="handle_stepChange()">
                             <option value="">Select a planned step ...</option>
                             <option value="10">Replace an old gas boiler with an air source heat pump [23%]</option>
                             <option value="20">Replace an old gas boiler with a ground source heat pump [23%]</option>
                             <option value="30">Replace 5 beef (herd) portions per week with poultry [20%]</option>
-                            <option value="40">Replace a petrol car with an electric car [17%]</option>
+                            <option value="40">Replace a petrol car with a battery electric car [17%]</option>
                             <option value="50">Increase loft insulation from ??cm to ??cm in a gas heated house with an
                                 old boiler [17%]
                             </option>
                         </select>
                         <br>
                         <br>
+                            <div align="right">
+                            [<a
+                                href="#"
+                                onClick="handle_suggestChanges(); return false"
+                            >Suggest updates ...</a>]
+                        </div>
+
                         <iframe
                                 id="docFrame"
                                 src="more_info_blank.html"
@@ -148,7 +128,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="sticky-top pt-2">
+                    <div class="sticky-top pt-2 unbranded">
                         <div class="card">
                             <div class="card-header">
                                 <h4>Menu</h4>
@@ -172,14 +152,6 @@
                                                 <br>
                                                 Follow changes to this step<input type="checkbox"><br>
                                                 <br>
-                                                <p>
-                                                    [Print ...]<br>
-                                                    [<a
-                                                        href="#"
-                                                        onClick="handle_suggestChanges(); return false"
-                                                    >Suggest updates ...</a>]<br>
-                                                </p>
-
                                             </td>
                                         </tr>
                                     </table>
