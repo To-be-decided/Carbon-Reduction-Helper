@@ -10,18 +10,16 @@
     <link rel="shortcut icon" href="images/favicon.ico">
     <title>Carbon Reduction Helper - Help</title>
 
-    <link href="lib/2.67123b20.chunk.css" rel="stylesheet">
-    <link href="lib/main.a391ff7c.chunk.css" rel="stylesheet">
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Common file includes -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173546127-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+    <script src="lib/common.js"></script>
+    <link rel="stylesheet" href="lib/common.css">
+    <link rel="stylesheet" href="lib/2.67123b20.chunk.css">
+    <link rel="stylesheet" href="lib/main.a391ff7c.chunk.css">
 
-        gtag('config', 'UA-173546127-1');
-    </script>
+    <script src="../model.js"></script>
+    <script src="view.js"></script>
+    <script src="../controller.js"></script>
 
     <!--
     <style>
@@ -59,7 +57,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="text-dark nav-link" disabled="" onclick="gotoMenu('help.html');return false">[Help]</a>
+                                <a class="text-dark nav-link" disabled="" href="#" onclick="gotoMenu('help.html');return false">[Help]</a>
                             </li>
                         </ul>
                     </div>
