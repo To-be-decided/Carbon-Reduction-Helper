@@ -34,7 +34,7 @@
         <header>
             <nav class="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 navbar navbar-light">
                 <div class="container">
-                    <a disabled="" class="navbar-brand disabled" href="dashboard.html">Carbon Reduction Helper (proof-of-concept)</a>
+                    <a disabled="" class="navbar-brand disabled" href="../index.html">Carbon Reduction Helper (proof-of-concept)</a>
                     <button aria-label="Toggle navigation" type="button" class="mr-2 navbar-toggler">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -44,7 +44,7 @@
                                 <a class="text-dark nav-link" href="#" onclick="gotoMenu('dashboard.html');return false">Dashboard</a>
                             </li>
                             <li class="nav-item">
-                                <a class="text-dark nav-link" href="#" onclick="gotoMenu('plan.html');return false">Plan</a>
+                                <a class="text-dark nav-link" href="#" onclick="gotoMenu('plan.html');return false">Select</a>
                             </li>
                             <li class="nav-item">
                                 <a class="text-dark nav-link" href="#" onclick="gotoMenu('familiarise.html');return false">Familiarise</a>
@@ -129,11 +129,6 @@
         document.getElementById('stepStateSelector').value = model_getStepState(step)
     }
 
-    handle_stepChange2 = function(stepId){
-        let newUrl = 'complete.html?step=' + stepId
-
-        window.location.href = newUrl;
-    }
 </script>
 
 </body>
