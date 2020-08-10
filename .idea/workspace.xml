@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d9c7da09-bf7f-4b84-973b-a249c0de6378" name="Default Changelist" comment="Change model_setStepState() to model_setStepStateId()&#10;Add model_StepReduction()&#10;Rationalised MVC:&#10;   Finished and tested persistence.js code&#10;   Add remaining step info to model.js&#10;   Add yourSavings() to controller.js&#10;   Add model_reload()&#10;   Rename moreInfoDataEntry to stepEntryConfig&#10;   Add reduction value to stepEntriesConfig&#10;   Add test_controller.html">
+      <change afterPath="$PROJECT_DIR$/.idea/Carbon-Reduction-Helper.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_08_2020_06_10_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_08_2020_06_10__Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_controller.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/images/car-bmw-i3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/images/car-mitsubishi-outlander.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/images/car-nissan-leaf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/lib/test_disqus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model.js" beforeDir="false" afterPath="$PROJECT_DIR$/model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/persistence.js" beforeDir="false" afterPath="$PROJECT_DIR$/persistence.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_model.html" beforeDir="false" afterPath="$PROJECT_DIR$/test_model.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/complete.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/complete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/familiarise.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/familiarise.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/plan.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/plan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/template.html" afterDir="false" />
+    </list>
+    <list id="7057072a-a76d-4b7e-b5ca-2e0939eceea3" name="Minor changes to text &amp; comments Implement 'incLowImpactSteps' URL param" comment="" />
+    <list id="8eacdc40-1148-4a99-a645-88b8a3414156" name="Revert &quot;Minor changes to text &amp; comments Implement 'incLowImpactSteps' URL param&quot;" comment="Revert &quot;Minor changes to text &amp; comments Implement 'incLowImpactSteps' URL param&quot;&#10;&#10;This reverts commit 552e7d6c" />
+    <list id="cb91482c-284c-4115-a3cf-d09c12bbdb8b" name="Revert &quot;Minor changes to text &amp; comments Implement 'incLowImpactSteps' URL param&quot;-2" comment="Revert &quot;Minor changes to text &amp; comments Implement 'incLowImpactSteps' URL param&quot;&#10;&#10;This reverts commit 552e7d6c" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="refs/heads/master" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Robs" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="SOFT" />
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="1fkzNRSnGa4iV2vlZ3pPs0zcncS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Rob\WebstormProjects\Carbon-Reduction-Helper\" />
+      <recent name="C:\Users\Rob\WebstormProjects\Carbon-Reduction-Helper" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Rob\WebstormProjects\Carbon-Reduction-Helper" />
+      <recent name="C:\Users\Rob\WebstormProjects\Carbon-Reduction-Helper\view" />
+      <recent name="C:\Users\Rob\WebstormProjects\Carbon-Reduction-Helper\view\lib" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.Disk - Plan">
+    <configuration name="Disk - Dashboard" type="JavascriptDebugType" uri="file://$PROJECT_DIR$/view/dashboard.html">
+      <method v="2" />
+    </configuration>
+    <configuration name="Disk - Plan" type="JavascriptDebugType" uri="file://$PROJECT_DIR$/view/plan.html">
+      <method v="2" />
+    </configuration>
+    <configuration name="Disk - Test Controller" type="JavascriptDebugType" uri="file://$PROJECT_DIR$/test_controller.html">
+      <method v="2" />
+    </configuration>
+    <configuration name="Disk" type="JavascriptDebugType" uri="file://$PROJECT_DIR$/index.html">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" uri="http://localhost:63342/view/dashboard.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="dashboard (staging)" type="JavascriptDebugType" temporary="true" uri="http://www.evergreen-consulting.co.uk/crs.staging/view/dashboard.html">
+      <method v="2" />
+    </configuration>
+    <configuration name="dashboard.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/view/dashboard.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.html (local)" type="JavascriptDebugType" temporary="true" uri="http://localhost:63342/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="test_model.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="file://$PROJECT_DIR$/test_model.html">
+      <method v="2" />
+    </configuration>
+    <configuration name="test_progress_bar" type="JavascriptDebugType" uri="file://$PROJECT_DIR$/view/lib/test_progressBar.html">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.test_progress_bar" />
+      <item itemvalue="JavaScript Debug.Disk" />
+      <item itemvalue="JavaScript Debug.Disk - Plan" />
+      <item itemvalue="JavaScript Debug.Disk - Test Controller" />
+      <item itemvalue="JavaScript Debug.Disk - Dashboard" />
+      <item itemvalue="JavaScript Debug.dashboard.html" />
+      <item itemvalue="JavaScript Debug.index.html (local)" />
+      <item itemvalue="JavaScript Debug.dashboard (staging)" />
+      <item itemvalue="JavaScript Debug.test_model.html" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.test_model.html" />
+        <item itemvalue="JavaScript Debug.dashboard (staging)" />
+        <item itemvalue="JavaScript Debug.index.html (local)" />
+        <item itemvalue="JavaScript Debug.dashboard.html" />
+        <item itemvalue="JavaScript Debug.test_model.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d9c7da09-bf7f-4b84-973b-a249c0de6378" name="Default Changelist" comment="" />
+      <changelist id="7057072a-a76d-4b7e-b5ca-2e0939eceea3" name="Minor changes to text &amp; comments Implement 'incLowImpactSteps' URL param" comment="" />
+      <created>1596776837595</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596776837595</updated>
+      <workItem from="1596776838710" duration="13522000" />
+      <workItem from="1596793900965" duration="6939000" />
+      <workItem from="1596803120512" duration="33924000" />
+      <workItem from="1596870108933" duration="593000" />
+      <workItem from="1596881142387" duration="12713000" />
+      <workItem from="1596900502103" duration="136000" />
+      <workItem from="1596900741518" duration="13180000" />
+      <workItem from="1596949415870" duration="15875000" />
+      <workItem from="1596971304938" duration="22058000" />
+      <workItem from="1597007543645" duration="373000" />
+      <workItem from="1597008200643" duration="5639000" />
+      <workItem from="1597034553444" duration="23379000" />
+      <workItem from="1597065153573" duration="4216000" />
+    </task>
+    <task id="LOCAL-00001" summary="Front page updates&#10;   image tweaked&#10;   removed unnecessary text&#10;In plan move ranking to summary.&#10;Added default step status.">
+      <created>1596793070938</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1596793070938</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Front page updates&#10;   image tweaked&#10;   removed unnecessary text&#10;In plan move ranking to summary.&#10;Added default step status.">
+      <created>1596800344943</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1596800344943</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add user control of what to compare to in dashboard.&#10;Simplify ranking comparison.&#10;Change minor text.">
+      <created>1596808823846</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1596808823846</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add progress bar type comparison of savings on Dashboard&#10;Remove compare-to dropdown.&#10;Various text updates.">
+      <created>1596831661588</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1596831661589</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Create basic CSS progress component - not referenced yet">
+      <created>1596861229564</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1596861229564</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fix size problem">
+      <created>1596861383977</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1596861383979</updated>
+    </task>
+    <task id="LOCAL-00007" summary="progressBar - work">
+      <created>1596865616584</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1596865616585</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add 3d progressBar&#10;Add tick image.">
+      <created>1596898700140</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1596898700142</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Fix warnings.&#10;Move volatilityConfirmed handling to model.js">
+      <created>1596911010998</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1596911010998</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Add feature status control">
+      <created>1596920417356</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1596920417356</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Convert tips from table to div.&#10;Move Google analytics to common.js.&#10;Tidied up order of elements.&#10;Tidied up file includes.">
+      <created>1596957795242</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1596957795242</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Finish &quot;convert tips from table to div.&quot;">
+      <created>1596959109819</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1596959109819</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Simplified comparison table on dashboard and text before it">
+      <created>1596959919223</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1596959919224</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Finished &quot;Simplified comparison table on dashboard and text before it.&quot;">
+      <created>1596960064675</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1596960064675</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Simplified text">
+      <created>1596960515128</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1596960515129</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Rename &quot;nonBranded&quot; to &quot;unbranded&quot; and move to common.css.&#10;Apply &quot;unbranded&quot; to the Familiarise page.">
+      <created>1596963934893</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1596963934893</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Support 1x numbers for access to data store.&#10;Ensure &quot;Suggest updates ...&quot; is displayed in unbranded code.&#10;Add javaDoc to model file">
+      <created>1596973767593</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1596973767593</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Move menu to left below brand.&#10;Remove &quot;Replace 5 beef ...&quot; from complete page.&#10;Centralise spacing after step selection in complete page.">
+      <created>1596985266995</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1596985266996</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Improve tips.&#10;Reduce front page image size.&#10;Tidy include files of index.html">
+      <created>1596994809406</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1596994809406</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Add menu class">
+      <created>1597000586785</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1597000586787</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Add controller_init() and model_init&#10;Separate config from settings.&#10;Revert back from using numeric state ids to original text state ids&#10;Use persistence.js code.&#10;Add model test harness.">
+      <created>1597042270629</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1597042270630</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Add controller_init() and model_init&#10;Separate config from settings.&#10;Revert back from using numeric state ids to original text state ids&#10;Use persistence.js code.&#10;Add model test harness.&#10;Move controller init">
+      <created>1597042671868</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1597042671869</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Fix double model_init()">
+      <created>1597043294543</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1597043294543</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Revert &quot;Fix double model_init()&quot;&#10;&#10;This reverts commit d42e0dad">
+      <created>1597045332041</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1597045332041</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Revert &quot;Fix double model_init()&quot;&#10;&#10;This reverts commit d42e0dad">
+      <created>1597045392361</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1597045392361</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="Robs" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/Robs" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Add dropdown to enable/disable &#10;Move background color from &lt;td&gt; to &lt;tr&gt;" />
+    <MESSAGE value="Add user control of what to compare to in dashboard.&#10;Simplify ranking comparison.&#10;Change minor text." />
+    <MESSAGE value="Add progress bar type comparison of savings on Dashboard&#10;Remove compare-to dropdown.&#10;Various text updates." />
+    <MESSAGE value="Create basic CSS progress component - not referenced yet" />
+    <MESSAGE value="Fix size problem" />
+    <MESSAGE value="progressBar - work" />
+    <MESSAGE value="Add 3d progressBar&#10;Add tick image." />
+    <MESSAGE value="Fix warnings.&#10;Move volatilityConfirmed handling to model.js" />
+    <MESSAGE value="Add feature status control" />
+    <MESSAGE value="Convert tips from table to div.&#10;Move Google analytics to common.js.&#10;Tidied up order of elements.&#10;Tidied up file includes." />
+    <MESSAGE value="Finish &quot;convert tips from table to div.&quot;" />
+    <MESSAGE value="Simplified comparison table on dashboard and text before it" />
+    <MESSAGE value="Finished &quot;Simplified comparison table on dashboard and text before it.&quot;" />
+    <MESSAGE value="Simplified text" />
+    <MESSAGE value="Rename &quot;nonBranded&quot; to &quot;unbranded&quot; and move to common.css.&#10;Apply &quot;unbranded&quot; to the Familiarise page." />
+    <MESSAGE value="Support 1x numbers for access to data store.&#10;Ensure &quot;Suggest updates ...&quot; is displayed in unbranded code.&#10;Add javaDoc to model file" />
+    <MESSAGE value="Move menu to left below brand.&#10;Remove &quot;Replace 5 beef ...&quot; from complete page.&#10;Centralise spacing after step selection in complete page." />
+    <MESSAGE value="Improve tips.&#10;Reduce front page image size.&#10;Tidy include files of index.html" />
+    <MESSAGE value="Add menu class" />
+    <MESSAGE value="Add controller_init() and model_init&#10;Separate config from settings.&#10;Revert back from using numeric state ids to original text state ids&#10;Use persistence.js code.&#10;Add model test harness." />
+    <MESSAGE value="Fix double model_init() calls" />
+    <MESSAGE value="Fix double model_init()" />
+    <MESSAGE value="." />
+    <MESSAGE value="Revert &quot;Fix double model_init()&quot;&#10;&#10;This reverts commit d42e0dad" />
+    <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;Fix double model_init()&quot;&#10;&#10;This reverts commit d42e0dad" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="275" y="22" key="#Deployment" timestamp="1596899643893">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="22" key="#Deployment/0.0.1366.728@0.0.1366.728" timestamp="1596899643893" />
+    <state x="475" y="222" key="#Scopes" timestamp="1596803231375">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="475" y="222" key="#Scopes/0.0.1366.728@0.0.1366.728" timestamp="1596803231375" />
+    <state x="501" y="175" key="#Web_Browsers" timestamp="1596894479850">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="501" y="175" key="#Web_Browsers/0.0.1366.728@0.0.1366.728" timestamp="1596894479850" />
+    <state x="158" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597054659092">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="158" y="0" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1597054659092" />
+    <state x="438" y="66" key="#xdebugger.evaluate" timestamp="1597059378031">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="438" y="66" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1597059378031" />
+    <state x="-11" y="0" width="1337" height="728" key="CommitChangelistDialog2" timestamp="1597069556452">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="-11" y="0" width="1337" height="728" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1597069556452" />
+    <state width="843" height="452" key="DebuggerActiveHint" timestamp="1597062757419">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="843" height="452" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1597062757419" />
+    <state x="92" y="92" width="1182" height="544" maximized="true" key="DiffContextDialog" timestamp="1597056607273">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="92" y="92" width="1182" height="544" maximized="true" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1597056607273" />
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1597055051423">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1597055051423" />
+    <state width="520" height="329" key="Git.Branch.Popup" timestamp="1597064437504">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="520" height="329" key="Git.Branch.Popup/0.0.1366.728@0.0.1366.728" timestamp="1597064437504" />
+    <state x="175" y="47" key="Git.Interactive.Rebase.Dialog" timestamp="1597044327122">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="175" y="47" key="Git.Interactive.Rebase.Dialog/0.0.1366.728@0.0.1366.728" timestamp="1597044327122" />
+    <state x="530" y="265" key="Git.Rebase.Log.Action.NewCommitMessage.Dialog" timestamp="1597044650114">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="530" y="265" key="Git.Rebase.Log.Action.NewCommitMessage.Dialog/0.0.1366.728@0.0.1366.728" timestamp="1597044650113" />
+    <state width="662" height="223" key="GridCell.Tab.0.bottom" timestamp="1597068521468">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="662" height="223" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1597068521468" />
+    <state width="662" height="223" key="GridCell.Tab.0.center" timestamp="1597068521467">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="662" height="223" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1597068521467" />
+    <state width="662" height="223" key="GridCell.Tab.0.left" timestamp="1597068521467">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="662" height="223" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1597068521467" />
+    <state width="662" height="223" key="GridCell.Tab.0.right" timestamp="1597068521468">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="662" height="223" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1597068521468" />
+    <state width="662" height="223" key="GridCell.Tab.1.bottom" timestamp="1597068622740">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="662" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1597068622740" />
+    <state width="662" height="223" key="GridCell.Tab.1.center" timestamp="1597068622738">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="662" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1597068622738" />
+    <state width="662" height="223" key="GridCell.Tab.1.left" timestamp="1597068622737">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="662" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1597068622737" />
+    <state width="662" height="223" key="GridCell.Tab.1.right" timestamp="1597068622738">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="662" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1597068622738" />
+    <state width="662" height="223" key="GridCell.Tab.2.bottom" timestamp="1597068521003">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="662" height="223" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1597068521003" />
+    <state width="662" height="223" key="GridCell.Tab.2.center" timestamp="1597068521002">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="662" height="223" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1597068521002" />
+    <state width="662" height="223" key="GridCell.Tab.2.left" timestamp="1597068521002">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="662" height="223" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1597068521002" />
+    <state width="662" height="223" key="GridCell.Tab.2.right" timestamp="1597068521003">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="662" height="223" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1597068521003" />
+    <state width="662" height="223" key="GridCell.Tab.3.bottom" timestamp="1597068521004">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="662" height="223" key="GridCell.Tab.3.bottom/0.0.1366.728@0.0.1366.728" timestamp="1597068521004" />
+    <state width="662" height="223" key="GridCell.Tab.3.center" timestamp="1597068521004">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="662" height="223" key="GridCell.Tab.3.center/0.0.1366.728@0.0.1366.728" timestamp="1597068521004" />
+    <state width="662" height="223" key="GridCell.Tab.3.left" timestamp="1597068521003">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="662" height="223" key="GridCell.Tab.3.left/0.0.1366.728@0.0.1366.728" timestamp="1597068521003" />
+    <state width="662" height="223" key="GridCell.Tab.3.right" timestamp="1597068521004">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="662" height="223" key="GridCell.Tab.3.right/0.0.1366.728@0.0.1366.728" timestamp="1597068521004" />
+    <state x="17" y="47" width="1312" height="619" key="MergeDialog" timestamp="1597047613670">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="17" y="47" width="1312" height="619" key="MergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1597047613670" />
+    <state x="301" y="106" key="MultipleFileMergeDialog" timestamp="1597047613680">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="301" y="106" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1597047613680" />
+    <state x="423" y="66" key="RollbackChangesDialog" timestamp="1597065880189">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="423" y="66" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1597065880189" />
+    <state x="334" y="0" key="SettingsEditor" timestamp="1596909752717">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="334" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1596909752717" />
+    <state x="92" y="92" width="1182" height="544" key="ShowDiffWithBranchDialog" timestamp="1596976600046">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="92" y="92" width="1182" height="544" key="ShowDiffWithBranchDialog/0.0.1366.728@0.0.1366.728" timestamp="1596976600046" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1596803469748">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1596803469748" />
+    <state x="449" y="68" key="VCS.ChangeListViewerDialog" timestamp="1597064578879">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="449" y="68" key="VCS.ChangeListViewerDialog/0.0.1366.728@0.0.1366.728" timestamp="1597064578879" />
+    <state x="530" y="277" key="VCS.ChangelistChooser" timestamp="1596778154103">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728@0.0.1366.728" timestamp="1596778154103" />
+    <state x="375" y="122" key="Vcs.Multiple.Commit.Info.Dialog.Key" timestamp="1596995195585">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="375" y="122" key="Vcs.Multiple.Commit.Info.Dialog.Key/0.0.1366.728@0.0.1366.728" timestamp="1596995195585" />
+    <state x="275" y="83" key="Vcs.Push.Dialog.v2" timestamp="1597047270047">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="83" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1597047270047" />
+    <state x="351" y="97" key="VcsDiffUtil.ChangesDialog" timestamp="1596803779849">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="351" y="97" key="VcsDiffUtil.ChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1596803779849" />
+    <state x="92" y="92" width="1182" height="544" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1596976600046">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="92" y="92" width="1182" height="544" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1596976600046" />
+    <state x="500" y="277" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597044892089">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="500" y="277" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1597044892089" />
+    <state x="235" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1596901037199">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="235" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1596901037199" />
+    <state x="389" y="97" width="790" height="592" key="find.popup" timestamp="1597064097017">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="389" y="97" width="790" height="592" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1597064097017" />
+    <state x="568" y="94" width="500" height="540" key="ftp.server.browser" timestamp="1596832345268">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="568" y="94" width="500" height="540" key="ftp.server.browser/0.0.1366.728@0.0.1366.728" timestamp="1596832345268" />
+    <state x="430" y="258" key="git4idea.ui.GitResetDialog" timestamp="1596950424379">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="430" y="258" key="git4idea.ui.GitResetDialog/0.0.1366.728@0.0.1366.728" timestamp="1596950424379" />
+    <state x="430" y="262" key="git4idea.ui.GitStashDialog" timestamp="1597064345535">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="430" y="262" key="git4idea.ui.GitStashDialog/0.0.1366.728@0.0.1366.728" timestamp="1597064345535" />
+    <state x="430" y="207" key="git4idea.ui.GitTagDialog" timestamp="1596951244527">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="430" y="207" key="git4idea.ui.GitTagDialog/0.0.1366.728@0.0.1366.728" timestamp="1596951244527" />
+    <state x="430" y="210" key="git4idea.ui.GitUnstashDialog" timestamp="1597064592458">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="430" y="210" key="git4idea.ui.GitUnstashDialog/0.0.1366.728@0.0.1366.728" timestamp="1597064592457" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1596892471122">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1596892471122" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/view/plan.html</url>
+          <line>701</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

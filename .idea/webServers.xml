@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="aca1b1f9-6829-4eef-b46b-b2f04e82a498" name="Falcoda" url="http://ftp.evergreen-consulting.co.uk">
+        <fileTransfer host="ftp.evergreen-consulting.co.uk" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

@@ -676,8 +676,8 @@
 <script>
 
     handle_stepStateChange = function(stepId, stateId) {
-        controller_handle_stepStateChange(stepId, stateId);
 
+        controller_handle_stepStateChange(stepId, stateId);
         refresh_totals();
     }
 
@@ -698,56 +698,37 @@
 
     }
 
-    refresh_totals = function(){
+    refresh_totals = function() {
+        let savings = yourSavings()
+
         //*** Update done values ***
-        let savedDonePerc = Math.round(getCarbonSavingsBySelectorValue("done"))
+        let savedDonePerc = Math.round(savings.completed)
         let savedDoneNewPercText = savedDonePerc + "%"
 
         let savedDonePercId = document.getElementById("savedDone")
-        if(savedDoneNewPercText !== savedDonePercId.innerText){
+        if (savedDoneNewPercText !== savedDonePercId.innerText) {
             savedDonePercId.innerText = savedDoneNewPercText
             pulse(savedDonePercId, "slideSource_fade")
         }
 
         //*** Update planned values ***
-        let savedPlannedPerc = Math.round(getCarbonSavingsBySelectorValue("aspiring"))
+        let savedPlannedPerc = Math.round(savings.planned)
         let savedPlannedNewPercText = savedPlannedPerc + "%"
 
         let savedPlannedPercId = document.getElementById("savedPlanned")
-        if(savedPlannedNewPercText !== savedPlannedPercId.innerText){
+        if (savedPlannedNewPercText !== savedPlannedPercId.innerText) {
             savedPlannedPercId.innerText = savedPlannedNewPercText
             pulse(savedPlannedPercId, 'slideSource_fade')
         }
 
         //*** Update feedback ***
-        let savedDoneThresholdPerc = 20;
 
         let feedbackId = document.getElementById("feedback");
-        if(savedDonePercId > savedDoneThresholdPerc) {
+        if (savedDonePercId > savedDoneThresholdPerc) {
             feedbackId.innerText = "Well done you have achieved more than 20% savings.<br>Keep up the good work!";
-        }else{
+        } else {
             feedbackId.innerText = ""
         }
-    }
-
-    getCarbonSavingsBySelectorValue=function(selectorValue) {
-        let stepSelectors = document.getElementsByClassName("form-control");
-        let i;
-        let saved = 0
-
-        console.log("Emissions for '" + selectorValue + "': Calculating ...")
-        for (i = 0; i < stepSelectors.length; i++) {   // Each selector
-            let stepSelector = stepSelectors[i];
-            let stepSelectorValue = stepSelector.value
-            if (stepSelectorValue === selectorValue) {
-                let emissionsString = stepSelector.parentNode.parentNode.children[1].innerText
-                // Get first number in string ignoring "," separator
-                let emissionsValue = parseFloat(emissionsString.replace(",", ""))
-                saved = saved + emissionsValue;
-            }
-        }
-        console.log("Emissions for '" + selectorValue + "': " + saved + "%")
-        return saved
     }
 
     refresh_steps = function(){
@@ -773,6 +754,8 @@
 			document.getElementById('resultsSummary').innerHTML = "12 out of 26 steps"
         }
     }
+
+
 
     controller_init()
 
