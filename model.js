@@ -82,9 +82,6 @@ let settings = [
 let volatilityConfirmed = false;
 
 model_init = function(){
-    // Read settings from cookie
-    console.log("model_init(): All cookies = " + document.cookie)
-
     loadValues()
 }
 
