@@ -17,10 +17,6 @@
     <link rel="stylesheet" href="lib/2.67123b20.chunk.css">
     <link rel="stylesheet" href="lib/main.a391ff7c.chunk.css">
 
-    <script src="../model.js"></script>
-	<script src="view.js"></script>
-    <script src="../controller.js"></script>
-
     <!-- Locals -->
 
 </head>
@@ -238,8 +234,7 @@ B&Q = £945
 <!--                                           Follow changes to this step<input type="checkbox"><br> -->
                                                 Change this step status to:
                                                 <select id="stepStateSelector"
-                                                        onFocus="this.oldIndex = this.selectedIndex"
-                                                        onChange="model_setStepStateId(step, this.value); this.selectedIndex = this.oldIndex"
+                                                        onChange="model_setStepStateId(step, this.value)"
                                                 >
                                                     <option value=""></option>
                                                     <option value="maybe">Maybe</option>
@@ -276,6 +271,9 @@ B&Q = £945
 <script src="../controller.js"></script>
 
 <script>
+
+    controller_init()
+
     //Select correct step
     let selectorId = document.getElementById('stepSelector');
 
@@ -287,7 +285,7 @@ B&Q = £945
         document.getElementById('step' + step + '_exec_info').style.display = "";
 
         // Set step state
-        document.getElementById('stepStateSelector').value = model_getStepState(step)
+        document.getElementById('stepStateSelector').value = model_getStepStateId(step)
     }
 
     handle_stepChange = function(){
