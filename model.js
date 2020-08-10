@@ -290,6 +290,20 @@ model_getStepReduction = function(stepId){
 
 // ============================================
 
+find_stepsByStateId = function(stateId){
+    let stepsByStateId=[]
+
+    settings.forEach(
+        step => {
+            if(step.stepStateId === stateId){
+                stepsByStateId.push(step)
+            }
+        }
+    );
+
+    return stepsByStateId
+}
+
 find_stepSettingsIndexByStepId = function(stepId){
     let index = settings.findIndex(
         stepEntry => stepEntry.stepId == stepId,
@@ -331,4 +345,17 @@ function loadValues() {
     }else{
         settings = JSON.parse(crh_cookiePair.split('=')[1]);
     }
+}
+
+create_selectHtml = function(steps, openTagContents){
+    html = "<select " + openTagContents + '>'
+    steps.forEach(
+        step => {html = html +
+            '<option value="' + step.stepId + '">'
+            + stepEntriesConfig[find_stepSettingsIndexByStepId(step.stepId)].summary
+            + '</option>'}
+    )
+    html = html + "</select>"
+
+    return html
 }

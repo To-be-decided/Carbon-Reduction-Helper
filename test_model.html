@@ -5,7 +5,6 @@
     <title>Title</title>
 
     <script src="model.js"></script>
-    <script src="persistence.js"></script>
 </head>
 <body>
 
@@ -23,6 +22,7 @@
 
     // Save a value locally
     model_setStepStateId("20", "test")
+    model_setStepStateId("30", "test")
 
     // Retrieve and check
     let localStepStateId_20 = model_getStepStateId("20")
@@ -42,6 +42,29 @@
     }else{
         console.log("Saving State: Failed (returned " + savedStepStateId_20 + ")")
     }
+
+//*** Test find_stepsByStateId ***
+    completedSteps = find_stepsByStateId("test")
+    if(
+        completedSteps.length === 2 &&
+        completedSteps[0].stepId === 20 &&
+        completedSteps[1].stepId === 30
+    ){
+        console.log("find_stepsByStateId: Passed")
+    }else{
+        console.log("find_stepsByStateId: Failed")
+        console.log("   completedSteps.length = " + completedSteps.length)
+        completedSteps.forEach(
+            step => console.log("   " + step.stepId)
+        )
+    }
+
+    console.log("Testing finding steps by non-existent stateId ...")
+    notExistSteps = find_stepsByStateId("notExist")
+    notExistSteps.forEach(
+        step => console.log(step.stepId)
+    )
+
 </script>
 
 </body>

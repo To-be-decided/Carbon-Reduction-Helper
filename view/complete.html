@@ -13,6 +13,9 @@
     <!-- Common file includes -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173546127-1"></script>
     <script src="lib/common.js"></script>
+    <script src="../model.js"></script>
+    <script src="view.js"></script>
+    <script src="../controller.js"></script>
     <link rel="stylesheet" href="lib/common.css">
     <link rel="stylesheet" href="lib/2.67123b20.chunk.css">
     <link rel="stylesheet" href="lib/main.a391ff7c.chunk.css">
@@ -266,11 +269,6 @@ B&Q = £945
     </div>
 </div>
 
-<script src="lib/common.js"></script>
-<script src="../model.js"></script>
-<script src="view.js"></script>
-<script src="../controller.js"></script>
-
 <script>
 
     controller_init()
@@ -298,6 +296,11 @@ B&Q = £945
 
         window.location.href = url;
     }
+
+    document.getElementById("stepSelector").innerHTML =
+        create_selectHtml(find_stepsByStateId("aspiring"), "")
+
+
 </script>
 
 </body>
