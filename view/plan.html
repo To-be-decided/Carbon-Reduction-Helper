@@ -674,6 +674,9 @@
 <!-------------------------------------------------------------->
 
 <script>
+
+    controller_init()
+
     handle_stepStateChange = function(stepId, stateId) {
         controller_handle_stepStateChange(stepId, stateId);
 
@@ -691,7 +694,7 @@
             stepStateSelectors,
             function(s){
                 let stepId = s.id.substring("step".length,999)
-                s.value = model_getStepState(stepId);
+                s.value = model_getStepStateId(stepId);
             }
         );
 
@@ -773,9 +776,12 @@
         }
     }
 
+model_init();
+
     refresh_stepStates();
     refresh_totals();
     refresh_steps();
+
 
     </script>
 

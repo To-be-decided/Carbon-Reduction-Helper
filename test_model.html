@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="model.js"></script>
+</head>
+<body>
+
+<script>
+    console.log("Starting")
+/*
+        "summary": "Replace gas boiler with a ground source heat pump",
+        "defaultState":  stepStateId_undefined,
+        "embedUrl": "https://docs.google.com/document/d/e/2PACX-1vQO1vSeA_MQYjiMZKKbB1tI6Pu9y9j1VAe7fnH7PTzoFS1v1XHfyxoiAmwVHn_THm6DPVoQNQrlTy3w/pub?embedded=true",
+*/
+    let editUrl_20 = model_getStepEditUrl("20")
+    if(editUrl_20 === "https://docs.google.com/document/d/10JEDaNkGi-s6BOkuW99qzfYAtC_mZnSyET0AGJl9CSE/edit#"){
+        console.log("EditURL: Passed")
+    }else{
+        console.log("EditURL: Failed (returned " + editUrl_20 + ")")
+    }
+
+    // Save a value locally
+    model_setStepState("20", "test")
+
+    // Retrieve and check
+    let localStepStateId_20 = model_getStepStateId("20")
+    if(localStepStateId_20 === "test"){
+        console.log("Setting State : Passed")
+    }else{
+        console.log("Setting State: Failed (returned " + localStepStateId_20 + ")")
+    }
+
+    // Reset local values
+    model_init()
+
+    // Retrieve and check
+    let savedStepStateId_20 = model_getStepStateId("20")
+    if(savedStepStateId_20 === "test"){
+        console.log("Saving State : Passed")
+    }else{
+        console.log("Saving State: Failed (returned " + savedStepStateId_20 + ")")
+    }
+</script>
+
+</body>
+</html>
