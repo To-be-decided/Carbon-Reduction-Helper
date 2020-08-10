@@ -675,8 +675,6 @@
 
 <script>
 
-    controller_init()
-
     handle_stepStateChange = function(stepId, stateId) {
         controller_handle_stepStateChange(stepId, stateId);
 
@@ -776,7 +774,9 @@
         }
     }
 
-model_init();
+    controller_init()
+
+    model_init();
 
     refresh_stepStates();
     refresh_totals();
