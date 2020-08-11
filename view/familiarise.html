@@ -22,6 +22,21 @@
     <script src="../controller.js"></script>
 
     <!-- Locals -->
+
+    <script>
+        handle_stepChange = function () {
+            //*** Set step in url
+            if(selectorId.value !== step){
+                window.location.href = 'familiarise.html?step=' + selectorId.value
+            }
+        }
+
+        handle_suggestChanges = function(){
+            alert("The information is stored in a Google doc so you will need to login in to Google")
+            window.open(model_getStepEditUrl(step));
+        }
+
+    </script>
 </head>
 
 <body data-gr-c-s-loaded="true">
@@ -66,7 +81,7 @@
                     <!--suppress HtmlDeprecatedAttribute -->
                     <div align="center">
                         <div class="tips unbranded"></div> <!-- Tips -->
-                        Familiarise step <div id="stepSelector"></div>
+                        Familiarise step <div id="stepSelectorDiv"></div>
                         <br>
                         <br>
                             <div align="right">
@@ -138,44 +153,35 @@
 <script>
     controller_init()
 
-    let selectorId = document.getElementById('stepSelector');
-    if(step !== "") selectorId.value = step
-
-    // Change selector to stored step state
-    stepStateSelector = document.getElementById('stepStateSelector')
-    stepStateSelector.value = model_getStepStateId(step);   // @todo Correct the stepId
-
-    handle_stepChange = function () {
-        document.getElementById('docFrame').src = "more_info_loading.html";
-        let url = 'familiarise.html'
-
-        if(selectorId.value !== ""){
-            url = url + '?step=' + selectorId.value
-        }
-        setTimeout("window.location.href = \'" + url + "\'", 0)
-
-    }
-
-    update_stepChange = function () {
-        let selectorId = document.getElementById('stepSelector');
-
-        if (selectorId.selectedIndex !== "") {
-            document.getElementById('docFrame').src = model_getStepEmbedUrl(step);
-        }
-    }
-
-    update_stepChange()
-
-    handle_suggestChanges = function(){
-        alert("The information is stored in a Google doc so you will need to login in to Google")
-        window.open(model_getStepEditUrl(step));
-    }
-
-    document.getElementById("stepSelector").innerHTML =
+    //*** Populate the step selector drop-down
+    let selectorDivId = document.getElementById('stepSelectorDiv');
+    selectorDivId.innerHTML =
         create_selectHtml(
             find_stepsByStateId("willFamiliarise"),
-            'id="stepSelector" onchange="handle_stepChange()'
+            'id="stepSelector" onchange="handle_stepChange()"'
         )
+
+    //*** Select the required step
+    let selectorId = document.getElementById('stepSelector')
+    if(step === "") {   // Select the first step
+        step = selectorId.value
+        handle_stepChange()
+    }else{  // Use the passed step
+        // @todo - Add an entry for the passed step
+        selectorId.value = step
+    }
+
+    //*** Set the step state
+    stepStateSelector = document.getElementById('stepStateSelector')
+    stepStateSelector.value = model_getStepStateId(step);
+
+    //*** Show related info
+    let embedUrl = model_getStepEmbedUrl(selectorId.value)
+    if(embedUrl === ""){
+        document.getElementById('docFrame').src = "more_info_notAvailable.html"
+    }else {
+        document.getElementById('docFrame').src = embedUrl;
+    }
 </script>
 
 </body>
