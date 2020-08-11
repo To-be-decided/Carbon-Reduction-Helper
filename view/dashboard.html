@@ -77,17 +77,12 @@
                                 </li>
                             </ul>
                         </div>
-                        <h3>Well done! You are making good progress.</h3>
+                        <h3 id="summaryMessageId">Loading ...</h3>
 
                         <table style="margin-left:40px" width="100%">
                             <tr>
-                                <td width="90%" colspan="2">
-                                    <h5>You have :</h5>
-                                    <ul>
-                                        <li>reduced your carbon emissions by <b>17%</b> this month <img src="images/tick.png"></li>
-                                        <li>saved a total of <b>17%</b> <img src="images/tick.png"></li>
-                                        <li>committed to saving a total of <b>69%</b> by ??? <img src="images/tick.png"></li>
-                                    </ul>
+                                <td id="detailedMessageId" width="90%" colspan="2">
+
                                 </td>
                             </tr>
                             <tr>
@@ -218,15 +213,54 @@
 </div>
 
     <script>
+        let savings
+
+        controller_init()
+
+        savings = yourSavings()
+
+        //*** Set progress bars ***
         pBar_set("governmentTarget_pbarId", "48")
-        pBar_set("youActual_pbarId", "23")
+        pBar_set("youActual_pbarId", savings.completed)
         pBar_set("friendsActual_pbarId", "21")
         pBar_set("worldActual_pbarId", "18")
 
         pBar_set("friendsPlanned_pbarId", "49")
         pBar_set("governmentTargetPlanned_pbarId", "48")
-        pBar_set("youPlanned_pbarId", "43")
+        pBar_set("youPlanned_pbarId", savings.completed + savings.planned)
         pBar_set("worldPlanned_pbarId", "28")
+
+        //*** Create and display motivational message
+        // Needs to be before setting "actualSavedId" and "plannedSavedId" control values
+        let msg=""
+        if(savings.completed >= 0.5){
+            msg = "Well done: You have exceeded the UK government target - but keep up the good work ..."
+        }else if(savings.completed === 0){
+            msg = "Well done: You are about to help make a better world"
+        }
+        document.getElementById("summaryMessageId").innerText = msg
+
+        let temp = ""
+        if(savings.completed === 0) {
+            temp = temp + '<h7>Started planning a better future by popping over to the <a href="plan.html">Select</a> and select your first carbon reduction action</h7><ul>'
+        }else{
+            temp = temp + '<h5>You have :</h5><ul>'
+            temp = temp + '<li>reduced your carbon emissions by <b>??%</b> this month <img src="images/tick.png"></li>'
+            temp = temp + '<li>saved a total of <b id="actualSavedId">??%</b> <img src="images/tick.png"></li>'
+            temp = temp + '<li>committed to saving a total of <b id="plannedSavedId">69%</b> by ??? <img src="images/tick.png"></li>'
+            temp = temp + '</ul>'
+        }
+        document.getElementById("detailedMessageId").innerHTML = temp
+
+
+
+        document.getElementById("actualSavedId").innerText = savings.completed + "%"
+        document.getElementById("plannedSavedId").innerText = (savings.completed + savings.planned) + "%"
+
+
+
+
+
     </script>
 </body>
 </html>

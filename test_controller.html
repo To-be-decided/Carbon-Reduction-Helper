@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="model.js"></script>
+<script src="controller.js"></script>
+<script src="persistence.js"></script>
+
+<script>
+    model_init()
+
+    model_setStepStateId(10, "done")  // 23
+    model_setStepStateId(20, "done")  // 23
+
+    model_setStepStateId(30, "aspiring")  // 20
+    model_setStepStateId(40, "aspiring")  // 17
+
+    let savings = yourSavings()
+    if(
+        savings["completed"] === (23 + 23) &&
+        savings["planned"] ===  (20 + 17)
+    ){
+        console.log("yourSavings(): Passed")
+    }else{
+        console.log("yourSavings(): Failed")
+    }
+
+
+    let testStepState = "maybe"
+    model_setStepStateId(50, testStepState)
+    model_reload()
+    actualStepState = model_getStepStateId(50)
+    if(actualStepState === testStepState){
+        console.log("Storage: Passed")
+    }else{
+        console.log("Storage: Failed!!!!!!!!!!!!!")
+    }
+
+
+</script>
+
+</body>
+</html>

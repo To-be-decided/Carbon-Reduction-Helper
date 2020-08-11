@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="lib/main.a391ff7c.chunk.css">
 
     <script src="../model.js"></script>
-    <script src="view.js"></script>
+	<script src="view.js"></script>
     <script src="../controller.js"></script>
 
     <!-- Locals -->
@@ -135,7 +135,7 @@
                                                 Change this step status to:
                                                 <select id="stepStateSelector"
                                                         onFocus="this.oldIndex = this.selectedIndex"
-                                                        onChange="model_setStepState(step, this.value); this.selectedIndex = this.oldIndex">
+                                                        onChange="model_setStepStateId(step, this.value)">
                                                     <option value=""></option>
                                                     <option value="maybe">Maybe</option>
                                                     <option value="aspiring">Plan to</option>
@@ -160,18 +160,15 @@
     </div>
 </div>
 
-
-
-
-
-
 <script>
+    controller_init()
+
     let selectorId = document.getElementById('stepSelector');
     if(step !== "") selectorId.value = step
 
     // Change selector to stored step state
     stepStateSelector = document.getElementById('stepStateSelector')
-    stepStateSelector.value = model_getStepState(step);   // @todo Correct the stepId
+    stepStateSelector.value = model_getStepStateId(step);   // @todo Correct the stepId
 
     handle_stepChange = function () {
         document.getElementById('docFrame').src = "more_info_loading.html";
