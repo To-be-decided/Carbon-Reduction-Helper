@@ -8,7 +8,7 @@
     <base href=".">
 
     <link rel="shortcut icon" href="images/favicon.ico">
-    <title>Carbon Reduction Helper - Complete</title>
+    <title>Carbon Reduction Helper - Adopt</title>
 
     <link href="lib/2.67123b20.chunk.css" rel="stylesheet">
     <link href="lib/main.a391ff7c.chunk.css" rel="stylesheet">
@@ -40,19 +40,19 @@
                     </button>
                     <div class="d-sm-inline-flex flex-sm-row-reverse collapse navbar-collapse">
                         <ul class="navbar-nav flex-grow">
-                            <li class="nav-item">
+                            <li class="nav-item menu_dashboard">
                                 <a class="text-dark nav-link disabled" href="dashboard.html">Dashboard</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item menu_select">
                                 <a class="text-dark nav-link" href="plan.html">Select</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item menu_familiarise">
                                 <a class="text-dark nav-link" href="familiarise.html">Familiarise</a>
                             </li>
-                            <li class="nav-item">
-                                <a disabled="" class="text-dark nav-link disabled" href="complete.html">[Complete]</a>
+                            <li class="nav-item menu_complete">
+                                <a disabled="" class="text-dark nav-link disabled" href="complete.html">[Adopt]</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item menu_help">
                                 <a class="text-dark nav-link" href="#" onclick="gotoMenu('help.html');return false">help</a></li>
                         </ul>
                     </div>
@@ -74,7 +74,7 @@
                             doing
                         </li>
                         <li>click on its associated status and select your preference, then</li>
-                        <li>click on [Familiarise] or [Complete] menus</li>
+                        <li>click on [Familiarise] or [Adopt] menus</li>
                     </ul>
                 </small>
 
@@ -102,7 +102,7 @@
                                     <select>
                                         <option></option>
                                         <option>In progress</option>
-                                        <option selected>Complete</option>
+                                        <option selected>Adopt</option>
                                     </select>
                                 </td>
                                 <td>
@@ -115,7 +115,7 @@
                                     <select>
                                         <option></option>
                                         <option>In progress</option>
-                                        <option selected>Complete</option>
+                                        <option selected>Adopt</option>
                                     </select>
                                 </td>
                                 <td>
@@ -152,11 +152,11 @@
                                                 Set this step status to:
                                                 <select onChange="alert('Not implement in this proof-of-concept')">
                                                     <option value=""></option>
-                                                    <option value="maybe">Maybe</option>
-                                                    <option value="aspiring">Plan to</option>
-                                                    <option value="done">Completed</option>
+                                                    <option value="maybe">Monitor</option>
+                                                    <option value="aspiring">Adopt</option>
+                                                    <option value="done">Mark as complete</option>
                                                     <option value="na">Not applicable</option>
-                                                    <option value="never">Never</option>
+                                                    <option value="never">Reject</option>
                                                 </select>
                                             </td>
                                         </tr>

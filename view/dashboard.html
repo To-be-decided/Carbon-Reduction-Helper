@@ -33,9 +33,7 @@
     <div id="root">
         <div>
             <header>
-<!--
-                <nav class="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 navbar navbar-light">
-                -->
+
                 <nav class="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 navbar-light">
                     <div class="container">
                         <a class="navbar-brand" href="../index.html">Carbon Reduction Helper (proof-of-concept)</a>
@@ -54,8 +52,8 @@
                                 <li class="nav-item menu_familiarise">
                                     <a class="text-dark nav-link" href="#" onclick="gotoMenu('familiarise.html');return false">Familiarise</a>
                                 </li>
-                                <li class="nav-item menu_complete" >
-                                    <a class="text-dark nav-link"  href="#" onclick="gotoMenu('complete.html');return false">Complete</a>
+                                <li class="nav-item menu_adopt" >
+                                    <a class="text-dark nav-link"  href="#" onclick="gotoMenu('complete.html');return false">Adopt</a>
                                 </li>
 
                                 <li class="nav-item menu_help">
@@ -69,14 +67,7 @@
             <div class="container-xl">
                 <div class="row">
                     <div class="col-md-8">
-                        <div class="tips" style="display:none">
-                            Tips:
-                            <ul>
-                                <li>
-                                    <small><i>This dashboard <b>uses fixed sample data</b> that reflects the default settings in the "select" page.</i></small>
-                                </li>
-                            </ul>
-                        </div>
+                        <div class="tips" style="display:none"></div>
                         <h3 id="summaryMessageId">Loading ...</h3>
 
                         <table style="margin-left:40px" width="100%">
@@ -242,7 +233,7 @@
 
         let temp = ""
         if(savings.completed === 0) {
-            temp = temp + '<h7>Started planning a better future by popping over to the <a href="plan.html">Select</a> and select your first carbon reduction action</h7><ul>'
+            temp = temp + '<h7>Start planning a better future by popping over to the <a href="plan.html">Select</a> and select your first carbon reduction action</h7><ul>'
         }else{
             temp = temp + '<h5>You have :</h5><ul>'
             temp = temp + '<li>reduced your carbon emissions by <b>??%</b> this month <img src="images/tick.png"></li>'

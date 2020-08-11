@@ -10,6 +10,14 @@
 /*    display: none !important; */
 }
 
+.nav-item {
+    font-size:16pt
+}
+
+.navbar-collapse{
+    width:500px
+}
+
 .menu_dashboard{
     /*
     width: 50px;
@@ -37,7 +45,7 @@
      */
 }
 
-.menu_complete{
+.menu_adopt{
 /*    width: 50px;
     height:50px;
     background-image: url("../images/complete.png");

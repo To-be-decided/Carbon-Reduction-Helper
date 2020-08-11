@@ -8,7 +8,7 @@
     <base href=".">
 
     <link rel="shortcut icon" href="images/favicon.ico">
-    <title>Carbon Reduction Helper - Complete</title>
+    <title>Carbon Reduction Helper - Adopt</title>
 
     <link href="lib/2.67123b20.chunk.css" rel="stylesheet">
     <link href="lib/main.a391ff7c.chunk.css" rel="stylesheet">
@@ -40,20 +40,20 @@
                     </button>
                     <div class="d-sm-inline-flex flex-sm-row-reverse collapse navbar-collapse">
                         <ul class="navbar-nav flex-grow">
-                            <li class="nav-item">
+                            <li class="nav-item menu_dashboard">
                                 <a class="text-dark nav-link" href="#" onclick="gotoMenu('dashboard.html');return false">Dashboard</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item menu_select">
                                 <a class="text-dark nav-link" href="#" onclick="gotoMenu('plan.html');return false">Select</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item menu_familiarise">
                                 <a class="text-dark nav-link" href="#" onclick="gotoMenu('familiarise.html');return false">Familiarise</a>
                             </li>
-                            <li class="nav-item">
-                                <a disabled="" class="text-dark nav-link"  href="#" onclick="gotoMenu('complete.html');return false">[Complete]</a>
+                            <li class="nav-item menu_adopt">
+                                <a disabled="" class="text-dark nav-link"  href="#" onclick="gotoMenu('complete.html');return false">[Adopt]</a>
                             </li>
 
-                            <li class="nav-item">
+                            <li class="nav-item menu_help">
                                 <a class="text-dark nav-link" href="#" onclick="gotoMenu('help.html');return false">Help</a>
                             </li>
                         </ul>
@@ -86,11 +86,11 @@
                                                 Set this step status to:
                                                 <select id="stepStateSelector" onFocus="this.oldIndex = this.selectedIndex" onChange="model_setStepStateId(step, this.value); this.selectedIndex = this.oldIndex">
                                                     <option value=""></option>
-                                                    <option value="maybe">Maybe</option>
-                                                    <option value="aspiring">Plan to</option>
-                                                    <option value="done">Completed</option>
+                                                    <option value="maybe">Monitor</option>
+                                                    <option value="aspiring">Adopt</option>
+                                                    <option value="done">Mark as complete</option>
                                                     <option value="na">Not applicable</option>
-                                                    <option value="never">Never</option>
+                                                    <option value="never">Reject</option>
                                                 </select>
                                                 <br>
                                                 <br>

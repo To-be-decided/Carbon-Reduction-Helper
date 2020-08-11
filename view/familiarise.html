@@ -49,8 +49,8 @@
                             <li class="nav-item menu_familiarise">
                                 <a class="text-dark nav-link" disabled="" href="#" onclick="gotoMenu('familiarise.html');return false">[Familiarise]</a>
                             </li>
-                            <li class="nav-item menu_complete">
-                                <a class="text-dark nav-link" href="#" onclick="gotoMenu('complete.html');return false">Complete</a>
+                            <li class="nav-item menu_adopt">
+                                <a class="text-dark nav-link" href="#" onclick="gotoMenu('complete.html');return false">Adopt</a>
                             </li>
                             <li class="nav-item menu_help">
                                 <a class="text-dark nav-link" href="#" onclick="gotoMenu('help.html');return false">Help</a>
@@ -66,7 +66,7 @@
                     <!--suppress HtmlDeprecatedAttribute -->
                     <div align="center">
                         <div class="tips unbranded"></div> <!-- Tips -->
-                        <div id="stepSelector"></div>
+                        Familiarise step <div id="stepSelector"></div>
                         <br>
                         <br>
                             <div align="right">
@@ -86,7 +86,7 @@
                         <div>
                             Note:<br>
                                If you don't have off-road parking there are several options to install on-street charge points.<br>
-                            Automatically submit your request for on-street charging in the Complete page.
+                            Automatically submit your request for on-street charging in the Adopt page.
                         </div>
                         -->
                     </div>
@@ -111,12 +111,12 @@
                                                         onFocus="this.oldIndex = this.selectedIndex"
                                                         onChange="model_setStepStateId(step, this.value)">
                                                     <option value=""></option>
-                                                    <option value="maybe">Maybe</option>
-                                                    <option value="willFamiliarise">Needs familiarisation</option>
-                                                    <option value="aspiring">Plan to</option>
-                                                    <option value="done">Completed</option>
+                                                    <option value="maybe">Monitor</option>
+                                                    <option value="willFamiliarise">Familiarise myself</option>
+                                                    <option value="aspiring">Adopt</option>
+                                                    <option value="done">Mark as complete</option>
                                                     <option value="na">Not applicable</option>
-                                                    <option value="never">Never</option>
+                                                    <option value="never">Reject</option>
                                                 </select>
                                                 <br>
                                                 Follow changes to this step<input type="checkbox"><br>
