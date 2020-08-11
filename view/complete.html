@@ -281,17 +281,30 @@ B&Q = £945
     }
 
     handle_stepChange = function(){
-        let url = 'complete.html'
+        let stepSelectorDivId = document.getElementById('stepSelectorDiv');
+        let selectorId = document.getElementById('stepSelector')
 
-        if(selectorId.value !== ""){
-            url = url + '?step=' + selectorId.value
+        //*** Set step in url
+        if(selectorId.value !== step){
+
+            let openTagContents = 'id="stepSelector" onchange="handle_stepChange()"'
+            if(selectorId.value === "all"){
+                // Display all steps
+                stepSelectorDivId.innerHTML =
+                    create_selectHtmlByStepStateId('all', openTagContents)
+            }else if(selectorId.value === "filtered"){
+                // Display
+                selectorDivId.innerHTML =
+                    create_selectHtmlByStepStateId( 'aspiring', openTagContents )
+            } else {
+                window.location.href = 'complete.html?step=' + selectorId.value
+            }
         }
 
-        window.location.href = url;
     }
 
-    document.getElementById("stepSelector").innerHTML =
-        create_selectHtml(find_stepsByStateId("aspiring"), "")
+    handle_stepChange()
+//    document.getElementById("stepSelector").innerHTML = create_selectHtml(find_stepsByStateId("aspiring"), "")
 
 
 </script>

@@ -5,7 +5,7 @@ stepStateId_undefined   = ""
  * @summary
  * @type {({summary: string, embedUrl: string, editUrl: string, defaultState: string, stepId: number}|{summary: string, embedUrl: string, editUrl: string, defaultState: string, stepId: number}|{summary: string, embedUrl: string, editUrl: string, defaultState: string, stepId: number}|{summary: string, embedUrl: string, editUrl: string, defaultState: string, stepId: number}|{summary: string, embedUrl: string, editUrl: string, defaultState: string, stepId: number})[]}
  */
-let stepEntriesConfig = [
+var stepEntriesConfig = [
     {
         "stepId": 10,
         "summary": "Replace gas boiler with an air source heat pump",
@@ -293,6 +293,8 @@ model_getStepReduction = function(stepId){
 find_stepsByStateId = function(stateId){
     let stepsByStateId=[]
 
+    if(stateId === "all") return JSON.parse(JSON.stringify(settings))
+
     settings.forEach(
         step => {
             if(step.stepStateId === stateId){
@@ -311,6 +313,11 @@ find_stepSettingsIndexByStepId = function(stepId){
     )
     return index
 }
+
+find_stepConfigEntryByStepId = function(stepId){
+    return stepEntriesConfig[find_stepConfigIndexByStepId(stepId)]
+}
+
 
 find_stepConfigIndexByStepId = function(stepId){
     let index = stepEntriesConfig.findIndex(
@@ -347,14 +354,32 @@ function loadValues() {
     }
 }
 
-create_selectHtml = function(steps, openTagContents){
+create_selectHtmlByStepStateId = function(stepStateId, openTagContents){
+    let steps=[]
+
+    if(stepStateId === "all"){
+        steps = JSON.parse(JSON.stringify(stepEntriesConfig))
+    }
+
     html = "<select " + openTagContents + '>'
-    steps.forEach(
-        step => {html = html +
-            '<option value="' + step.stepId + '">'
-            + stepEntriesConfig[find_stepSettingsIndexByStepId(step.stepId)].summary
-            + '</option>'}
+    settings.forEach(
+        step => {
+            if(step.stepStateId === stepStateId || stepStateId === "all") {
+                // Find the configuration entry for that step
+                config = find_stepConfigEntryByStepId(step.stepId)
+
+                html = html +
+                    '<option value="' + config.stepId + '">'
+                    + config.summary + "     (" + config.reduction + "%)"
+                    + '</option>'
+            }
+        }
     )
+    if(stepStateId === "all") {
+        html = html + "<option value='filtered'>[Filtered only ...]</option>"
+    }else{
+        html = html + "<option value='all'>[Display all ...]</option>"
+    }
     html = html + "</select>"
 
     return html

@@ -25,9 +25,25 @@
 
     <script>
         handle_stepChange = function () {
+
+            let stepSelectorDivId = document.getElementById('stepSelectorDiv');
+            let selectorId = document.getElementById('stepSelector')
+
             //*** Set step in url
             if(selectorId.value !== step){
-                window.location.href = 'familiarise.html?step=' + selectorId.value
+
+                let openTagContents = 'id="stepSelector" onchange="handle_stepChange()"'
+                if(selectorId.value === "all"){
+                    // Display all steps
+                    stepSelectorDivId.innerHTML =
+                        create_selectHtmlByStepStateId('all', openTagContents)
+                }else if(selectorId.value === "filtered"){
+                    // Display
+                    selectorDivId.innerHTML =
+                        create_selectHtmlByStepStateId( 'willFamiliarise', openTagContents )
+                } else {
+                    window.location.href = 'familiarise.html?step=' + selectorId.value
+                }
             }
         }
 
@@ -81,7 +97,7 @@
                     <!--suppress HtmlDeprecatedAttribute -->
                     <div align="center">
                         <div class="tips unbranded"></div> <!-- Tips -->
-                        Familiarise step <div id="stepSelectorDiv"></div>
+                        Familiarise with step <div id="stepSelectorDiv"></div>
                         <br>
                         <br>
                             <div align="right">
@@ -156,8 +172,8 @@
     //*** Populate the step selector drop-down
     let selectorDivId = document.getElementById('stepSelectorDiv');
     selectorDivId.innerHTML =
-        create_selectHtml(
-            find_stepsByStateId("willFamiliarise"),
+        create_selectHtmlByStepStateId(
+            "willFamiliarise",
             'id="stepSelector" onchange="handle_stepChange()"'
         )
 
