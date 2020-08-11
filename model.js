@@ -354,27 +354,39 @@ function loadValues() {
     }
 }
 
-create_selectHtmlByStepStateId = function(stepStateId, openTagContents){
+create_selectHtmlByStepStateId = function(stepStateId, openTagContents, additionalEntryCount){
     let steps=[]
 
+    html = "<select " + openTagContents + '>'
+
+    // *** Find entries to display
     if(stepStateId === "all"){
         steps = JSON.parse(JSON.stringify(stepEntriesConfig))
+    }else {
+        settings.forEach(
+            step => {
+                if (step.stepStateId === stepStateId) {
+                    steps.push(find_stepConfigEntryByStepId(step.stepId))
+                }
+            }
+        )
     }
-
-    html = "<select " + openTagContents + '>'
-    settings.forEach(
-        step => {
-            if(step.stepStateId === stepStateId || stepStateId === "all") {
-                // Find the configuration entry for that step
+    if(steps.length + additionalEntryCount > 0) {  // THEN there are items to display
+        steps.forEach(
+            step => {
                 config = find_stepConfigEntryByStepId(step.stepId)
 
                 html = html +
                     '<option value="' + config.stepId + '">'
-                    + config.summary + "     (" + config.reduction + "%)"
+                    + config.reduction + "% : " + config.summary
                     + '</option>'
             }
-        }
-    )
+        )
+    }else{ // No entries to display
+        html = html + "<option value='' selected>[No selected steps to display - see Display All below]</option>"
+        stepStateId = "dummy"  // To force the all option to be added
+    }
+
     if(stepStateId === "all") {
         html = html + "<option value='filtered'>[Filtered only ...]</option>"
     }else{
@@ -384,3 +396,14 @@ create_selectHtmlByStepStateId = function(stepStateId, openTagContents){
 
     return html
 }
+
+addOptionToSelectByControl = function(selectControl){
+    let config = find_stepConfigEntryByStepId(step)
+
+    option = document.createElement("option")
+    option.value = config.stepId
+    option.text = config.reduction + "% : " + config.summary
+
+    selectControl.options.add(option, selectControl.options[0]);
+}
+

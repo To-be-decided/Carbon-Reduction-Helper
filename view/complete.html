@@ -22,6 +22,30 @@
 
     <!-- Locals -->
 
+<script>
+    handle_stepChange = function(){
+        let stepSelectorDivId = document.getElementById('stepSelectorDiv');
+        let selectorId = document.getElementById('stepSelector')
+
+        //*** Set step from url
+        if(selectorId.value !== step){
+
+            let openTagContents = 'id="stepSelector" onchange="handle_stepChange()"'
+			if(selectorId.value === "all"){  //THEN display all steps.
+                stepSelectorDivId.innerHTML =
+                    create_selectHtmlByStepStateId('all', openTagContents, 0)
+            }else if(selectorId.value === "filtered"){
+                // Display
+                selectorDivId.innerHTML =
+                    create_selectHtmlByStepStateId( 'aspiring', openTagContents )
+            } else {
+                window.location.href = 'complete.html?step=' + selectorId.value
+            }
+        }
+
+    }
+</script>
+
 </head>
 
 <body data-gr-c-s-loaded="true">
@@ -66,7 +90,7 @@
                 <div class="col-md-8">
                     <div align="center">
                         <div class="tips unbranded"></div> <!-- Tips -->
-                        Select step to work on<select id="stepSelector" onchange="handle_stepChange()"></select>
+                        Adopt <div id="stepSelectorDiv"></div>
                         <br>
                         .
                     </div>
@@ -241,6 +265,7 @@ B&Q = £945
                                                     <option value="never">Reject</option>
                                                 </select>
                                                 <br>
+                                                Follow changes to this step<input type="checkbox"><br>
                                                 <br>
                                                 <p>
                                                     [Print ...]<br>
@@ -263,50 +288,41 @@ B&Q = £945
 </div>
 
 <script>
-
     controller_init()
 
-    //Select correct step
-    let selectorId = document.getElementById('stepSelector');
+    //*** Populate the step selector drop-down
+    let selectorDivId = document.getElementById('stepSelectorDiv');
+    selectorDivId.innerHTML =
+        create_selectHtmlByStepStateId(
+            "aspiring",
+            'id="stepSelector" onchange="handle_stepChange()"',
+            0
+        )
 
-    if(step !== "") {
-        // Set step
-        selectorId.value = step
+    //*** Select the required step
+    if(step === "") {   // THEN no specific step override
+        handle_stepChange()
+    }else{  // Use the passed step
+        if(selectHasValueByControl(selectorDivId.innerHTML, step)) {  // THEN is already in select
+            selectorId.value = step
+        }else{
+            selectorDivId.innerHTML =
+                create_selectHtmlByStepStateId(
+                    "aspiring",
+                    'id="stepSelector" onchange="handle_stepChange()"',
+                    1
+                )
+            addOptionToSelectByControl(document.getElementById("stepSelector"))
+        }
 
         // Display step info
         document.getElementById('step' + step + '_exec_info').style.display = "";
-
-        // Set step state
-        document.getElementById('stepStateSelector').value = model_getStepStateId(step)
     }
 
-    handle_stepChange = function(){
-        let stepSelectorDivId = document.getElementById('stepSelectorDiv');
-        let selectorId = document.getElementById('stepSelector')
-
-        //*** Set step in url
-        if(selectorId.value !== step){
-
-            let openTagContents = 'id="stepSelector" onchange="handle_stepChange()"'
-            if(selectorId.value === "all"){
-                // Display all steps
-                stepSelectorDivId.innerHTML =
-                    create_selectHtmlByStepStateId('all', openTagContents)
-            }else if(selectorId.value === "filtered"){
-                // Display
-                selectorDivId.innerHTML =
-                    create_selectHtmlByStepStateId( 'aspiring', openTagContents )
-            } else {
-                window.location.href = 'complete.html?step=' + selectorId.value
-            }
-        }
-
-    }
-
-    handle_stepChange()
-//    document.getElementById("stepSelector").innerHTML = create_selectHtml(find_stepsByStateId("aspiring"), "")
-
-
+    //*** Set the step state
+    stepStateSelector = document.getElementById('stepStateSelector')
+    stepStateSelector.value = model_getStepStateId(step);
+		
 </script>
 
 </body>

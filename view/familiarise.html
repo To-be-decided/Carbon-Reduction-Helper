@@ -29,14 +29,13 @@
             let stepSelectorDivId = document.getElementById('stepSelectorDiv');
             let selectorId = document.getElementById('stepSelector')
 
-            //*** Set step in url
-            if(selectorId.value !== step){
+            //*** Set step from url
+            if(selectorId.value !== step){  // THEN step is different than step dropdown
 
                 let openTagContents = 'id="stepSelector" onchange="handle_stepChange()"'
-                if(selectorId.value === "all"){
-                    // Display all steps
+                if(selectorId.value === "all"){  //THEN display all steps.
                     stepSelectorDivId.innerHTML =
-                        create_selectHtmlByStepStateId('all', openTagContents)
+                        create_selectHtmlByStepStateId('all', openTagContents, 0)
                 }else if(selectorId.value === "filtered"){
                     // Display
                     selectorDivId.innerHTML =
@@ -97,7 +96,8 @@
                     <!--suppress HtmlDeprecatedAttribute -->
                     <div align="center">
                         <div class="tips unbranded"></div> <!-- Tips -->
-                        Familiarise with step <div id="stepSelectorDiv"></div>
+                        Familiarise with <div id="stepSelectorDiv"></div>
+                    </div>
                         <br>
                         <br>
                             <div align="right">
@@ -139,7 +139,6 @@
                                             <td>
                                                 Change this step status to:
                                                 <select id="stepStateSelector"
-                                                        onFocus="this.oldIndex = this.selectedIndex"
                                                         onChange="model_setStepStateId(step, this.value)">
                                                     <option value=""></option>
                                                     <option value="maybe">Monitor</option>
@@ -174,17 +173,27 @@
     selectorDivId.innerHTML =
         create_selectHtmlByStepStateId(
             "willFamiliarise",
-            'id="stepSelector" onchange="handle_stepChange()"'
+            'id="stepSelector" onchange="handle_stepChange()"',
+			0
         )
 
     //*** Select the required step
     let selectorId = document.getElementById('stepSelector')
-    if(step === "") {   // Select the first step
-        step = selectorId.value
+    if(step === "") {   // THEN no specific step override
         handle_stepChange()
     }else{  // Use the passed step
-        // @todo - Add an entry for the passed step
-        selectorId.value = step
+        if(selectHasValueByControl(selectorDivId.innerHTML, step)) {  // THEN is already in select
+            selectorId.value = step
+        }else{
+            selectorDivId.innerHTML =
+                create_selectHtmlByStepStateId(
+                    "willFamiliarise",
+                    'id="stepSelector" onchange="handle_stepChange()"',
+                    1
+                )
+            addOptionToSelectByControl(document.getElementById("stepSelector"))
+        }
+
     }
 
     //*** Set the step state
