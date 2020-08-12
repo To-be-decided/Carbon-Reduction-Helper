@@ -10,6 +10,18 @@
     gtag('config', 'UA-173546127-1');
     window.dataLayer = window.dataLayer || [];
 
+    entering = function(proc, message){
+        console.log(">>>>> " + proc)
+    }
+
+    exiting = function(proc, message){
+        console.log("<<<<< " + proc)
+    }
+
+    log = function(proc, message){
+        console.log(proc + " - " + message)
+    }
+
 
 // Common parameters
 const queryString = window.location.search;

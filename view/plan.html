@@ -69,6 +69,18 @@
     function handle_adopt(){
         document.getElementById("AdoptButtonId").disabled = false
     }
+
+    function handle_adoptButtonClick(){
+
+        //*** Set the step in the url to the version selected
+        step = document.querySelector('input[name="selStep"]:checked').value  // For gotoMenu()
+
+        //*** Mark the step as adopting and save
+        setStepState(step, 'aspiring')
+
+        //*** Goto the familiarise page
+        gotoMenu("familiarise.html")
+    }
 </script>
 
 <!-------------------------------------------------------------->
@@ -234,7 +246,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio">
+                                                    <input name="selStep"  type="radio" value="10" oninput="handle_adopt()">
                                                 </div>
                                         </tr>
                                         <tr>
@@ -246,7 +258,7 @@
                                             <td class="unbranded">
                                                 <div class="advancedMode">
                                                     <select class="stateSelector form-control" id="step20"
-                                                            onChange="handle_stepStateChange(10, this.value)"
+                                                            onChange="handle_stepStateChange(20, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
                                                         <option value="maybe">Monitor</option>
@@ -257,7 +269,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio">
+                                                    <input name="selStep"  type="radio"  value="20" oninput="handle_adopt()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -271,7 +283,7 @@
                                             <td class="unbranded">
                                                 <div class="advancedMode">
                                                     <select class="stateSelector form-control" id="step30"
-                                                            onChange="handle_stepStateChange(10, this.value)"
+                                                            onChange="handle_stepStateChange(30, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
                                                         <option value="maybe">Monitor</option>
@@ -282,7 +294,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep" type="radio" >
+                                                    <input name="selStep"  type="radio" value="30" oninput="handle_adopt()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -296,7 +308,7 @@
                                             <td class="unbranded">
                                                 <div class="advancedMode">
                                                     <select class="stateSelector form-control" id="step40"
-                                                            onChange="handle_stepStateChange(10, this.value)"
+                                                            onChange="handle_stepStateChange(40, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
                                                         <option value="maybe">Monitor</option>
@@ -307,7 +319,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="40" oninput="handle_adopt()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -322,7 +334,7 @@
                                             <td class="unbranded">
                                                 <div class="advancedMode">
                                                     <select class="stateSelector form-control" id="step50"
-                                                            onChange="handle_stepStateChange(10, this.value)"
+                                                            onChange="handle_stepStateChange(50, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
                                                         <option value="maybe">Monitor</option>
@@ -333,7 +345,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="50" oninput="handle_adopt()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -347,7 +359,7 @@
                                             <td class="unbranded">
                                                 <div class="advancedMode">
                                                     <select class="stateSelector form-control" id="step60"
-                                                            onChange="handle_stepStateChange(10, this.value)"
+                                                            onChange="handle_stepStateChange(60, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
                                                         <option value="maybe">Monitor</option>
@@ -358,7 +370,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="60" oninput="handle_adopt()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -371,7 +383,7 @@
                                             <td class="unbranded">
                                                 <div class="advancedMode">
                                                     <select class="stateSelector form-control" id="step70"
-                                                            onChange="handle_stepStateChange(10, this.value)"
+                                                            onChange="handle_stepStateChange(70, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
                                                         <option value="maybe">Monitor</option>
@@ -382,7 +394,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="70" value="step" oninput="handle_adopt()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -394,7 +406,7 @@
                                             <td class="unbranded">
                                                 <div class="advancedMode">
                                                     <select class="stateSelector form-control" id="step80"
-                                                            onChange="handle_stepStateChange(10, this.value)"
+                                                            onChange="handle_stepStateChange(80, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
                                                         <option value="maybe">Monitor</option>
@@ -405,7 +417,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="80" oninput="handle_adopt()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -419,7 +431,7 @@
                                             <td class="unbranded">
                                                 <div class="advancedMode">
                                                     <select class="stateSelector form-control" id="step90"
-                                                            onChange="handle_stepStateChange(10, this.value)"
+                                                            onChange="handle_stepStateChange(90, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
                                                         <option value="maybe">Monitor</option>
@@ -430,7 +442,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="90" oninput="handle_adopt()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -442,7 +454,7 @@
                                             <td class="unbranded">
                                                 <div class="advancedMode">
                                                     <select class="stateSelector form-control" id="step100"
-                                                            onChange="handle_stepStateChange(10, this.value)"
+                                                            onChange="handle_stepStateChange(100, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
                                                         <option value="maybe">Monitor</option>
@@ -453,7 +465,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="100" oninput="handle_adopt()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -465,7 +477,7 @@
                                             <td class="unbranded">
                                                 <div class="advancedMode">
                                                     <select class="stateSelector form-control" id="step110"
-                                                            onChange="handle_stepStateChange(10, this.value)"
+                                                            onChange="handle_stepStateChange(110, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
                                                         <option value="maybe">Monitor</option>
@@ -476,7 +488,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="110" oninput="handle_adopt()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -488,7 +500,7 @@
                                             <td class="unbranded">
                                                 <div class="advancedMode">
                                                     <select class="stateSelector form-control" id="step120"
-                                                            onChange="handle_stepStateChange(10, this.value)"
+                                                            onChange="handle_stepStateChange(120, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
                                                         <option value="maybe">Monitor</option>
@@ -499,7 +511,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="120" oninput="handle_adopt()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -511,7 +523,7 @@
                                             <td class="unbranded">
                                                 <div class="advancedMode">
                                                     <select class="stateSelector form-control" id="step130"
-                                                            onChange="handle_stepStateChange(10, this.value)"
+                                                            onChange="handle_stepStateChange(130, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
                                                         <option value="maybe">Monitor</option>
@@ -522,7 +534,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="130" oninput="handle_adopt()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -534,7 +546,7 @@
                                             <td class="unbranded">
                                                 <div class="advancedMode">
                                                     <select class="stateSelector form-control" id="step140"
-                                                            onChange="handle_stepStateChange(10, this.value)"
+                                                            onChange="handle_stepStateChange(140, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
                                                         <option value="maybe">Monitor</option>
@@ -545,7 +557,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="140" oninput="handle_adopt()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -558,7 +570,7 @@
                                             <td class="costEffectiveness">??<br>%/£/yr</td>
                                             <td class="unbranded">
                                                 <div class="advancedMode">
-                                                    <select id="step140" class="stateSelector form-control" onChange="handle_stepStateChange(10, this.value)" style="width:150px">
+                                                    <select id="step140" class="stateSelector form-control" onChange="handle_stepStateChange(150, this.value)" style="width:150px">
                                                         <option value=""></option>
                                                         <option value="maybe">Monitor</option>
                                                         <option value="willFamiliarise">Familiarise myself</option>
@@ -568,7 +580,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="150" oninput="handle_adopt()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -581,7 +593,7 @@
                                             <td class="unbranded">
                                                 <div class="advancedMode">
                                                     <select class="stateSelector form-control" id="step150"
-                                                            onChange="handle_stepStateChange(10, this.value)"
+                                                            onChange="handle_stepStateChange(150, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
                                                         <option value="maybe">Monitor</option>
@@ -592,7 +604,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="160" oninput="handle_adopt()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -603,8 +615,8 @@
                                             <td class="costEffectiveness">??<br>%/£/yr</td>
                                             <td class="unbranded">
                                                 <div class="advancedMode">
-                                                    <select class="stateSelector form-control" id="step160"
-                                                            onChange="handle_stepStateChange(10, this.value)"
+                                                    <select class="stateSelector form-control" id="step170"
+                                                            onChange="handle_stepStateChange(170, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
                                                         <option value="maybe">Monitor</option>
@@ -615,7 +627,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="170" oninput="handle_adopt()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -626,8 +638,8 @@
                                             <td class="costEffectiveness">??<br>%/£/yr</td>
                                             <td class="unbranded">
                                                 <div class="advancedMode">
-                                                    <select class="stateSelector form-control" id="step170"
-                                                            onChange="handle_stepStateChange(10, this.value)"
+                                                    <select class="stateSelector form-control" id="step180"
+                                                            onChange="handle_stepStateChange(180, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
                                                         <option value="maybe">Monitor</option>
@@ -638,7 +650,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="180" oninput="handle_adopt()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -651,8 +663,8 @@
                                             <td class="costEffectiveness">??<br>%/£/yr</td>
                                             <td class="unbranded">
                                                 <div class="advancedMode">
-                                                    <select class="stateSelector form-control" id="step180"
-                                                            onChange="handle_stepStateChange(10, this.value)"
+                                                    <select class="stateSelector form-control" id="step190"
+                                                            onChange="handle_stepStateChange(190, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
                                                         <option value="maybe">Monitor</option>
@@ -663,7 +675,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="190" oninput="handle_adopt()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -675,8 +687,8 @@
                                             <td class="costEffectiveness">??<br>%/£/yr</td>
                                             <td class="unbranded">
                                                 <div class="advancedMode">
-                                                    <select class="stateSelector form-control" id="step190"
-                                                            onChange="handle_stepStateChange(10, this.value)"
+                                                    <select class="stateSelector form-control" id="step200"
+                                                            onChange="handle_stepStateChange(200, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
                                                         <option value="maybe">Monitor</option>
@@ -687,7 +699,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="200" oninput="handle_adopt()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -698,8 +710,8 @@
                                             <td class="costEffectiveness">??<br>%/£/yr</td>
                                             <td class="unbranded">
                                                 <div class="advancedMode">
-                                                    <select class="stateSelector form-control" id="step200"
-                                                            onChange="handle_stepStateChange(10, this.value)"
+                                                    <select class="stateSelector form-control" id="step210"
+                                                            onChange="handle_stepStateChange(210, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
                                                         <option value="maybe">Monitor</option>
@@ -710,7 +722,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="210" oninput="handle_adopt()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -721,8 +733,8 @@
                                             <td class="costEffectiveness">??<br>%/£/yr</td>
                                             <td class="unbranded">
                                                 <div class="advancedMode">
-                                                    <select class="stateSelector form-control" id="step210"
-                                                            onChange="handle_stepStateChange(10, this.value)"
+                                                    <select class="stateSelector form-control" id="step220"
+                                                            onChange="handle_stepStateChange(220, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
                                                         <option value="maybe">Monitor</option>
@@ -733,7 +745,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="220" oninput="handle_adopt()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -744,8 +756,8 @@
                                             <td class="costEffectiveness">??<br>%/£/yr</td>
                                             <td class="unbranded">
                                                 <div class="advancedMode">
-                                                    <select class="stateSelector form-control" id="step220"
-                                                            onChange="handle_stepStateChange(10, this.value)"
+                                                    <select class="stateSelector form-control" id="step230"
+                                                            onChange="handle_stepStateChange(230, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
                                                         <option value="maybe">Monitor</option>
@@ -756,7 +768,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="230" oninput="handle_adopt()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -767,8 +779,8 @@
                                             <td class="costEffectiveness">??<br>%/£/yr</td>
                                             <td class="unbranded">
                                                 <div class="advancedMode">
-                                                    <select class="stateSelector form-control" id="step230"
-                                                            onChange="handle_stepStateChange(10, this.value)"
+                                                    <select class="stateSelector form-control" id="step240"
+                                                            onChange="handle_stepStateChange(240, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
                                                         <option value="maybe">Monitor</option>
@@ -779,7 +791,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="240" oninput="handle_adopt()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -790,8 +802,8 @@
                                             <td class="costEffectiveness">Max<br>%/£/yr</td>
                                             <td class="unbranded">
                                                 <div class="advancedMode">
-                                                    <select class="stateSelector form-control" id="step240"
-                                                            onChange="handle_stepStateChange(10, this.value)"
+                                                    <select class="stateSelector form-control" id="step250"
+                                                            onChange="handle_stepStateChange(250, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
                                                         <option value="maybe">Monitor</option>
@@ -802,7 +814,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="250" oninput="handle_adopt()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -813,8 +825,8 @@
                                             <td class="costEffectiveness">Max<br>%/£/yr</td>
                                             <td class="unbranded">
                                                 <div class="advancedMode">
-                                                    <select class="stateSelector form-control" id="step250"
-                                                            onChange="handle_stepStateChange(10, this.value)"
+                                                    <select class="stateSelector form-control" id="step260"
+                                                            onChange="handle_stepStateChange(260, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
                                                         <option value="maybe">Monitor</option>
@@ -825,7 +837,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="260" oninput="handle_adopt()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -836,8 +848,8 @@
                                             <td class="costEffectiveness">Max<br>%/£/yr</td>
                                             <td class="unbranded">
                                                 <div class="advancedMode">
-                                                    <select class="stateSelector form-control" id="step260"
-                                                            onChange="handle_stepStateChange(10, this.value)"
+                                                    <select class="stateSelector form-control" id="step270"
+                                                            onChange="handle_stepStateChange(270, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
                                                         <option value="maybe">Monitor</option>
@@ -848,7 +860,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="270" oninput="handle_adopt()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -878,9 +890,10 @@
                                             <input
                                                     id="AdoptButtonId"
                                                     type="button"
-                                                    value="Adopt"
+                                                    value="Familiarise with selected step"
                                                     style="width:200px; height:70px; font-size:30px"
                                                     disabled
+                                                    onclick="handle_adoptButtonClick()"
                                             >
                                         </div>
                                     </div> <!-- Car 2 - body -->

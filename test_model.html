@@ -6,66 +6,142 @@
 
     <script src="model.js"></script>
 </head>
+
+<script>
+
+</script>
 <body>
 
 <script>
+    test_setStepStateId = function() {
+        model_default()
+
+        let editUrl_20 = model_getStepEditUrl("20")
+        if (editUrl_20 === "https://docs.google.com/document/d/10JEDaNkGi-s6BOkuW99qzfYAtC_mZnSyET0AGJl9CSE/edit#") {
+            console.log("getEditURL: Passed")
+        } else {
+            console.log("getEditURL: Failed (returned " + editUrl_20 + ")")
+        }
+
+        // Save a value locally
+        model_setStepStateId("20", "test")
+        model_setStepStateId("30", "test")
+
+        // Retrieve and check
+        let localStepStateId_20 = model_getStepStateId("20")
+        if (localStepStateId_20 === "test") {
+            console.log("setStepState: Passed")
+        } else {
+            console.log("setStepState: Failed (returned " + localStepStateId_20 + ")")
+        }
+
+        // Reset local values
+        loadValues()
+
+        // Retrieve and check
+        let savedStepStateId_20 = model_getStepStateId("20")
+        if (savedStepStateId_20 === "test") {
+            console.log("Saving State : Passed")
+        } else {
+            console.log("Saving State: Failed (returned " + savedStepStateId_20 + ")")
+        }
+    }
+
+    //*** Test find_stepsByStateId ***
+    test_find_stepsByStateId = function()
+    {
+        completedSteps = find_stepsByStateId("test")
+        if (
+            completedSteps.length === 2 &&
+            completedSteps[0].stepId === 20 &&
+            completedSteps[1].stepId === 30
+        ) {
+            console.log("find_stepsByStateId: Passed")
+        } else {
+            console.log("find_stepsByStateId: Failed")
+            console.log("   completedSteps.length = " + completedSteps.length)
+            completedSteps.forEach(
+                step => console.log("   " + step.stepId)
+            )
+        }
+
+        console.log("Testing finding steps by non-existent stateId ...")
+        notExistSteps = find_stepsByStateId("notExist")
+        notExistSteps.forEach(
+            step => console.log(step.stepId)
+        )
+}
+
+    call_create_selectHtmlByStepStateId = function(test, stepStateId, openTagContents, additionalEntryCount, exp_html){
+        let act_html = create_selectHtmlByStepStateId(stepStateId, openTagContents, additionalEntryCount);
+
+        if(act_html === exp_html) {
+            console.log(test & ": Passed")
+        }else{
+            console.log(test & ": Failed:")
+            console.log("   Expected : " + exp_html)
+            console.log("   Actual   : " + act_html)
+        }
+    }
+
+    test_create_selectHtmlByStepStateId = function() {
+        model_default()
+        model_setStepStateId("10", "test")
+        model_setStepStateId("20", "test")
+
+        let exp = ""
+        let test = ""
+
+        test = "No filtered entries and no warning"
+        exp =
+            "<select id='testId'><option value='all'>[Display all ...]</option></select>"
+        call_create_selectHtmlByStepStateId(test, "missing", "id='testId'", 1, exp)
+
+        test = "No filtered entries and warning"
+        exp =
+            "<select id='testId'><option value='' selected>[No 'missing' steps selected - use Display All below]</option><option value='all'>[Display all ...]</option></select>"
+        call_create_selectHtmlByStepStateId(test, "missing", "id='testId'", 0, exp)
+
+        test = "Filtered entries without warning"
+        exp =
+            "<select ><option value='10' selected>23% : Replace gas boiler with an air source heat pump</option><option value='20'>23% : Replace gas boiler with a ground source heat pump</option><option value='all'>[Display all ...]</option></select>"
+        call_create_selectHtmlByStepStateId(test, "test", "", 1, exp)
+
+        test = "Filtered entries and warning"
+        exp =
+            "<select ><option value='10' selected>23% : Replace gas boiler with an air source heat pump</option><option value='20'>23% : Replace gas boiler with a ground source heat pump</option><option value='all'>[Display all ...]</option></select>"
+        call_create_selectHtmlByStepStateId(test, "test", "", 0, exp)
+
+        test = "Opening tag contents"
+        exp =
+            "<select id='testId'><option value='10' selected>23% : Replace gas boiler with an air source heat pump</option><option value=\'20\'>23% : Replace gas boiler with a ground source heat pump</option><option value='all'>[Display all ...]</option></select>"
+        call_create_selectHtmlByStepStateId(test, "test", "id='testId'", 0, exp)
+
+        test = "All entries"
+        exp = "<select ><option value='10' selected>23% : Replace gas boiler with an air source heat pump</option><option value='20'>23% : Replace gas boiler with a ground source heat pump</option><option value='30'>20% : Replace 5 beef (herd) portions per week with poultry</option><option value='40'>17% : Replace a petrol car with an electric car</option><option value='50'>17% : Increase loft insulation from ??cm to ??cm in a gas heated house with an old boiler</option><option value='60'>9% : Replace old gas boiler with a new condensing boiler</option><option value='70'>8% : Commute by walking rather than driving a petrol car</option><option value='80'>8% : Replace 2 beef (herd) portions/week with poultry</option><option value='90'>7% : Reduce home thermostat by 2 deg C in a house with an old gas central heating</option><option value='100'>5% : Work 1 day/week at home rather than commuting via a petrol car</option><option value='110'>8% : Drive rather than fly to holiday location 1,000 miles away</option><option value='120'>5% : One staycation per year rather than a 1,000 mile flight.</option><option value='130'>4% : Share a petrol car to work</option><option value='140'>3% : Install solar PV panels</option><option value='150'>2% : Switch to a car with 10% better mpg</option><option value='160'>2% : Switch to commuting by bus rather than a petrol car</option><option value='170'>1.6% : Use a train rather than drive on some long trips</option><option value='180'>1% : Install a solar immersion heater diverter feeding a electric hot water tank</option><option value='190'>1% : Install solar thermal panels with an electric powered hot water system</option><option value='200'>0.9% : Fill a dishwasher rather than using a half load</option><option value='210'>0.8% : Reduce your standby power by 50w</option><option value='220'>0.7% : Replace vented or condensing tumble dryer with heat pump model</option><option value='230'>0.6% : Switch to a start-stop car with same MPG</option><option value='240'>0.6% : Reduce maximum speed on motorway from 70 to 65 mph</option><option value='250'>0.6% : Convert 5 x 60w incandescent light bulbs to LED</option><option value='260'>0.2% : Dry clothes on washing line rather than tumble dryer</option><option value='filtered'>[Filtered only ...]</option></select>"
+        "<select id='testId'><option value='10' selected>23% : Replace gas boiler with an air source heat pump</option><option value=\'20\'>23% : Replace gas boiler with a ground source heat pump</option><option value='all'>[Display all ...]</option></select>"
+        call_create_selectHtmlByStepStateId(test, "all", "", 0, exp)
+    }
+
+
+    // =================================================================================
+
     console.log("Starting tests")
 
     model_init()
+    test_create_selectHtmlByStepStateId()
+    test_setStepStateId()
+    test_find_stepsByStateId()
 
-    let editUrl_20 = model_getStepEditUrl("20")
-    if(editUrl_20 === "https://docs.google.com/document/d/10JEDaNkGi-s6BOkuW99qzfYAtC_mZnSyET0AGJl9CSE/edit#"){
-        console.log("getEditURL: Passed")
-    }else{
-        console.log("getEditURL: Failed (returned " + editUrl_20 + ")")
-    }
+    console.log("Testing create_selectHtmlByStepStateId() ...")
+    let html = create_selectHtmlByStepStateId(10, "", 0);
 
-    // Save a value locally
-    model_setStepStateId("20", "test")
-    model_setStepStateId("30", "test")
-
-    // Retrieve and check
-    let localStepStateId_20 = model_getStepStateId("20")
-    if(localStepStateId_20 === "test"){
-        console.log("setStepState: Passed")
-    }else{
-        console.log("setStepState: Failed (returned " + localStepStateId_20 + ")")
-    }
-
-    // Reset local values
-    loadValues()
-
-    // Retrieve and check
-    let savedStepStateId_20 = model_getStepStateId("20")
-    if(savedStepStateId_20 === "test"){
-        console.log("Saving State : Passed")
-    }else{
-        console.log("Saving State: Failed (returned " + savedStepStateId_20 + ")")
-    }
-
-//*** Test find_stepsByStateId ***
-    completedSteps = find_stepsByStateId("test")
-    if(
-        completedSteps.length === 2 &&
-        completedSteps[0].stepId === 20 &&
-        completedSteps[1].stepId === 30
-    ){
-        console.log("find_stepsByStateId: Passed")
-    }else{
-        console.log("find_stepsByStateId: Failed")
-        console.log("   completedSteps.length = " + completedSteps.length)
-        completedSteps.forEach(
-            step => console.log("   " + step.stepId)
-        )
-    }
-
-    console.log("Testing finding steps by non-existent stateId ...")
-    notExistSteps = find_stepsByStateId("notExist")
-    notExistSteps.forEach(
-        step => console.log(step.stepId)
-    )
+//    model_setStepStateId("10", "test")
 
 </script>
 
 </body>
 </html>
+
+
+

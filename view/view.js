@@ -2,10 +2,9 @@ view_init = function(){
 
 }
 
-function selectHasValueByControl(c, value) {
-    if (c !== null) {
-        return (c.indexOf('value="' + value + '"') > -1);
-    } else {
-        return false;
-    }
+function selectHasValueByControl(sObj, value) {
+/*    for(i=0; i<sObj.options.length; i++){
+        if(sObj.options[i].value == value) return true
+    } */
+    return sObj.indexOf('value="' + value + '"') > -1
 }

@@ -7,11 +7,29 @@
 <body>
 
 <script src="view.js"></script>
+
+<select id="select1" onchange="test()">
+    <option value="1" selected>1</option>
+    <option value="2">2</option>
+</select>
+
+<input type="button" onclick="test()">
+
 <script>
-    openTag = 'id="stepSelector" onchange="handle_stepChange()"'
+    console.log("Starting ...")
+
+    e = document.getElementById("select1")
+    e.value = "2"
+
+    test = function(){
+        alert("Changed")
+    }
+
+    console.log("Testing present     = " + selectHasValueByControl(document.getElementById('select1'), "1"))
+    console.log("Testing not-present = " + selectHasValueByControl(document.getElementById('select1'), "notPresent"))
+    console.log("Testing empty       = " + selectHasValueByControl(document.getElementById('select1'), ""))
 
 </script>
-
 
 </body>
 </html>

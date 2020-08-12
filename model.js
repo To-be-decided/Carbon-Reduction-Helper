@@ -61,7 +61,7 @@ var stepEntriesConfig = [
         "editUrl": "",
     },{
         "stepId": 80,
-        "summary": "Replace 2 beef (herd) portions/week with poultry<",
+        "summary": "Replace 2 beef (herd) portions/week with poultry",
         "reduction": 8,
         "embedUrl": "",
         "editUrl": "",
@@ -215,8 +215,12 @@ model_init = function(){
 }
 
 model_reload = function(){
-    settings = JSON.parse(JSON.stringify(defaultSettings))
+    model_default()
     loadValues()
+}
+
+model_default = function(){
+    settings = JSON.parse(JSON.stringify(defaultSettings))
 }
 
 model_setStepStateId = function (stepId, stateId) {
@@ -354,49 +358,67 @@ function loadValues() {
     }
 }
 
+/**
+ * @summary Create HTML code for a dropdown containing a list of steps of a given state.
+ * @param stepStateId        The id representing the step state to be filtered for (eg "willFamiliarise")
+ * @param openTagContents    The options within the opening tag (eg id="me" value="default")
+ * @param additionalEntryCount  The number of additional entries that will be added later.
+ *                              If this is 0 and there are no steps fitting the stepStateId criteria,
+ *                              an option will be included to summarise no options available.
+ *                              Set to 1 to disable the no entries message
+ * @returns {string}        HTML representing the drop-down
+ * @notes                   The first entry will be set as "selected"
+ *                          The dropdown options are in the format
+ *                              "13% : Summary of step entry"
+ */
 create_selectHtmlByStepStateId = function(stepStateId, openTagContents, additionalEntryCount){
-    let steps=[]
+    let html=""
+    let other=""
+    let firstEntry = true
 
     html = "<select " + openTagContents + '>'
+    html = html + "<option disabled>------ For " + stepStateId + " -------</option>"
 
-    // *** Find entries to display
-    if(stepStateId === "all"){
-        steps = JSON.parse(JSON.stringify(stepEntriesConfig))
-    }else {
-        settings.forEach(
-            step => {
-                if (step.stepStateId === stepStateId) {
-                    steps.push(find_stepConfigEntryByStepId(step.stepId))
+    settings.forEach(
+        step => {
+            config = find_stepConfigEntryByStepId(step.stepId)
+
+            if (step.stepStateId === stepStateId || stepStateId === "all") {
+
+                html = html +"<option value='" + config.stepId + "'"
+                if(firstEntry) {
+                    html = html + " selected"
+                    firstEntry = false
                 }
-            }
-        )
-    }
-    if(steps.length + additionalEntryCount > 0) {  // THEN there are items to display
-        steps.forEach(
-            step => {
-                config = find_stepConfigEntryByStepId(step.stepId)
+                html = html + '>' + config.reduction + "% : " + config.summary + '</option>'
 
-                html = html +
-                    '<option value="' + config.stepId + '">'
-                    + config.reduction + "% : " + config.summary
-                    + '</option>'
-            }
-        )
-    }else{ // No entries to display
-        html = html + "<option value='' selected>[No selected steps to display - see Display All below]</option>"
-        stepStateId = "dummy"  // To force the all option to be added
-    }
+            }else{
 
-    if(stepStateId === "all") {
-        html = html + "<option value='filtered'>[Filtered only ...]</option>"
-    }else{
-        html = html + "<option value='all'>[Display all ...]</option>"
-    }
+                other = other +"<option value='" + config.stepId + "'"
+                if(firstEntry) {
+                    html = html + " selected"
+                    firstEntry = false
+                }
+                other = other + '>' + config.reduction + "% : " + config.summary + '</option>'
+
+            }
+        }
+    )
+    html = html + "<option disabled>------ Others -------</option>"
+    html = html + other
     html = html + "</select>"
 
     return html
 }
 
+/* @todo Where does it add the new option? */
+/**
+ * @summary Adds a select option based on the "step" global parameter to the defined selection control.
+ * The new option is in the format of
+ * <option value="config.stepId">config.summary</option>
+ *
+ * @param selectControl  The destination "select" control to add the option to.
+ */
 addOptionToSelectByControl = function(selectControl){
     let config = find_stepConfigEntryByStepId(step)
 
