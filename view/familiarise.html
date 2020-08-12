@@ -134,33 +134,32 @@
                         <div class="tips unbranded"></div> <!-- Tips -->
                         Familiarise with <div id="stepSelectorDiv"></div>
                     </div>
-                        <br>
-                        <br>
-                            <div align="right">
-                            [<a
-                                href="#"
-                                onClick="handle_suggestChanges(); return false"
-                            >Suggest updates ...</a>]
-                        </div>
-
-                        <iframe
-                                id="docFrame"
-                                src="more_info_blank.html"
-                                width="740" height="1000">
-                        </iframe><br>
-
-                        <!-- @todo - to be evaluated.
-                        <div>
-                            Note:<br>
-                               If you don't have off-road parking there are several options to install on-street charge points.<br>
-                            Automatically submit your request for on-street charging in the Adopt page.
-                        </div>
-                        -->
-                    </div>
                     <br>
-                    <div id="discussion1">
-                        <div id="disqus_thread"></div>
+                    <br>
+                    <div align="right">
+                        [<a
+                            href="#"
+                            onClick="handle_suggestChanges(); return false"
+                        >Suggest updates ...</a>]
                     </div>
+
+                    <iframe
+                            id="docFrame"
+                            src="more_info_blank.html"
+                            width="740" height="1000">
+                    </iframe><br>
+
+                    <!-- @todo - to be evaluated.
+                    <div>
+                        Note:<br>
+                           If you don't have off-road parking there are several options to install on-street charge points.<br>
+                        Automatically submit your request for on-street charging in the Adopt page.
+                    </div>
+                    -->
+                </div>
+                <br>
+                <div id="discussion1">
+                    <div id="disqus_thread"></div>
                 </div>
                 <div class="col-md-4">
                     <div class="sticky-top pt-2 unbranded">
@@ -187,6 +186,15 @@
                                                 <br>
                                                 Follow changes to this step<input type="checkbox"><br>
                                                 <br>
+                                                <input
+                                                        id="AdoptButtonId"
+                                                        type="button"
+                                                        value="Adopt"
+                                                        style="width:200px; height:70px; font-size:30px"
+                                                        disabled
+                                                        onclick="handle_adoptButtonClick()"
+                                                >
+
                                             </td>
                                         </tr>
                                     </table>
@@ -197,6 +205,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>

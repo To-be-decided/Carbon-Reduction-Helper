@@ -24,26 +24,48 @@
 
 <script>
     handle_stepChange = function(){
+        entering("handle_stepChange")
+
         let stepSelectorDivId = document.getElementById('stepSelectorDiv');
         let selectorId = document.getElementById('stepSelector')
 
         //*** Set step from url
-        if(selectorId.value !== step){
-
-            let openTagContents = 'id="stepSelector" onchange="handle_stepChange()"'
-			if(selectorId.value === "all"){  //THEN display all steps.
-                stepSelectorDivId.innerHTML =
-                    create_selectHtmlByStepStateId('all', openTagContents, 0)
-            }else if(selectorId.value === "filtered"){
-                // Display
-                selectorDivId.innerHTML =
-                    create_selectHtmlByStepStateId( 'aspiring', openTagContents )
-            } else {
-                window.location.href = 'complete.html?step=' + selectorId.value
-            }
+        if(selectorId.value !== step){  // THEN step is different than step dropdown
+            log("handle_stepChange", "Reloading page with step = " + selectorId.value)
+            window.location.href = 'complete.html?step=' + selectorId.value
         }
 
+        refresh_all()
+        exiting("handle_stepChange")
     }
+
+    refresh_all = function(){
+        entering("refresh_all")
+
+        //*** Set the step state
+        stepStateSelector = document.getElementById('stepStateSelector')
+        log("refresh_all", "Changing state drop-down from "
+            + "'" + stepStateSelector.value + "' to "
+            + "'" + model_getStepStateId(step) + "'")
+
+        stepStateSelector.value = model_getStepStateId(step);
+        // Note - setting a select element value above does not trigger the onchange() event.
+        // This isn't a problem as no action is required.
+        // It has been confirmed that setting the value property, correctly registers the new status but doesn't
+        // trigger the onchange() event
+
+        //*** Show related info
+        log("refresh_all", "Showing more information")
+        let embedUrl = model_getStepEmbedUrl(selectorId.value)
+        if(embedUrl === ""){
+            document.getElementById('docFrame').src = "more_info_notAvailable.html"
+        }else {
+            document.getElementById('docFrame').src = embedUrl;
+        }
+
+        exiting("refresh_all")
+    }
+
 </script>
 
 </head>
@@ -288,41 +310,41 @@ B&Q = £945
 </div>
 
 <script>
+    entering("Initialising")
     controller_init()
 
     //*** Populate the step selector drop-down
+    log("Initialising", "Populating the step drop-down")
     let selectorDivId = document.getElementById('stepSelectorDiv');
     selectorDivId.innerHTML =
         create_selectHtmlByStepStateId(
             "aspiring",
             'id="stepSelector" onchange="handle_stepChange()"',
-            0
+			0
         )
 
     //*** Select the required step
-    if(step === "") {   // THEN no specific step override
-        handle_stepChange()
-    }else{  // Use the passed step
-        if(selectHasValueByControl(selectorDivId.innerHTML, step)) {  // THEN is already in select
-            selectorId.value = step
-        }else{
-            selectorDivId.innerHTML =
-                create_selectHtmlByStepStateId(
-                    "aspiring",
-                    'id="stepSelector" onchange="handle_stepChange()"',
-                    1
-                )
-            addOptionToSelectByControl(document.getElementById("stepSelector"))
-        }
+    log("Initialising", "Select required step")
+    let selectorId = document.getElementById('stepSelector')
+    if(step === "") {   // THEN no specific step override to use
+
+        selectorId.value = "10"  // Initialise to first entry
+
+    }else {  // Use the passed step
+        log("Initialising", "step in URL detected")
+
+        selectorId.value = step   // Note - the onchange() will not fire
 
         // Display step info
         document.getElementById('step' + step + '_exec_info').style.display = "";
-    }
 
-    //*** Set the step state
-    stepStateSelector = document.getElementById('stepStateSelector')
-    stepStateSelector.value = model_getStepStateId(step);
-		
+        // Set step state
+        document.getElementById('stepStateSelector').value = model_getStepStateId(step)
+    }
+    // Fire onchange event - as setting value did not fire before
+    selectorId.dispatchEvent(new Event('change'));
+
+    exiting("Initialising")
 </script>
 
 </body>
