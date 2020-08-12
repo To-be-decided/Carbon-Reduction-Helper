@@ -2,23 +2,23 @@
     width: 100%;
 
     background-color: rgb(255, 255, 0);
-    !important;
+!important;
 }
 
 .unbranded {
     /* The "important" below is needed because the display is overridden in plan.html */
-/*    display: none !important; */
+    /*    display: none !important; */
 }
 
 .nav-item {
-    font-size:16pt
+    font-size: 16pt
 }
 
-.navbar-collapse{
-    width:500px
+.navbar-collapse {
+    width: 500px
 }
 
-.menu_dashboard{
+.menu_dashboard {
     /*
     width: 50px;
     height:50px;
@@ -27,16 +27,16 @@
      */
 }
 
-.menu_select{
-/*
-    width: 50px;
-    height:50px;
-    background-image: url("../images/select.png");
-    background-size: 100% 100%;
- */
+.menu_select {
+    /*
+        width: 50px;
+        height:50px;
+        background-image: url("../images/select.png");
+        background-size: 100% 100%;
+     */
 }
 
-.menu_familiarise{
+.menu_familiarise {
     /*
     width: 50px;
     height:50px;
@@ -45,19 +45,35 @@
      */
 }
 
-.menu_adopt{
-/*    width: 50px;
-    height:50px;
-    background-image: url("../images/complete.png");
-    background-size: 100% 100%;
-    */
+.menu_adopt {
+    /*    width: 50px;
+        height:50px;
+        background-image: url("../images/complete.png");
+        background-size: 100% 100%;
+        */
 }
 
-.menu_help{
+.menu_help {
     /*
     width: 50px;
     height:50px;
     background-image: url("../images/help.png");
     background-size: 100% 100%;
      */
+}
+
+.advancedMode {
+    display: none !important
+}
+
+.easyMode {
+}
+
+/* Hide default radio styles */
+[type=radio] {
+    position: absolute;
+    opacity: 0.5;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }
