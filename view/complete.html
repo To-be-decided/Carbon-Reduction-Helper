@@ -80,7 +80,7 @@
         if(step === "") {   // THEN no step in URL
 
             // @todo Initialising to step '10' needs reviewing and maybe udpating to first step in list
-            selectorId.value = "10"  // Initialise to first entry
+//            selectorId.value = "10"  // Initialise to first entry
 
         }else {  // Use the passed step
             log("Initialising", "step in URL detected")
@@ -360,6 +360,7 @@ B&Q = £945
     refresh_all()
 
     // Fire onchange event - as setting value did not fire before
+    let selectorId = document.getElementById('stepSelector')
     selectorId.dispatchEvent(new Event('change'));
 
     exiting("Initialising")

@@ -61,6 +61,18 @@
             refresh_stepList()
         }
 
+        function handle_adoptButtonClick(){
+
+            //*** Set the step in the url to the version selected
+            step = document.getElementById('stepSelector').value  // For gotoMenu()
+
+            //*** Mark the step as adopting and save
+            model_setStepStateId(step, "aspiring")
+
+            //*** Goto the familiarise page
+            gotoMenu("complete.html")
+        }
+
         refresh_all = function(){
             entering("refresh_all")
 
@@ -80,7 +92,7 @@
             // trigger the onchange() event
 
             //*** Show related info
-refresh_stepInfo()
+            refresh_stepInfo()
 
             exiting("refresh_all")
         }
@@ -101,8 +113,8 @@ refresh_stepInfo()
             let selectorId = document.getElementById('stepSelector')
             if(step === "") {   // THEN no step in URL
 
-                // @todo Initialising to step '10' needs reviewing and maybe udpating to first step in list
-                selectorId.value = "10"  // Initialise to first entry
+                // @todo Initialising to step '10' needs reviewing and maybe updating to first step in list
+//                selectorId.value = "10"  // Initialise to first entry
 
             }else {  // Use the passed step
                 log("Initialising", "step in URL detected")
@@ -232,8 +244,7 @@ refresh_stepInfo = function(){
                                                         type="button"
                                                         value="Adopt"
                                                         style="width:200px; height:70px; font-size:30px"
-                                                        disabled
-                                                        onclick="handle_familiariseButtonClick()"
+                                                        onclick="handle_adoptButtonClick()"
                                                 >
 
                                             </td>

@@ -76,7 +76,6 @@
         step = document.querySelector('input[name="selStep"]:checked').value  // For gotoMenu()
 
         //*** Mark the step as adopting and save
-        setStepState(step, 'willFamiliarise')
         model_setStepStateId(step, "willFamiliarise")
 
         //*** Goto the familiarise page
@@ -920,10 +919,6 @@
         refresh_totals();
     }
 
-    setStepState = function (stepId, stateId) {
-        document.getElementById("step" + stepId).value = stateId
-    }
-
     refresh_stepStates = function () {
         let stepStateSelectors = document.getElementsByClassName('stateSelector');
 
@@ -998,13 +993,11 @@
         }
     }
 
-
     controller_init()
 
     refresh_stepStates();
     refresh_totals();
     refresh_steps();
-
 
 </script>
 
