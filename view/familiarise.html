@@ -67,7 +67,7 @@
             step = document.getElementById('stepSelector').value  // For gotoMenu()
 
             //*** Mark the step as adopting and save
-            model_setStepStateId(step, "aspiring")
+            model_setStepStateId(step, "adopting")
 
             //*** Goto the familiarise page
             gotoMenu("complete.html")
@@ -103,7 +103,7 @@
             let selectorDivId = document.getElementById('stepSelectorDiv');
             selectorDivId.innerHTML =
                 create_selectHtmlByStepStateId(
-                    "willFamiliarise",
+                    "familiarising",
                     'id="stepSelector" onchange="handle_stepChange()"',
                     0
                 )
@@ -232,18 +232,18 @@ refresh_stepInfo = function(){
                                                         class = "quickMenuButton"
                                                         onclick="handle_adoptButtonClick()"
                                                 >
-                                                Change this step status to:
+                                                Change status to:
                                                 <select id="stepStateSelector"
                                                         onChange="handle_stepStateChange(this.value)">
                                                     <option value=""></option>
-                                                    <option value="maybe">Monitor</option>
-                                                    <option value="willFamiliarise">Familiarise myself</option>
-                                                    <option value="aspiring">Adopt</option>
-                                                    <option value="done">Mark as complete</option>
+                                                    <option value="monitoring">Monitoring</option>
+                                                    <option value="familiarising">Familiarising</option>
+                                                    <option value="adopting">Adopting</option>
+                                                    <option value="completed">Completed</option>
                                                     <option value="na">Not applicable</option>
-                                                    <option value="never">Reject</option>
-                                                </select>
-                                                Follow changes to this step<input type="checkbox"><br>
+                                                    <option value="rejected">Rejected</option>
+                                                </select><br>
+                                                Follow changes <input type="checkbox"><br>
                                             </td>
                                         </tr>
                                     </table>

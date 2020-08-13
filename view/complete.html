@@ -55,7 +55,7 @@
         let selectorDivId = document.getElementById('stepSelectorDiv');
         selectorDivId.innerHTML =
             create_selectHtmlByStepStateId(
-                "willFamiliarise",
+                "familiarising",
                 'id="stepSelector" onchange="handle_stepChange()"',
                 0
             )
@@ -102,7 +102,7 @@
         step = selectorId.value  // For gotoMenu()
 
         //*** Mark the step as completed and save
-        model_setStepStateId(step, "done")
+        model_setStepStateId(step, "completed")
 
         refresh_stepStates()
 
@@ -338,19 +338,20 @@ B&Q = £945
                                                         value="Completed"
                                                         class="quickMenuButton"
                                                         onclick="handle_completedButtonClick()"
-                                                >
+                                                ><br>
+                                                Change status to:
                                                 <select id="stepStateSelector"
                                                         onChange="handle_stepStateChange(this.value)"
                                                 >
-                                                    <option value="">Advanced state selection ...</option>
                                                     <option value=""></option>
-                                                    <option value="maybe">Monitor</option>
-                                                    <option value="willFamiliarise">Familiarise myself</option>
-                                                    <option value="aspiring">Adopt</option>
-                                                    <option value="done">Mark as complete</option>
+                                                    <option value="monitoring">Monitoring</option>
+                                                    <option value="familiarising">Familiarising</option>
+                                                    <option value="adopting">Adopting</option>
+                                                    <option value="completed">Completed</option>
                                                     <option value="na">Not applicable</option>
-                                                    <option value="never">Reject</option>
+                                                    <option value="rejected">Rejected</option>
                                                 </select>
+                                                <br>
                                                 Follow changes to this step<input type="checkbox"><br>
                                                 <p>
                                                     [Print ...]<br>

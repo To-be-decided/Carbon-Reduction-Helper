@@ -10,7 +10,7 @@ var stepEntriesConfig = [
         "stepId": 10,
         "summary": "Replace gas boiler with an air source heat pump",
         "reduction": 23,
-        "defaultState": "aspiring",
+        "defaultState": "adopting",
         "embedUrl": "https://docs.google.com/document/d/e/2PACX-1vSU47SJDExoBZlMuUMcKxciv-G4TCcy-LLFG6WLu2o5TJb88uQ7RVbq9x0MVrvwII04DwcB5lNdVZ4G/pub?embedded=true",
         "editUrl": "https://docs.google.com/document/u/0/d/1pK1G4sH_IXMSGDAxZJyifKp77WlhjTPUtZSaplVpuWk/edit",
     },
@@ -26,7 +26,7 @@ var stepEntriesConfig = [
         "stepId": 30,
         "summary": "Replace 5 beef (herd) portions per week with poultry",
         "reduction": 20,
-        "defaultState":  "aspiring",
+        "defaultState":  "adopting",
         "embedUrl": "https://docs.google.com/document/d/e/2PACX-1vRy_pvL4djiznmVE1iGbxjx3p4N9LZ-BQK1egCcSdqakIm6sUz2n6WGY6nCPzQoGBqvJrULlN7gITep/pub?embedded=true",
         "editUrl": "https://docs.google.com/document/d/189TdeSvhg5xnG05ojybBP0NcSgevV0SCDQtf_X9Hwg8/edit"
     },
@@ -34,7 +34,7 @@ var stepEntriesConfig = [
         "stepId": 40,
         "summary": "Replace a petrol car with an electric car",
         "reduction": 17,
-        "defaultState":  "done",
+        "defaultState":  "completed",
         "embedUrl": "https://docs.google.com/document/d/e/2PACX-1vQLByAy2Xh2C6aE6wYmgQ70WKHrZTneL23BfIcFQLb7UE-LBfRkTy88KzDKUsPZ5WqSNGpO5JxQRD6P/pub?embedded=true",
         "editUrl": "https://docs.google.com/document/d/1LpWNo4Q592zBO01xp8IzYpWbKVovOPSReDV9vv598Hc/edit"
     },
@@ -42,7 +42,7 @@ var stepEntriesConfig = [
         "stepId": 50,
         "summary": "Increase loft insulation from ??cm to ??cm in a gas heated house with an old boiler",
         "reduction": 17,
-        "defaultState":  "aspiring",
+        "defaultState":  "adopting",
         "embedUrl": "https://docs.google.com/document/d/e/2PACX-1vSQYSwJwsj4zICvkhOX-rQB6Cyt-xZQMUVNzq8glFSTsI6dT-0zL6mbgXEVNXwexj7NEAUxqRfpUC-0/pub?embedded=true",
         "editUrl": "https://docs.google.com/document/d/1hKaGpUCPWt0OCTXfa-uaqnpzu7YmqwJRUqDVR9u5y1Q/edit",
     },
@@ -50,7 +50,7 @@ var stepEntriesConfig = [
         "stepId": 60,
         "summary": "Replace old gas boiler with a new condensing boiler",
         "reduction": 9,
-        "defaultState":  "aspiring",
+        "defaultState":  "adopting",
         "embedUrl": "https://docs.google.com/document/d/e/2PACX-1vRkLE8vg0CcJEYu8-xAtkjD8bXBCv4BXpljMxxDBzlAuXqszDafnyrNY5Vtsm01iTya0rWpqwuquI_C/pub?embedded=true",
         "editUrl": "https://docs.google.com/document/d/1pfhk3K2M_Y3FNotjdDzGpXftBilaDkJ5zqYS5Le2VtA/edit#",
     },{
@@ -94,7 +94,7 @@ var stepEntriesConfig = [
         "stepId": 125,
         "summary": "Add wall insulation in a gas heated house with an old boiler",
         "reduction": 4,
-        "defaultState": "aspiring",
+        "defaultState": "adopting",
         "embedUrl": "https://docs.google.com/document/d/e/2PACX-1vSQYSwJwsj4zICvkhOX-rQB6Cyt-xZQMUVNzq8glFSTsI6dT-0zL6mbgXEVNXwexj7NEAUxqRfpUC-0/pub?embedded=true",
         "editUrl": "https://docs.google.com/document/d/1hKaGpUCPWt0OCTXfa-uaqnpzu7YmqwJRUqDVR9u5y1Q/edit",
     },{
@@ -373,7 +373,7 @@ function loadValues() {
 
 /**
  * @summary Create HTML code for a dropdown containing a list of steps of a given state.
- * @param stepStateId        The id representing the step state to be filtered for (eg "willFamiliarise")
+ * @param stepStateId        The id representing the step state to be filtered for (eg "familiarising")
  * @param openTagContents    The options within the opening tag (eg id="me" value="default")
  * @param additionalEntryCount  The number of additional entries that will be added later.
  *                              If this is 0 and there are no steps fitting the stepStateId criteria,
@@ -391,10 +391,10 @@ create_selectHtmlByStepStateId = function(stepStateId, openTagContents, addition
 
     let htmlByState=[]
 
-    htmlByState['maybe'] = ""
-    htmlByState['willFamiliarise'] = ""
-    htmlByState['aspiring'] = ""
-    htmlByState['done'] = ""
+    htmlByState['monitoring'] = ""
+    htmlByState['familiarising'] = ""
+    htmlByState['adopting'] = ""
+    htmlByState["completed"] = ""
     htmlByState['never'] = ""
 
     settings.forEach(
@@ -410,13 +410,13 @@ create_selectHtmlByStepStateId = function(stepStateId, openTagContents, addition
 
     html = "<select " + openTagContents + '>'
         + "<option disabled>------ Monitoring -------</option>"
-        + htmlByState['maybe']
+        + htmlByState['monitoring']
         + "<option disabled>------ Familiarising -------</option>"
-        + htmlByState['willFamiliarise']
+        + htmlByState['familiarising']
         + "<option disabled>------ Adopting -------</option>"
-        + htmlByState['aspiring']
+        + htmlByState['adopting']
         + "<option disabled>------ Completed -------</option>"
-        + htmlByState['done']
+        + htmlByState["completed"]
         + "<option disabled>------ Undecided -------</option>"
         + htmlByState['other']
         + "<option disabled>------ Rejected -------</option>"

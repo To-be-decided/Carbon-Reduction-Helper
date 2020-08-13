@@ -16,12 +16,12 @@ yourSavings = function(){
     settings.forEach(
         stepEntry => {
             switch(stepEntry.stepStateId){
-                case "done":
+                case "completed":
                     total_complete = total_complete +
                         stepEntriesConfig[find_stepConfigIndexByStepId(stepEntry.stepId)].reduction
                     break
 
-                case "aspiring":
+                case "adopting":
                     total_planned = total_planned +
                         stepEntriesConfig[find_stepConfigIndexByStepId(stepEntry.stepId)].reduction
                     break;

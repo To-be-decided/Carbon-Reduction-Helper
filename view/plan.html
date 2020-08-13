@@ -77,7 +77,7 @@
         step = document.querySelector('input[name="selStep"]:checked').value  // For gotoMenu()
 
         //*** Mark the step as adopting and save
-        model_setStepStateId(step, "willFamiliarise")
+        model_setStepStateId(step, "familiarising")
 
         //*** Goto the familiarise page
         gotoMenu("familiarise.html")
@@ -89,7 +89,7 @@
         step = document.querySelector('input[name="selStep"]:checked').value  // For gotoMenu()
 
         //*** Mark the step as adopting and save
-        model_setStepStateId(step, "aspiring")
+        model_setStepStateId(step, "adopting")
 
         //*** Goto the familiarise page
         gotoMenu("complete.html")
@@ -251,11 +251,11 @@
                                                             onChange="handle_stepStateChange(10, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
@@ -274,11 +274,11 @@
                                                             onChange="handle_stepStateChange(20, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
@@ -299,11 +299,11 @@
                                                             onChange="handle_stepStateChange(30, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
@@ -324,11 +324,11 @@
                                                             onChange="handle_stepStateChange(40, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
@@ -350,11 +350,11 @@
                                                             onChange="handle_stepStateChange(50, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
@@ -375,11 +375,11 @@
                                                             onChange="handle_stepStateChange(60, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
@@ -399,11 +399,11 @@
                                                             onChange="handle_stepStateChange(70, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
@@ -422,11 +422,11 @@
                                                             onChange="handle_stepStateChange(80, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
@@ -447,11 +447,11 @@
                                                             onChange="handle_stepStateChange(90, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
@@ -470,11 +470,11 @@
                                                             onChange="handle_stepStateChange(100, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
@@ -493,11 +493,11 @@
                                                             onChange="handle_stepStateChange(110, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
@@ -516,11 +516,11 @@
                                                             onChange="handle_stepStateChange(120, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>plete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>plete</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
@@ -541,11 +541,11 @@
                                                             onChange="handle_stepStateChange(125, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
@@ -564,11 +564,11 @@
                                                             onChange="handle_stepStateChange(130, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
@@ -587,11 +587,11 @@
                                                             onChange="handle_stepStateChange(140, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
@@ -610,11 +610,11 @@
                                                 <div class="advancedMode">
                                                     <select id="step140" class="stateSelector form-control" onChange="handle_stepStateChange(150, this.value)" style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
@@ -634,11 +634,11 @@
                                                             onChange="handle_stepStateChange(150, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
@@ -657,11 +657,11 @@
                                                             onChange="handle_stepStateChange(170, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
@@ -680,11 +680,11 @@
                                                             onChange="handle_stepStateChange(180, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
@@ -705,11 +705,11 @@
                                                             onChange="handle_stepStateChange(190, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
@@ -729,11 +729,11 @@
                                                             onChange="handle_stepStateChange(200, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
@@ -752,11 +752,11 @@
                                                             onChange="handle_stepStateChange(210, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
@@ -775,11 +775,11 @@
                                                             onChange="handle_stepStateChange(220, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
@@ -798,11 +798,11 @@
                                                             onChange="handle_stepStateChange(230, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
@@ -821,11 +821,11 @@
                                                             onChange="handle_stepStateChange(240, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
@@ -844,11 +844,11 @@
                                                             onChange="handle_stepStateChange(250, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
@@ -867,11 +867,11 @@
                                                             onChange="handle_stepStateChange(260, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
@@ -890,11 +890,11 @@
                                                             onChange="handle_stepStateChange(270, this.value)"
                                                             style="width:150px">
                                                         <option value=""></option>
-                                                        <option value="maybe">Monitor</option>
-                                                        <option value="willFamiliarise">Familiarise myself</option>
-                                                        <option value="aspiring">Adopt</option>
-                                                        <option value="done">Mark as complete</option>
-                                                        <option value="never">Reject</option>
+                                                        <option value="monitoring">Monitoring</option>
+                                                        <option value="familiarising">Familiarising</option>
+                                                        <option value="adopting">Adopting</option>
+                                                        <option value="completed">Completed</option>
+                                                        <option value="rejected">Rejected</option>
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">

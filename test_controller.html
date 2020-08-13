@@ -13,11 +13,11 @@
 <script>
     model_init()
 
-    model_setStepStateId(10, "done")  // 23
-    model_setStepStateId(20, "done")  // 23
+    model_setStepStateId(10, "completed")  // 23
+    model_setStepStateId(20, "completed")  // 23
 
-    model_setStepStateId(30, "aspiring")  // 20
-    model_setStepStateId(40, "aspiring")  // 17
+    model_setStepStateId(30, "adopting")  // 20
+    model_setStepStateId(40, "adopting")  // 17
 
     let savings = yourSavings()
     if(
@@ -30,7 +30,7 @@
     }
 
 
-    let testStepState = "maybe"
+    let testStepState = "monitoring"
     model_setStepStateId(50, testStepState)
     model_reload()
     actualStepState = model_getStepStateId(50)
