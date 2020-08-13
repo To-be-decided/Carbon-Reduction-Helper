@@ -90,8 +90,15 @@ var stepEntriesConfig = [
         "reduction": 5,
         "embedUrl": "",
         "editUrl": "",
-},{
-        "stepId": 130,
+}, {
+        "stepId": 125,
+        "summary": "Add wall insulation in a gas heated house with an old boiler",
+        "reduction": 4,
+        "defaultState": "aspiring",
+        "embedUrl": "https://docs.google.com/document/d/e/2PACX-1vSQYSwJwsj4zICvkhOX-rQB6Cyt-xZQMUVNzq8glFSTsI6dT-0zL6mbgXEVNXwexj7NEAUxqRfpUC-0/pub?embedded=true",
+        "editUrl": "https://docs.google.com/document/d/1hKaGpUCPWt0OCTXfa-uaqnpzu7YmqwJRUqDVR9u5y1Q/edit",
+    },{
+    "stepId": 130,
         "summary": "Share a petrol car to work",
         "reduction": 4,
         "embedUrl": "",
@@ -190,6 +197,7 @@ let defaultSettings = [
     {"stepId": 100, "stepStateId": ""},
     {"stepId": 110, "stepStateId": ""},
     {"stepId": 120, "stepStateId": ""},
+    {"stepId": 125, "stepStateId": ""},
     {"stepId": 130, "stepStateId": ""},
     {"stepId": 140, "stepStateId": ""},
     {"stepId": 150, "stepStateId": ""},
@@ -357,6 +365,8 @@ function loadValues() {
     if(crh_cookiePair == undefined){
         console.log("model_init(): CRH Cookie not found continuing with default values")
     }else{
+        /* @todo Loading values needs to support new values (maybe by overwriting individual entries in settings so
+        any new ones are automatically defaulted.  Work around is to clear cache */
         settings = JSON.parse(crh_cookiePair.split('=')[1]);
     }
 }

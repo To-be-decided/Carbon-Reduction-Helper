@@ -528,6 +528,31 @@
                                                 </div>
                                             </td>
                                         </tr>
+                                        <tr>
+                                            <td>Add wall insulation in a gas heated house with an old boiler<br>
+                                                <a href="familiarise.html?step=125">More ...</a>
+                                            </td>
+                                            <td>4%</td>
+                                            <td class="popularity">***--</td>
+                                            <td class="costEffectiveness">??<br>%/£/yr</td>
+                                            <td class="unbranded">
+                                                <div class="advancedMode">
+                                                    <select class="stateSelector form-control" id="step125"
+                                                            onChange="handle_stepStateChange(125, this.value)"
+                                                            style="width:150px">
+                                                        <option value=""></option>
+                                                        <option value="maybe">Monitor</option>
+                                                        <option value="willFamiliarise">Familiarise myself</option>
+                                                        <option value="aspiring">Adopt</option>
+                                                        <option value="done">Mark as complete</option>
+                                                        <option value="never">Reject</option>
+                                                    </select>
+                                                </div>
+                                                <div class="easyMode">
+                                                    <input name="selStep"  type="radio" value="125" oninput="handle_select()">
+                                                </div>
+                                            </td>
+                                        </tr>
                                         <tr class="below5perc">
                                             <td>Share a petrol car to work</td>
                                             <td>4%</td>
@@ -908,8 +933,6 @@
                                                     disabled
                                                     onclick="handle_familiariseButtonClick()"
                                             >
-                                            <br>
-                                            <br>
                                             <input
                                                     id="AdoptButtonId"
                                                     type="button"
@@ -918,8 +941,6 @@
                                                     disabled
                                                     onclick="handle_adoptButtonClick()"
                                             >
-                                            <br>
-                                            <br>
                                         </div>
                                     </div> <!-- Car 2 - body -->
 
