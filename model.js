@@ -243,7 +243,10 @@ model_getStepStateId = function (stepId) {
     if(stepId === "") return stepStateId_undefined;
 
     let index = find_stepSettingsIndexByStepId(stepId)
-    if(index === undefined) return stepStateId_undefined
+    if(index === undefined || index === -1){
+        console.log("model_getStepStateId(): Failed to find stepId '" + stepId)
+        return stepStateId_undefined
+    }
 
     return settings[index].stepStateId
 }
@@ -376,37 +379,39 @@ create_selectHtmlByStepStateId = function(stepStateId, openTagContents, addition
     let other=""
     let firstEntry = true
 
-    html = "<select " + openTagContents + '>'
-    html = html + "<option disabled>------ For " + stepStateId + " -------</option>"
+    let htmlByState=[]
+
+    htmlByState['maybe'] = ""
+    htmlByState['willFamiliarise'] = ""
+    htmlByState['aspiring'] = ""
+    htmlByState['done'] = ""
+    htmlByState['never'] = ""
 
     settings.forEach(
         step => {
             config = find_stepConfigEntryByStepId(step.stepId)
-
-            if (step.stepStateId === stepStateId || stepStateId === "all") {
-
-                html = html +"<option value='" + config.stepId + "'"
-                if(firstEntry) {
-                    html = html + " selected"
-                    firstEntry = false
-                }
-                html = html + '>' + config.reduction + "% : " + config.summary + '</option>'
-
-            }else{
-
-                other = other +"<option value='" + config.stepId + "'"
-                if(firstEntry) {
-                    html = html + " selected"
-                    firstEntry = false
-                }
-                other = other + '>' + config.reduction + "% : " + config.summary + '</option>'
-
-            }
+            if(step.stepStateId === "") step.stepStateId = "other"
+            htmlByState[step.stepStateId] +=
+                '<option value="' + config.stepId +'">'
+                + config.reduction + "% : " + config.summary
+                + '</option>'
         }
     )
-    html = html + "<option disabled>------ Others -------</option>"
-    html = html + other
-    html = html + "</select>"
+
+    html = "<select " + openTagContents + '>'
+        + "<option disabled>------ Continue to monitor -------</option>"
+        + htmlByState['maybe']
+        + "<option disabled>------ To familiarise with -------</option>"
+        + htmlByState['willFamiliarise']
+        + "<option disabled>------ Adopting -------</option>"
+        + htmlByState['aspiring']
+        + "<option disabled>------ Not decided -------</option>"
+        + htmlByState['other']
+        + "<option disabled>------ Completed -------</option>"
+        + htmlByState['done']
+        + "<option disabled>------ Rejected -------</option>"
+        + htmlByState['never']
+        + html + "</select>"
 
     return html
 }

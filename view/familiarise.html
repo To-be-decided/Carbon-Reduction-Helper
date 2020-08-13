@@ -55,8 +55,15 @@
             exiting("handle_stepChange")
         }
 
+        handle_stepStateChange = function(newStateId){
+            model_setStepStateId(step, newStateId)
+            refresh_stepList()
+        }
+
         refresh_all = function(){
             entering("refresh_all")
+
+            refresh_stepList()
 
             //*** Set the step state
             stepStateSelector = document.getElementById('stepStateSelector')
@@ -80,6 +87,31 @@
             }
 
             exiting("refresh_all")
+        }
+
+        refresh_stepList = function(){
+            //*** Populate the step selector drop-down
+            log("Initialising", "Populating the step drop-down")
+            let selectorDivId = document.getElementById('stepSelectorDiv');
+            selectorDivId.innerHTML =
+                create_selectHtmlByStepStateId(
+                    "willFamiliarise",
+                    'id="stepSelector" onchange="handle_stepChange()"',
+                    0
+                )
+
+            //*** Select the required step
+            log("Initialising", "Select required step")
+            let selectorId = document.getElementById('stepSelector')
+            if(step === "") {   // THEN no specific step override to use
+
+                selectorId.value = "10"  // Initialise to first entry
+
+            }else {  // Use the passed step
+                log("Initialising", "step in URL detected")
+
+                selectorId.value = step   // Note - the onchange() will not fire
+            }
         }
 
         handle_suggestChanges = function(){
@@ -174,7 +206,7 @@
                                             <td>
                                                 Change this step status to:
                                                 <select id="stepStateSelector"
-                                                        onChange="model_setStepStateId(step, this.value)">
+                                                        onChange="handle_stepStateChange(this.value)">
                                                     <option value=""></option>
                                                     <option value="maybe">Monitor</option>
                                                     <option value="willFamiliarise">Familiarise myself</option>
@@ -212,33 +244,9 @@
 
 <script>
     entering("Initialising")
+
     controller_init()
-
-    //*** Populate the step selector drop-down
-    log("Initialising", "Populating the step drop-down")
-    let selectorDivId = document.getElementById('stepSelectorDiv');
-    selectorDivId.innerHTML =
-        create_selectHtmlByStepStateId(
-            "willFamiliarise",
-            'id="stepSelector" onchange="handle_stepChange()"',
-			0
-        )
-
-    //*** Select the required step
-    log("Initialising", "Select required step")
-    let selectorId = document.getElementById('stepSelector')
-    if(step === "") {   // THEN no specific step override to use
-
-        selectorId.value = "10"  // Initialise to first entry
-
-    }else {  // Use the passed step
-        log("Initialising", "step in URL detected")
-
-        selectorId.value = step   // Note - the onchange() will not fire
-    }
-
-    // Fire onchange event - as setting value did not fire before
-    selectorId.dispatchEvent(new Event('change'));
+    refresh_all()
 
     exiting("Initialising")
 </script>
