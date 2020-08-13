@@ -66,17 +66,18 @@
         element.classList.toggle(element.classList[0])
     }
 
-    function handle_adopt(){
-        document.getElementById("AdoptButtonId").disabled = false
+    function handle_select(){
+        document.getElementById("FamiliariseButtonId").disabled = false
     }
 
-    function handle_adoptButtonClick(){
+    function handle_familiariseButtonClick(){
 
         //*** Set the step in the url to the version selected
         step = document.querySelector('input[name="selStep"]:checked').value  // For gotoMenu()
 
         //*** Mark the step as adopting and save
-        setStepState(step, 'aspiring')
+        setStepState(step, 'willFamiliarise')
+        model_setStepStateId(step, "willFamiliarise")
 
         //*** Goto the familiarise page
         gotoMenu("familiarise.html")
@@ -246,7 +247,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" value="10" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="10" oninput="handle_select()">
                                                 </div>
                                         </tr>
                                         <tr>
@@ -269,7 +270,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio"  value="20" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio"  value="20" oninput="handle_select()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -294,7 +295,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" value="30" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="30" oninput="handle_select()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -319,7 +320,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" value="40" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="40" oninput="handle_select()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -345,7 +346,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" value="50" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="50" oninput="handle_select()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -370,7 +371,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" value="60" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="60" oninput="handle_select()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -394,7 +395,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" value="70" value="step" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="70" value="step" oninput="handle_select()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -417,7 +418,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" value="80" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="80" oninput="handle_select()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -442,7 +443,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" value="90" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="90" oninput="handle_select()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -465,7 +466,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" value="100" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="100" oninput="handle_select()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -488,7 +489,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" value="110" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="110" oninput="handle_select()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -511,7 +512,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" value="120" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="120" oninput="handle_select()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -534,7 +535,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" value="130" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="130" oninput="handle_select()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -557,7 +558,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" value="140" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="140" oninput="handle_select()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -580,7 +581,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" value="150" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="150" oninput="handle_select()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -604,7 +605,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" value="160" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="160" oninput="handle_select()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -627,7 +628,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" value="170" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="170" oninput="handle_select()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -650,7 +651,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" value="180" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="180" oninput="handle_select()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -675,7 +676,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" value="190" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="190" oninput="handle_select()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -699,7 +700,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" value="200" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="200" oninput="handle_select()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -722,7 +723,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" value="210" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="210" oninput="handle_select()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -745,7 +746,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" value="220" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="220" oninput="handle_select()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -768,7 +769,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" value="230" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="230" oninput="handle_select()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -791,7 +792,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" value="240" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="240" oninput="handle_select()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -814,7 +815,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" value="250" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="250" oninput="handle_select()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -837,7 +838,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" value="260" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="260" oninput="handle_select()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -860,7 +861,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" value="270" oninput="handle_adopt()">
+                                                    <input name="selStep"  type="radio" value="270" oninput="handle_select()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -888,12 +889,12 @@
                                         </div>
                                         <div class="card-body">
                                             <input
-                                                    id="AdoptButtonId"
+                                                    id="FamiliariseButtonId"
                                                     type="button"
-                                                    value="Familiarise with selected step"
-                                                    style="width:200px; height:70px; font-size:30px"
+                                                    value="Familiarise now"
+                                                    style="width:250px; height:40px; font-size:20px"
                                                     disabled
-                                                    onclick="handle_adoptButtonClick()"
+                                                    onclick="handle_familiariseButtonClick()"
                                             >
                                         </div>
                                     </div> <!-- Car 2 - body -->

@@ -399,16 +399,16 @@ create_selectHtmlByStepStateId = function(stepStateId, openTagContents, addition
     )
 
     html = "<select " + openTagContents + '>'
-        + "<option disabled>------ Continue to monitor -------</option>"
+        + "<option disabled>------ Monitoring -------</option>"
         + htmlByState['maybe']
-        + "<option disabled>------ To familiarise with -------</option>"
+        + "<option disabled>------ Familiarising -------</option>"
         + htmlByState['willFamiliarise']
         + "<option disabled>------ Adopting -------</option>"
         + htmlByState['aspiring']
-        + "<option disabled>------ Not decided -------</option>"
-        + htmlByState['other']
         + "<option disabled>------ Completed -------</option>"
         + htmlByState['done']
+        + "<option disabled>------ Undecided -------</option>"
+        + htmlByState['other']
         + "<option disabled>------ Rejected -------</option>"
         + htmlByState['never']
         + html + "</select>"
