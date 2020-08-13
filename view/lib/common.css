@@ -77,3 +77,9 @@
     height: 20px;
     cursor: pointer;
 }
+
+.quickMenuButton{
+    width:250px;
+    height:40px;
+    font-size:20px;
+}

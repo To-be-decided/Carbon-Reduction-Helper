@@ -42,22 +42,8 @@
     refresh_all = function(){
         entering("refresh_all")
 
-        //*** Step list
         refresh_stepList()
-
-        //*** Set the step state
-        stepStateSelector = document.getElementById('stepStateSelector')
-        log("refresh_all", "Changing state drop-down from "
-            + "'" + stepStateSelector.value + "' to "
-            + "'" + model_getStepStateId(step) + "'")
-
-        stepStateSelector.value = model_getStepStateId(step);
-        // Note - setting a select element value above does not trigger the onchange() event.
-        // This isn't a problem as no action is required.
-        // It has been confirmed that setting the value property, correctly registers the new status but doesn't
-        // trigger the onchange() event
-
-        //*** Show related info
+        refresh_stepStates()
         refresh_stepInfo()
 
         exiting("refresh_all")
@@ -89,12 +75,41 @@
         }
     }
 
+    refresh_stepStates = function(){
+        //*** Set the step state
+        stepStateSelector = document.getElementById('stepStateSelector')
+        log("refresh_all", "Changing state drop-down from "
+            + "'" + stepStateSelector.value + "' to "
+            + "'" + model_getStepStateId(step) + "'")
+
+        stepStateSelector.value = model_getStepStateId(step);
+        // Note - setting a select element value above does not trigger the onchange() event.
+        // This isn't a problem as no action is required.
+        // It has been confirmed that setting the value property, correctly registers the new status but doesn't
+        // trigger the onchange() event
+    }
+
     handle_stepStateChange = function(newStateId){
         let selectorId = document.getElementById('stepSelector')
         model_setStepStateId(selectorId.value, newStateId)
         refresh_stepList()
     }
-	
+
+    function handle_completedButtonClick(){
+
+        //*** Set the step in the url to the version selected
+        let selectorId = document.getElementById('stepSelector')
+        step = selectorId.value  // For gotoMenu()
+
+        //*** Mark the step as completed and save
+        model_setStepStateId(step, "done")
+
+        refresh_stepStates()
+
+        //*** Goto the familiarise page
+//        gotoMenu("plan.html")   // Don't switch page as it is disorientated
+    }
+
     refresh_stepInfo = function(){
         entering("refresh_stepInfo")
 
@@ -317,11 +332,19 @@ B&Q = £945
                                     <table>
                                         <tr>
                                             <td>
-<!--                                           Follow changes to this step<input type="checkbox"><br> -->
-                                                Change this step status to:
+                                                <input
+                                                        id="CompletedButtonId"
+                                                        type="button"
+                                                        value="Completed"
+                                                        class="quickMenuButton"
+                                                        onclick="handle_completedButtonClick()"
+                                                >
+                                                <br>
+                                                <br>
                                                 <select id="stepStateSelector"
                                                         onChange="handle_stepStateChange(this.value)"
                                                 >
+                                                    <option value="">Advanced state selection ...</option>
                                                     <option value=""></option>
                                                     <option value="maybe">Monitor</option>
                                                     <option value="willFamiliarise">Familiarise myself</option>

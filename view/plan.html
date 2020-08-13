@@ -68,6 +68,7 @@
 
     function handle_select(){
         document.getElementById("FamiliariseButtonId").disabled = false
+        document.getElementById("AdoptButtonId").disabled = false
     }
 
     function handle_familiariseButtonClick(){
@@ -80,6 +81,18 @@
 
         //*** Goto the familiarise page
         gotoMenu("familiarise.html")
+    }
+
+    function handle_adoptButtonClick(){
+
+        //*** Set the step in the url to the version selected
+        step = document.querySelector('input[name="selStep"]:checked').value  // For gotoMenu()
+
+        //*** Mark the step as adopting and save
+        model_setStepStateId(step, "aspiring")
+
+        //*** Goto the familiarise page
+        gotoMenu("complete.html")
     }
 </script>
 
@@ -197,7 +210,7 @@
                         <div class="row">
                             <div class="col-md-8"> <!-- tips and list of steps -->
                                 <br>
-                                <h5 style="font-style:italic" align="center">Select the next carbon reduction step you are happy doing<br>from the list below and click [Adopt]</h5>
+                                <h5 style="font-style:italic" align="center">From the list below, select the next carbon reduction<br> step you are happy doing and click [Familiarise or Adopt]</h5>
                                 <br>
                                 <form>
                                     <table aria-labelledby="tableLabel" class="table table-striped">
@@ -891,10 +904,22 @@
                                                     id="FamiliariseButtonId"
                                                     type="button"
                                                     value="Familiarise now"
-                                                    style="width:250px; height:40px; font-size:20px"
+                                                    class = "quickMenuButton"
                                                     disabled
                                                     onclick="handle_familiariseButtonClick()"
                                             >
+                                            <br>
+                                            <br>
+                                            <input
+                                                    id="AdoptButtonId"
+                                                    type="button"
+                                                    value="Adopt now"
+                                                    class = "quickMenuButton"
+                                                    disabled
+                                                    onclick="handle_adoptButtonClick()"
+                                            >
+                                            <br>
+                                            <br>
                                         </div>
                                     </div> <!-- Car 2 - body -->
 

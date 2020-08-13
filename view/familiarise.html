@@ -225,6 +225,15 @@ refresh_stepInfo = function(){
                                     <table>
                                         <tr>
                                             <td>
+                                                <input
+                                                        id="AdoptButtonId"
+                                                        type="button"
+                                                        value="Adopt"
+                                                        class = "quickMenuButton"
+                                                        onclick="handle_adoptButtonClick()"
+                                                >
+                                                <br>
+                                                <br>
                                                 Change this step status to:
                                                 <select id="stepStateSelector"
                                                         onChange="handle_stepStateChange(this.value)">
@@ -238,14 +247,6 @@ refresh_stepInfo = function(){
                                                 </select>
                                                 <br>
                                                 Follow changes to this step<input type="checkbox"><br>
-                                                <br>
-                                                <input
-                                                        id="AdoptButtonId"
-                                                        type="button"
-                                                        value="Adopt"
-                                                        style="width:200px; height:70px; font-size:30px"
-                                                        onclick="handle_adoptButtonClick()"
-                                                >
 
                                             </td>
                                         </tr>
