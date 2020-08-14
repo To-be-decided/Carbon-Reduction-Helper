@@ -1,95 +1,39 @@
+
+/* === EASY MODE === */
+.easyMode     { display:block }
+.advancedMode { display:none !important}
+#mainWindow{ width:500px }
+
+/* === ADVANCED MODE === */
+/*
+.easyMode { display:none !important}
+.advancedMode { display:block }
+#mainWindow{ width:500px }
+*/
+
+/* === INFO ONLY MODE ***/
+/*
+.standAloneMode{ display: none }
+.infoOnlyMode{ display: initial }
+*/
+
+/* === STAND ALONG MODE ***/
+
+.standAloneMode{ display: block }
+.infoOnlyMode  { display: none !important}
+
+
+/***************************************/
+
 .tips {
     width: 100%;
 
     background-color: rgb(255, 255, 0);
-!important;
-}
-
-.unbranded {
-    /* The "important" below is needed because the display is overridden in plan.html */
-    /*    display: none !important; */
 }
 
 .nav-item {
     font-size: 16pt
 }
-
-.navbar-collapse {
-    width: 500px;
-}
-
-.menu_dashboard {
-    /*
-    width: 50px;
-    height:50px;
-    background-image: url("../images/dashboard.png");
-    background-size: 100% 100%;
-     */
-}
-
-.menu_select {
-    /*
-        width: 50px;
-        height:50px;
-        background-image: url("../images/select.png");
-        background-size: 100% 100%;
-     */
-}
-
-.menu_familiarise {
-    /*
-    width: 50px;
-    height:50px;
-    background-image: url("../images/familiarise.png");
-    background-size: 100% 100%;
-     */
-}
-
-.menu_adopt {
-    /*    width: 50px;
-        height:50px;
-        background-image: url("../images/complete.png");
-        background-size: 100% 100%;
-        */
-}
-
-.menu_help {
-    /*
-    width: 50px;
-    height:50px;
-    background-image: url("../images/help.png");
-    background-size: 100% 100%;
-     */
-}
-
-/*************************************************/
-
-/* Disable to start and enable what is required */
-.advancedMode { display: none !important }
-.easyMode     { display: none !important } */
-
-/* === ADVANCE MODE === */
-
-.advancedMode {
-    display:initial
-}
-
-#mainWindow{
-    width:570px
-}
-
-
-/* === EASY MODE === */
-/*
-.easyMode {
-    display:block
-}
-
-#mainWindow{
-    width:700px
-}
-*/
-/***************************************/
 
 .navbar-collapse{
     width:445px

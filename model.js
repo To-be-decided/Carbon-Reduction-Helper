@@ -11,8 +11,14 @@ var stepEntriesConfig = [
         "summary": "Replace gas boiler with an air source heat pump",
         "reduction": 23,
         "defaultState": "adopting",
-        "embedUrl": "https://docs.google.com/document/d/e/2PACX-1vSU47SJDExoBZlMuUMcKxciv-G4TCcy-LLFG6WLu2o5TJb88uQ7RVbq9x0MVrvwII04DwcB5lNdVZ4G/pub?embedded=true",
+        "embedUrl": "http://localhost:63342/carbon-reduction-helper/view/moreInfo/Replace%20an%20old%20gas%20boiler%20with%20an%20air%20source%20heat%20pump.pdf",
         "editUrl": "https://docs.google.com/document/u/0/d/1pK1G4sH_IXMSGDAxZJyifKp77WlhjTPUtZSaplVpuWk/edit",
+        "toolTip": "Air source heat pumps use about 1/3 the amount of energy of a gas or electric heater.<br>"
+            +"PROS:<ul>"
+            +"<li>UK grant funding is available</li></ul>"
+            +"CONS<ul>"
+            + "<li>Requires fitting of an external unit similar to an air conditioner</li>"
+            + "<li>May require replacing existing radiators</li></ul>"
     },
     {
         "stepId": 20,

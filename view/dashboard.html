@@ -225,9 +225,9 @@
         let msg=""
         if(savings.completed === 0) {
             msg = "Well done: You are about to help make a better world"
-        }else if(saving.completed < 0.5){
+        }else if(savings.completed < 0.5){
             msg = "Well done: You are making progress."
-        }else if(saving.completed >= 0.5){
+        }else if(savings.completed >= 0.5){
             msg = "Well done: You have exceeded the UK government target - but keep up the good work ..."
         }
         document.getElementById("summaryMessageId").innerText = msg
@@ -235,7 +235,7 @@
         let temp = ""
         if(savings.completed === 0) {
             temp = temp + "<br>"
-            temp = temp + '<h5>First step is to <a href="plan.html">select an action that you are happy to adopt</a></h5><ul>'
+            temp = temp + '<h5>Just <a href="plan.html">select an action</a> that you are happy to adopt</h5><ul>'
         }else{
             temp = temp + '<h5>You have :</h5><ul>'
             temp = temp + '<li>reduced your carbon emissions by <b>??%</b> this month <img src="images/tick.png"></li>'
@@ -246,8 +246,10 @@
         document.getElementById("detailedMessageId").innerHTML = temp
 
 
-        document.getElementById("actualSavedId").innerText = savings.completed + "%"
-        document.getElementById("plannedSavedId").innerText = (savings.completed + savings.planned) + "%"
+        if(document.getElementById("actualSavedId")) {
+            document.getElementById("actualSavedId").innerText = savings.completed + "%"
+            document.getElementById("plannedSavedId").innerText = (savings.completed + savings.planned) + "%"
+        }
 
     </script>
 </body>
