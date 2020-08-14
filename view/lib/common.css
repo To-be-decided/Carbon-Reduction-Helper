@@ -15,7 +15,7 @@
 }
 
 .navbar-collapse {
-    width: 500px
+    width: 500px;
 }
 
 .menu_dashboard {
@@ -62,12 +62,36 @@
      */
 }
 
+/*************************************************/
+
 .advancedMode {
     display: none !important
 }
 
-.easyMode {
+/* === ADVANCE MODE === */
+
+/*
+.advancedMode {
+    display: block
 }
+
+.mainWindow{
+    width:580px
+}
+*/
+
+/* === ADVANCE MODE === */
+.easyMode {
+    display:block
+}
+
+.mainWindow{
+    width:700px
+}
+
+/***************************************/
+
+
 
 /* Hide default radio styles */
 [type=radio] {

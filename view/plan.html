@@ -99,59 +99,6 @@
 <!-------------------------------------------------------------->
 
 <div id="root">
-    <div>
-        <div id="resultsSummary" class="advancedMode">Calculating ...</div>
-        <hr>
-        <div id="filters" class="advancedMode">
-            Search by text contents &nbsp;&nbsp;&nbsp;
-            <input
-                id="searchField"
-                onchange="alert('Not implemented in this proof-of-concept.  Please use the browser\'s find facility')"
-                type="text"
-                value="e.g. electric"
-        >
-            <hr>
-
-            Filter by category<br>
-            &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Food (save upto ??%) <br>
-            &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Technology (save upto ??%) <br>
-            &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Travel (save upto ??%) <br>
-
-            <br>
-                Filter by status<br>
-                &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Monitor<br>
-                &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Adopt<br>
-                &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Done <br>
-                &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Ignore<br>
-                <br>
-
-            Include information on<br>
-            &nbsp;&nbsp;&nbsp;<input checked disabled onchange="alert('Disabling is not implemented in this proof-of-concept'); this.value='All'"
-                                     type="checkbox">Cost
-            effectiveness<br>
-            <br>
-
-        Filter by impact on person<br>
-        &nbsp;&nbsp;&nbsp;<select>
-        <option>Any</option>
-        <option disabled>Medium or less</option>
-        <option disabled>Low or less</option>
-        <option disabled>None</option>
-    </select> physical disruption<br>
-        <br>
-        &nbsp;&nbsp;&nbsp;<select>
-        <option>Any</option>
-        <option disabled>Medium or less</option>
-        <option disabled>Low or less</option>
-        <option disabled>None</option>
-    </select> cost
-        <br>
-        <br>
-        Filter by carbon reduction<br>
-        &nbsp;&nbsp;&nbsp;<input id="showStepsBelow5perc" onchange="refresh_steps()" type="checkbox">
-                Include steps with a reduction<br> of less than 5%<br>
-            </div>
-    </div> <!-- Filters -->
     <header>
         <nav class=" unbranded navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 navbar-light">
             <div class="container">
@@ -161,7 +108,7 @@
                 <button aria-label="Toggle navigation" class="mr-2 navbar-toggler" type="button">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="d-sm-inline-flex flex-sm-row-reverse collapse navbar-collapse unbranded">
+                <div class="d-sm-inline-flex flex-sm-row-reverse collapse navbar-collapse unbranded" align="left">
                     <ul class="navbar-nav flex-grow">
                         <li class="nav-item menu_dashboard">
                             <a class="text-dark nav-link" href="#"
@@ -190,8 +137,60 @@
         </nav>
     </header>
     <div class="container-xl">
-        <div id="stepList" class="row">
-            <div class="col-md-8"> <!-- tips and list of steps -->
+        <div class="row">
+            <div id="statusAndOptions" class="advancedMode" style="width:300px">
+                <div id="resultsSummary">Calculating ...</div>
+                <div id="filters">
+                    Search by text contents &nbsp;&nbsp;&nbsp;
+                    <input
+                            id="searchField"
+                            onchange="alert('Not implemented in this proof-of-concept.  Please use the browser\'s find facility')"
+                            type="text"
+                            value="e.g. electric"
+                    >
+                    <hr>
+
+                    Filter by category<br>
+                    &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Food (save upto ??%) <br>
+                    &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Technology (save upto ??%) <br>
+                    &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Travel (save upto ??%) <br>
+
+                    <br>
+                    Filter by status<br>
+                    &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Monitor<br>
+                    &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Adopt<br>
+                    &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Done <br>
+                    &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Ignore<br>
+                    <br>
+
+                    Include information on<br>
+                    &nbsp;&nbsp;&nbsp;<input checked disabled onchange="alert('Disabling is not implemented in this proof-of-concept'); this.value='All'"
+                                             type="checkbox">Cost
+                    effectiveness<br>
+                    <br>
+
+                    Filter by impact on person<br>
+                    &nbsp;&nbsp;&nbsp;<select>
+                    <option>Any</option>
+                    <option disabled>Medium or less</option>
+                    <option disabled>Low or less</option>
+                    <option disabled>None</option>
+                </select> physical disruption<br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;<select>
+                    <option>Any</option>
+                    <option disabled>Medium or less</option>
+                    <option disabled>Low or less</option>
+                    <option disabled>None</option>
+                </select> cost
+                    <br>
+                    <br>
+                    Filter by carbon reduction<br>
+                    &nbsp;&nbsp;&nbsp;<input id="showStepsBelow5perc" onchange="refresh_steps()" type="checkbox">
+                    Include steps with a reduction<br> of less than 5%<br>
+                </div>
+            </div> <!-- Filters -->
+            <div id="mainWindow"> <!-- tips and list of steps -->
                 <br>
                 <h5 style="font-style:italic" align="center">From the list below, select the next carbon reduction<br> step you are happy doing and click [Familiarise or Adopt]</h5>
                 <br>
@@ -390,7 +389,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="easyMode">
-                                                    <input name="selStep"  type="radio" value="70" value="step" oninput="handle_select()">
+                                                    <input name="selStep"  type="radio" value="70" oninput="handle_select()">
                                                 </div>
                                             </td>
                                         </tr>
@@ -887,9 +886,9 @@
                                         </tr>
                                     </table> <!-- table-striped -->
                                 </form>
-                            </div> <!-- tips and list of steps -->
-                            <div class="col-md-4 unbranded"> <!-- Cards container -->
-                                <div class="sticky-top pt-2">
+            </div> <!-- tips and list of steps -->
+            <div id="contextMenu" class="unbranded"  style="width:250px"> <!-- Cards container -->
+                <div class="sticky-top pt-2">
                                     <!-- Comparison of emissions -->
                                     <div class="card">
                                         <div class="card-header  advancedMode">
@@ -929,9 +928,8 @@
 
                 </div> <!-- Card 2 -->
             </div> <!-- Context menu -->
-        </div>  <!-- StepList  -->
+        </div>
     </div> <!-- container-xl -->
-    </div> <!-- Anonymous -->
 </div> <!-- Root -->
 
 <!-------------------------------------------------------------->
