@@ -33,7 +33,6 @@
     <div id="root">
         <div>
             <header>
-
                 <nav class="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 navbar-light">
                     <div class="container">
                         <a class="navbar-brand" href="../index.html">Carbon Reduction Helper (proof-of-concept)</a>
@@ -63,7 +62,7 @@
                         </div>
                     </div>
                 </nav>
-    </header>
+            </header>
             <div class="container-xl">
                 <div class="row">
                     <div class="col-md-8">
@@ -224,16 +223,19 @@
         //*** Create and display motivational message
         // Needs to be before setting "actualSavedId" and "plannedSavedId" control values
         let msg=""
-        if(savings.completed >= 0.5){
-            msg = "Well done: You have exceeded the UK government target - but keep up the good work ..."
-        }else if(savings.completed === 0){
+        if(savings.completed === 0) {
             msg = "Well done: You are about to help make a better world"
+        }else if(saving.completed < 0.5){
+            msg = "Well done: You are making progress."
+        }else if(saving.completed >= 0.5){
+            msg = "Well done: You have exceeded the UK government target - but keep up the good work ..."
         }
         document.getElementById("summaryMessageId").innerText = msg
 
         let temp = ""
         if(savings.completed === 0) {
-            temp = temp + '<h7>Start planning a better future by popping over to the <a href="plan.html">Select</a> and select your first carbon reduction action</h7><ul>'
+            temp = temp + "<br>"
+            temp = temp + '<h5>First step is to <a href="plan.html">select an action that you are happy to adopt</a></h5><ul>'
         }else{
             temp = temp + '<h5>You have :</h5><ul>'
             temp = temp + '<li>reduced your carbon emissions by <b>??%</b> this month <img src="images/tick.png"></li>'

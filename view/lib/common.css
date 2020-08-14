@@ -64,31 +64,31 @@
 
 /*************************************************/
 
-.advancedMode {
-    display: none !important
-}
+/* Disable to start and enable what is required */
+.advancedMode { display: none !important }
+.easyMode     { display: none !important } */
 
 /* === ADVANCE MODE === */
 
+.advancedMode {
+    display:initial
+}
+
+#mainWindow{
+    width:570px
+}
+
+
+/* === EASY MODE === */
 /*
-.advancedMode {
-    display: block
-}
-
-.mainWindow{
-    width:580px
-}
-*/
-
-/* === ADVANCE MODE === */
 .easyMode {
     display:block
 }
 
-.mainWindow{
+#mainWindow{
     width:700px
 }
-
+*/
 /***************************************/
 
 .navbar-collapse{
