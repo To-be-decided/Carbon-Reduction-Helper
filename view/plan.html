@@ -13,27 +13,27 @@
         }
     </style>
 
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-    <meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport">
-    <meta content="#000000" name="theme-color">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
     <!--<base href="/">-->
     <base href=".">
 
     <!-- @todo Next line causes warning in IDE
     <link rel="manifest" href="./lib/manifest.json"> -->
 
-    <link href="images/favicon.ico" rel="shortcut icon">
+    <link  rel="shortcut icon" href="images/favicon.ico">
     <title>Carbon Reduction Helper - Plan</title>
 
     <!-- Common file includes -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173546127-1"></script>
     <script src="lib/common.js"></script>
-    <link href="lib/common.css" rel="stylesheet">
-    <link href="lib/2.67123b20.chunk.css" rel="stylesheet">
-    <link href="lib/main.a391ff7c.chunk.css" rel="stylesheet">
+    <link rel="stylesheet" href="lib/common.css">
+    <link rel="stylesheet" href="lib/2.67123b20.chunk.css">
+    <link rel="stylesheet" href="lib/main.a391ff7c.chunk.css">
 
     <script src="../model.js"></script>
-    <script src="view.js"></script>
+	<script src="view.js"></script>
     <script src="../controller.js"></script>
 
     <!-- Locals -->
@@ -102,34 +102,28 @@
     <header>
         <nav class=" unbranded navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 navbar-light">
             <div class="container">
-                <a class="navbar-brand" href="../index.html">Carbon Reduction Helper
-                    (proof-of-concept)</a>
+                <a class="navbar-brand" href="../index.html">Carbon Reduction Helper (proof-of-concept)</a>
                 <br>
-                <button aria-label="Toggle navigation" class="mr-2 navbar-toggler" type="button">
+                <button aria-label="Toggle navigation" type="button" class="mr-2 navbar-toggler">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="d-sm-inline-flex flex-sm-row-reverse collapse navbar-collapse unbranded" align="left">
+                <div class="d-sm-inline-flex flex-sm-row-reverse collapse navbar-collapse unbranded">
                     <ul class="navbar-nav flex-grow">
                         <li class="nav-item menu_dashboard">
-                            <a class="text-dark nav-link" href="#"
-                               onclick="gotoMenu('dashboard.html');return false">Dashboard</a>
+                            <a class="text-dark nav-link" href="#" onclick="gotoMenu('dashboard.html');return false">Dashboard</a>
                         </li>
                         <li class="nav-item menu_select">
-                            <a class="text-dark nav-link" disabled="" href="#"
-                               onclick="gotoMenu('plan.html');return false">[Select]</a>
+                            <a class="text-dark nav-link" disabled="" href="#" onclick="gotoMenu('plan.html');return false">[Select]</a>
                         </li>
                         <li class="nav-item menu_familiarise">
-                            <a class="text-dark nav-link" href="#"
-                               onclick="gotoMenu('familiarise.html');return false">Familiarise</a>
+                            <a class="text-dark nav-link" href="#" onclick="gotoMenu('familiarise.html');return false">Familiarise</a>
                         </li>
                         <li class="nav-item menu_adopt">
-                            <a class="text-dark nav-link" href="#"
-                               onclick="gotoMenu('complete.html');return false">Adopt</a>
+                            <a class="text-dark nav-link" href="#" onclick="gotoMenu('complete.html');return false">Adopt</a>
                         </li>
 
                         <li class="nav-item menu_help">
-                            <a class="text-dark nav-link" href="#"
-                               onclick="gotoMenu('help.html');return false">Help</a>
+                            <a class="text-dark nav-link" href="#" onclick="gotoMenu('help.html');return false">Help</a>
                         </li>
                     </ul>
                 </div>

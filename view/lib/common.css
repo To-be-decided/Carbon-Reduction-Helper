@@ -91,6 +91,9 @@
 
 /***************************************/
 
+.navbar-collapse{
+    width:445px
+}
 
 
 /* Hide default radio styles */
