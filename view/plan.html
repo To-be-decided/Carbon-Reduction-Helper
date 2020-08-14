@@ -100,140 +100,123 @@
 
 <div id="root">
     <div>
-        <table style="margin-left:20px;">
+        <div id="resultsSummary" class="advancedMode">Calculating ...</div>
+        <hr>
+        <div id="filters" class="advancedMode">
+            Search by text contents &nbsp;&nbsp;&nbsp;
+            <input
+                id="searchField"
+                onchange="alert('Not implemented in this proof-of-concept.  Please use the browser\'s find facility')"
+                type="text"
+                value="e.g. electric"
+        >
+            <hr>
 
-            <td class="notBranded">
-                <div valign="top" width="400"> <!-- Left panel -->
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <!-- @todo The positioning of filter options needs to be converted from the initial quick fix table implementation to:
-                        1) locate inside the main window container
-                        2) float at the top of screen regardless of scroll position -->
-                    <div id="resultsSummary" class="advancedMode">Calculating ...</div>
-                    <hr>
-                    <div id="filters" class="advancedMode">
+            Filter by category<br>
+            &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Food (save upto ??%) <br>
+            &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Technology (save upto ??%) <br>
+            &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Travel (save upto ??%) <br>
 
-                        Search by text contents
-                        &nbsp;&nbsp;&nbsp;<input
-                            id="searchField"
-                            onchange="alert('Not implemented in this proof-of-concept.  Please use the browser\'s find facility')"
-                            type="text"
-                            value="e.g. electric"
-                    >
-                        <hr>
+            <br>
+                Filter by status<br>
+                &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Monitor<br>
+                &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Adopt<br>
+                &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Done <br>
+                &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Ignore<br>
+                <br>
 
-                        Filter by category<br>
-                        &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Food (save upto ??%) <br>
-                        &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Technology (save upto ??%) <br>
-                        &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Travel (save upto ??%) <br>
+            Include information on<br>
+            &nbsp;&nbsp;&nbsp;<input checked disabled onchange="alert('Disabling is not implemented in this proof-of-concept'); this.value='All'"
+                                     type="checkbox">Cost
+            effectiveness<br>
+            <br>
 
-                        <br>
-                            Filter by status<br>
-                            &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Monitor<br>
-                            &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Adopt<br>
-                            &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Done <br>
-                            &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Ignore<br>
-                            <br>
+        Filter by impact on person<br>
+        &nbsp;&nbsp;&nbsp;<select>
+        <option>Any</option>
+        <option disabled>Medium or less</option>
+        <option disabled>Low or less</option>
+        <option disabled>None</option>
+    </select> physical disruption<br>
+        <br>
+        &nbsp;&nbsp;&nbsp;<select>
+        <option>Any</option>
+        <option disabled>Medium or less</option>
+        <option disabled>Low or less</option>
+        <option disabled>None</option>
+    </select> cost
+        <br>
+        <br>
+        Filter by carbon reduction<br>
+        &nbsp;&nbsp;&nbsp;<input id="showStepsBelow5perc" onchange="refresh_steps()" type="checkbox">
+                Include steps with a reduction<br> of less than 5%<br>
+            </div>
+    </div> <!-- Filters -->
+    <header>
+        <nav class=" unbranded navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">Carbon Reduction Helper
+                    (proof-of-concept)</a>
+                <br>
+                <button aria-label="Toggle navigation" class="mr-2 navbar-toggler" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="d-sm-inline-flex flex-sm-row-reverse collapse navbar-collapse unbranded">
+                    <ul class="navbar-nav flex-grow">
+                        <li class="nav-item menu_dashboard">
+                            <a class="text-dark nav-link" href="#"
+                               onclick="gotoMenu('dashboard.html');return false">Dashboard</a>
+                        </li>
+                        <li class="nav-item menu_select">
+                            <a class="text-dark nav-link" disabled="" href="#"
+                               onclick="gotoMenu('plan.html');return false">[Select]</a>
+                        </li>
+                        <li class="nav-item menu_familiarise">
+                            <a class="text-dark nav-link" href="#"
+                               onclick="gotoMenu('familiarise.html');return false">Familiarise</a>
+                        </li>
+                        <li class="nav-item menu_adopt">
+                            <a class="text-dark nav-link" href="#"
+                               onclick="gotoMenu('complete.html');return false">Adopt</a>
+                        </li>
 
-                        Include information on<br>
-                        &nbsp;&nbsp;&nbsp;<input checked disabled onchange="alert('Disabling is not implemented in this proof-of-concept'); this.value='All'"
-                                                 type="checkbox">Cost
-                        effectiveness<br>
-                        <br>
-
-                    Filter by impact on person<br>
-                    &nbsp;&nbsp;&nbsp;<select>
-                    <option>Any</option>
-                    <option disabled>Medium or less</option>
-                    <option disabled>Low or less</option>
-                    <option disabled>None</option>
-                </select> physical disruption<br>
-                    <br>
-                    &nbsp;&nbsp;&nbsp;<select>
-                    <option>Any</option>
-                    <option disabled>Medium or less</option>
-                    <option disabled>Low or less</option>
-                    <option disabled>None</option>
-                </select> cost
-                    <br>
-                    <br>
-                    Filter by carbon reduction<br>
-                    &nbsp;&nbsp;&nbsp;<input id="showStepsBelow5perc" onchange="refresh_steps()" type="checkbox">
-                            Include steps with a reduction<br> of less than 5%<br>
-                        </div>
-                </div> <!-- Left panel -->
-            </td>
-                <td> <!-- centre panel -->
-                    <header>
-                        <nav class=" unbranded navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 navbar-light">
-                            <div class="container">
-                                <a class="navbar-brand" href="../index.html">Carbon Reduction Helper
-                                    (proof-of-concept)</a>
-                                <br>
-                                <button aria-label="Toggle navigation" class="mr-2 navbar-toggler" type="button">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
-                                <div class="d-sm-inline-flex flex-sm-row-reverse collapse navbar-collapse unbranded">
-                                    <ul class="navbar-nav flex-grow">
-                                        <li class="nav-item menu_dashboard">
-                                            <a class="text-dark nav-link" href="#"
-                                               onclick="gotoMenu('dashboard.html');return false">Dashboard</a>
-                                        </li>
-                                        <li class="nav-item menu_select">
-                                            <a class="text-dark nav-link" disabled="" href="#"
-                                               onclick="gotoMenu('plan.html');return false">[Select]</a>
-                                        </li>
-                                        <li class="nav-item menu_familiarise">
-                                            <a class="text-dark nav-link" href="#"
-                                               onclick="gotoMenu('familiarise.html');return false">Familiarise</a>
-                                        </li>
-                                        <li class="nav-item menu_adopt">
-                                            <a class="text-dark nav-link" href="#"
-                                               onclick="gotoMenu('complete.html');return false">Adopt</a>
-                                        </li>
-
-                                        <li class="nav-item menu_help">
-                                            <a class="text-dark nav-link" href="#"
-                                               onclick="gotoMenu('help.html');return false">Help</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div> <!-- container -->
-                        </nav>
-                    </header>
-                    <div class="container-xl">
-                        <div class="row">
-                            <div class="col-md-8"> <!-- tips and list of steps -->
-                                <br>
-                                <h5 style="font-style:italic" align="center">From the list below, select the next carbon reduction<br> step you are happy doing and click [Familiarise or Adopt]</h5>
-                                <br>
-                                <form>
-                                    <table aria-labelledby="tableLabel" class="table table-striped">
-                                        <thead>
-                                        <tr>
-                                            <th style="vertical-align:top">Step Summary</th>
-                                            <th>Amount<img alt="Click to change sorting" src="images/sort_down.png"><br>
-                                                <small>(c.f. average<br>UK person)</small></th>
-                                            <th class="costEffectiveness" style="vertical-align:top">
-                                                <a
-                                                        href="plan.html"
-                                                        onClick='alert("Sorting on this column is not implemented in this proof-of-concept")'>Cost
-                                                    effect-iveness
-                                                </a>
-                                            </th>
-                                            <th class="unbranded" style="vertical-align:top">
-                                                <a href="plan.html"
-                                                   onClick='alert("Sorting on this column is not implemented in this proof-of-concept")'>I
-                                                    want to ...
-                                                </a>
-                                            </th>
-                                        </tr>
-                                        </thead>
+                        <li class="nav-item menu_help">
+                            <a class="text-dark nav-link" href="#"
+                               onclick="gotoMenu('help.html');return false">Help</a>
+                        </li>
+                    </ul>
+                </div>
+            </div> <!-- container -->
+        </nav>
+    </header>
+    <div class="container-xl">
+        <div id="stepList" class="row">
+            <div class="col-md-8"> <!-- tips and list of steps -->
+                <br>
+                <h5 style="font-style:italic" align="center">From the list below, select the next carbon reduction<br> step you are happy doing and click [Familiarise or Adopt]</h5>
+                <br>
+                <form>
+                    <table aria-labelledby="tableLabel" class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th style="vertical-align:top">Step Summary</th>
+                            <th>Amount<img alt="Click to change sorting" src="images/sort_down.png"><br>
+                                <small>(c.f. average<br>UK person)</small></th>
+                            <th class="costEffectiveness" style="vertical-align:top">
+                                <a
+                                        href="plan.html"
+                                        onClick='alert("Sorting on this column is not implemented in this proof-of-concept")'>Cost
+                                    effect-iveness
+                                </a>
+                            </th>
+                            <th class="unbranded" style="vertical-align:top">
+                                <a href="plan.html"
+                                   onClick='alert("Sorting on this column is not implemented in this proof-of-concept")'>I
+                                    want to ...
+                                </a>
+                            </th>
+                        </tr>
+                        </thead>
 
                                         <tr>
                                         <tr>
@@ -944,14 +927,10 @@
                                         </div>
                                     </div> <!-- Car 2 - body -->
 
-                                </div> <!-- Card 2 -->
-                            </div> <!-- Card 2 -->
-                        </div> <!-- row -->
-
-                    </div> <!-- container-xl -->
-                </td>
-            </tr>
-        </table>
+                </div> <!-- Card 2 -->
+            </div> <!-- Context menu -->
+        </div>  <!-- StepList  -->
+    </div> <!-- container-xl -->
     </div> <!-- Anonymous -->
 </div> <!-- Root -->
 
