@@ -100,7 +100,7 @@
 
 <div id="root">
     <header>
-        <nav class=" standAloneMode navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 navbar-light">
+        <nav class="navbar-expand-sm navbar-toggleable-sm ng-white  mb-3 navbar-light">
             <div class="container">
                 <a class="navbar-brand" href="../index.html">Carbon Reduction Helper (proof-of-concept)</a>
                 <br>
@@ -108,22 +108,26 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="d-sm-inline-flex flex-sm-row-reverse collapse navbar-collapse standAloneMode">
-                    <ul class="navbar-nav flex-grow">
-                        <li class="nav-item menu_dashboard">
-                            <a class="text-dark nav-link" href="#" onclick="gotoMenu('dashboard.html');return false">Dashboard</a>
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link" id="dashboard-tab" data-toggle="tab" href="#" role="tab" aria-controls="home" aria-selected="true"
+                               onclick="gotoMenu('dashboard.html');return false">Dashboard</a>
                         </li>
-                        <li class="nav-item menu_select">
-                            <a class="text-dark nav-link" disabled="" href="#" onclick="gotoMenu('plan.html');return false">[Select]</a>
+                        <li class="nav-item">
+                            <a class="nav-link active" id="select-tab" data-toggle="tab" href="#" role="tab" aria-controls="home" aria-selected="true"
+                               onclick="gotoMenu('plan.html');return false">Select</a>
                         </li>
-                        <li class="nav-item menu_familiarise">
-                            <a class="text-dark nav-link" href="#" onclick="gotoMenu('familiarise.html');return false">Familiarise</a>
+                        <li class="nav-item">
+                            <a class="nav-link" id="familiarise-tab" data-toggle="tab" href="#" role="tab" aria-controls="home" aria-selected="true"
+                               onclick="gotoMenu('familiarise.html');return false">Familiarise</a>
                         </li>
-                        <li class="nav-item menu_adopt">
-                            <a class="text-dark nav-link" href="#" onclick="gotoMenu('complete.html');return false">Adopt</a>
+                        <li class="nav-item">
+                            <a class="nav-link" id="adopt-tab" data-toggle="tab" href="#" role="tab" aria-controls="home" aria-selected="true"
+                               onclick="gotoMenu('complete.html');return false">Adopt</a>
                         </li>
-
-                        <li class="nav-item menu_help">
-                            <a class="text-dark nav-link" href="#" onclick="gotoMenu('help.html');return false">Help</a>
+                        <li class="nav-item">
+                            <a class="nav-link" id="help-tab" data-toggle="tab" href="#" role="tab" aria-controls="home" aria-selected="true"
+                               onclick="gotoMenu('help.html');return false">Help</a>
                         </li>
                     </ul>
                 </div>
@@ -132,7 +136,9 @@
     </header>
     <div class="container-xl">
         <div class="row">
-            <div id="statusAndOptions" style="width:300px">
+            <div id="statusAndOptions">
+                <br>
+                <br>
                 <br>
                 <div id="resultsSummary">Calculating ...</div><br>
                 <div id="filters">
@@ -164,10 +170,9 @@
                         <br>
                         Filter by carbon reduction<br>
                             &nbsp;&nbsp;&nbsp;<input id="showStepsBelow5perc" onchange="refresh_steps()" type="checkbox">
-                            Include steps with a reduction<br> of less than 5%<br>
+                            Include steps with a reduction of less than 5%<br>
                     <br>
                     </div>
-
                     <div class="advancedMode">
                         Filter by status<br>
                         &nbsp;&nbsp;&nbsp;<input checked disabled type="checkbox">Monitor<br>
@@ -184,7 +189,6 @@
 
             </div> <!-- Filters -->
             <div id="mainWindow"> <!-- tips and list of steps -->
-                <br>
                 <div class="standAloneMode">
                     <h5 style="font-style:italic" align="center">From the list below, select the next carbon reduction<br> step you are happy doing and click [Familiarise] or [Adopt]</h5>
                     <br>
@@ -887,7 +891,7 @@
                                     </table> <!-- table-striped -->
                 </form>
             </div> <!-- tips and list of steps -->
-            <div id="contextMenu" class="standAloneMode"  style="width:250px"> <!-- Cards container -->
+            <div id="contextMenu" class="standAloneMode"> <!-- Cards container -->
                 <div class="sticky-top pt-2">
                     <!-- Comparison of emissions -->
                     <div class="card advancedMode">

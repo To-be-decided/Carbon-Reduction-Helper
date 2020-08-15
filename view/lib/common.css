@@ -2,7 +2,7 @@
 /* === EASY MODE === */
 .easyMode     { display:block }
 .advancedMode { display:none !important}
-#mainWindow{ width:500px }
+#mainWindow{ width:650px }
 
 /* === ADVANCED MODE === */
 /*
@@ -10,7 +10,6 @@
 .advancedMode { display:block }
 #mainWindow{ width:500px }
 */
-
 /* === INFO ONLY MODE ***/
 /*
 .standAloneMode{ display: none }
@@ -36,9 +35,8 @@
 }
 
 .navbar-collapse{
-    width:445px
+    width:550px !important
 }
-
 
 /* Hide default radio styles */
 [type=radio] {
@@ -53,4 +51,16 @@
     width:100%; height:40px;
     font-size:20px;
     margin-bottom:6px; margin-top:6px;
+}
+
+#statusAndOptions {
+    width:210px
+}
+
+#contextMenu {
+    width:250px;
+}
+
+#mainWindow {
+    margin-right: 20px;
 }

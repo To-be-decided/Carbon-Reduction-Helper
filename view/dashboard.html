@@ -33,7 +33,7 @@
     <div id="root">
         <div>
             <header>
-                <nav class="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 navbar-light">
+                <nav class="navbar-expand-sm navbar-toggleable-sm ng-white  mb-3 navbar-light">
                     <div class="container">
                         <a class="navbar-brand" href="../index.html">Carbon Reduction Helper (proof-of-concept)</a>
                         <br>
@@ -41,25 +41,28 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="d-sm-inline-flex flex-sm-row-reverse collapse navbar-collapse">
-                            <ul class="navbar-nav flex-grow">
-                                <li class="nav-item menu_dashboard">
-                                    <a disabled="" class="text-dark nav-link" href="#" onclick="gotoMenu('dashboard.html');return false">[Dashboard]</a>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="dashboard-tab" data-toggle="tab" href="#" role="tab" aria-controls="home" aria-selected="true"
+                                       onclick="gotoMenu('dashboard.html');return false">Dashboard</a>
                                 </li>
-                                <li class="nav-item menu_select">
-                                    <a class="text-dark nav-link" href="#" onclick="gotoMenu('plan.html');return false">Select</a>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="select-tab" data-toggle="tab" href="#" role="tab" aria-controls="home" aria-selected="true"
+                                       onclick="gotoMenu('plan.html');return false">Select</a>
                                 </li>
-                                <li class="nav-item menu_familiarise">
-                                    <a class="text-dark nav-link" href="#" onclick="gotoMenu('familiarise.html');return false">Familiarise</a>
-                                </li>
-                                <li class="nav-item menu_adopt" >
-                                    <a class="text-dark nav-link"  href="#" onclick="gotoMenu('complete.html');return false">Adopt</a>
-                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="familiarise-tab" data-toggle="tab" href="#" role="tab" aria-controls="home" aria-selected="true"
+                                       onclick="gotoMenu('familiarise.html');return false">Familiarise</a>
 
-                                <li class="nav-item menu_help">
-                                    <a class="text-dark nav-link" href="#" onclick="gotoMenu('help.html');return false">Help</a>
-									</li>
-                            </ul>
-                        </div>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="adopt-tab" data-toggle="tab" href="#" role="tab" aria-controls="home" aria-selected="true"
+                                       onclick="gotoMenu('complete.html');return false">Adopt</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="help-tab" data-toggle="tab" href="#" role="tab" aria-controls="home" aria-selected="true"
+                                       onclick="gotoMenu('help.html');return false">Help</a>
+                                </li>
+                            </ul>                        </div>
                     </div>
                 </nav>
             </header>

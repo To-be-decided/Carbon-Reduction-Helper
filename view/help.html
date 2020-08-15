@@ -35,7 +35,7 @@
 <div id="root">
     <div>
         <header>
-            <nav class="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3 navbar-light">
+            <nav class="navbar-expand-sm navbar-toggleable-sm ng-white  mb-3 navbar-light">
                 <div class="container">
                     <a disabled="" class="navbar-brand disabled" href="../index.html">Carbon Reduction Helper (proof-of-concept)</a>
 <br>
@@ -43,31 +43,36 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="d-sm-inline-flex flex-sm-row-reverse collapse navbar-collapse">
-                        <ul class="navbar-nav flex-grow">
-                            <li class="nav-item menu_dashboard">
-                                <a class="text-dark nav-link" href="#" onclick="gotoMenu('dashboard.html');return false">Dashboard</a>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link" id="dashboard-tab" data-toggle="tab" href="#" role="tab" aria-controls="home" aria-selected="true"
+                                   onclick="gotoMenu('dashboard.html');return false">Dashboard</a>
                             </li>
-                            <li class="nav-item menu_select">
-                                <a class="text-dark nav-link" href="#" onclick="gotoMenu('plan.html');return false">Select</a>
+                            <li class="nav-item">
+                                <a class="nav-link" id="select-tab" data-toggle="tab" href="#" role="tab" aria-controls="home" aria-selected="true"
+                                   onclick="gotoMenu('plan.html');return false">Select</a>
                             </li>
-                            <li class="nav-item menu_familiarise">
-                                <a class="text-dark nav-link" href="#" onclick="gotoMenu('familiarise.html');return false">Familiarise</a>
+                            <li class="nav-item">
+                                <a class="nav-link" id="familiarise-tab" data-toggle="tab" href="#" role="tab" aria-controls="home" aria-selected="true"
+                                   onclick="gotoMenu('familiarise.html');return false">Familiarise</a>
                             </li>
-                            <li class="nav-item menu_adopt">
-                                <a class="text-dark nav-link"  href="#" onclick="gotoMenu('complete.html');return false">Adopt</a>
+                            <li class="nav-item">
+                                <a class="nav-link" id="adopt-tab" data-toggle="tab" href="#" role="tab" aria-controls="home" aria-selected="true"
+                                   onclick="gotoMenu('complete.html');return false">Adopt</a>
                             </li>
-
-                            <li class="nav-item menu_help">
-                                <a class="text-dark nav-link" disabled="" href="#" onclick="gotoMenu('help.html');return false">[Help]</a>
+                            <li class="nav-item">
+                                <a class="nav-link active" id="help-tab" data-toggle="tab" href="#" role="tab" aria-controls="home" aria-selected="true"
+                                   onclick="gotoMenu('help.html');return false">Help</a>
                             </li>
-                        </ul>
-                    </div>
+                        </ul>                    </div>
                 </div>
             </nav>
 </header>
         <div class="container-xl">
             <div class="row">
-                <div class="col-md-8">
+            	<div id="statusAndOptions">
+				</div>
+                <div id="mainWindow">
                     <iframe
                         width="100%" height="1500"
                         src="https://docs.google.com/document/d/e/2PACX-1vSo7guHqmaje1sowSdOwAWLD3DBpvvAvLcJhwHkaSwZ1ONdCoe7wLx98eagXKtZVcrdZbLzQrkOWv4h/pub?embedded=true">
